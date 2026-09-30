@@ -69,6 +69,9 @@
       <button onclick="switchTab('viral')" id="tab-btn-viral" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
         <i class="fa-solid fa-fire text-amber-400"></i> Formatos Virales Rant (Nodo B2B)
       </button>
+      <button onclick="switchTab('calculator')" id="tab-btn-calculator" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-chart-line text-emerald-400"></i> Meta 10K Seguidores & Proyección
+      </button>
       <button onclick="switchTab('settings')" id="tab-btn-settings" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
         <i class="fa-solid fa-sliders text-indigo-400"></i> APIs & Conexiones
       </button>
@@ -262,55 +265,93 @@
 
         <!-- DIAGNÓSTICO PROFUNDO & SEO ESTRATÉGICO -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-800">
-          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3">
+          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-4">
             <div class="flex items-center justify-between">
               <h3 class="text-sm font-bold text-sky-400 flex items-center gap-1.5">
-                <i class="fa-solid fa-lightbulb"></i> Diagnóstico de @nodotechgrowth
+                <i class="fa-solid fa-lightbulb"></i> Nodo B2B (@nodotechgrowth)
               </h3>
-              <span class="text-xs px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">Pico: 690 vs Caída: 17</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-bold">72% Hombres · 25-34 años (52.3%)</span>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              El <strong>23 de septiembre</strong> tuviste tu pico de <strong>690 vistas</strong> (el video contando la historia). El <strong>26 de septiembre</strong> cayó a <strong>17 vistas</strong>.
-            </p>
-            <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 text-xs text-slate-300 space-y-1.5">
-              <p class="font-bold text-emerald-400">🔍 Estrategia de SEO & Copy para Nodo:</p>
-              <p>• <strong>Texto en los primeros 2s:</strong> "El error de las empresas de servicios al cotizar por WhatsApp"</p>
-              <p>• <strong>Keywords en Copy:</strong> <code>automatizar whatsapp para empresas</code> · <code>crm ventas b2b bogota</code> · <code>metodo nodo ruta</code></p>
-              <p>• <strong>Estructura ganadora:</strong> Conflicto real de un cliente → Diagnóstico de fuga → Solución en Kommo/WhatsApp.</p>
+            
+            <div class="space-y-2 text-xs text-slate-300">
+              <p>• <strong>Público Real:</strong> Dueños de PYMES y comerciales en Colombia (86.1%). Siguen cuentas como <em>TikTok For Small Business</em> y <em>EDteam</em>.</p>
+              <p>• <strong>Por qué el pico de 690 vs caída de 17:</strong> El video ganador fue un <strong>storytelling de 36s cara a cámara</strong>. Los videos cortos genéricos o subidos en ráfaga (con 7 minutos de diferencia) fueron penalizados por el algoritmo.</p>
+              <p>• <strong>Objetivo del Perfil:</strong> Generar leads B2B hacia <code>conectanodo.com</code>.</p>
+            </div>
+
+            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-sky-500/30 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider">Bio Recomendada (≤ 80 caracteres):</span>
+                <button onclick="copyToClipboard('Bajamos el tiempo de respuesta de tu empresa de 3h a 10s con IA ⚡ Nodo B2B', this)" class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 hover:bg-sky-500/30">Copiar</button>
+              </div>
+              <p class="text-xs text-slate-100 font-mono bg-black/50 p-2 rounded border border-slate-800">
+                "Bajamos el tiempo de respuesta de tu empresa de 3h a 10s con IA ⚡ Nodo B2B"
+              </p>
+              <p class="text-[10px] text-slate-400">72 caracteres · Pega en el dolor directo del gerente y destaca tu solución.</p>
             </div>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3">
+          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-4">
             <div class="flex items-center justify-between">
               <h3 class="text-sm font-bold text-pink-400 flex items-center gap-1.5">
-                <i class="fa-solid fa-fire"></i> Diagnóstico de @santiagoquevedo71
+                <i class="fa-solid fa-fire"></i> Personal (@santiagoquevedo71)
               </h3>
-              <span class="text-xs px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 font-bold">29,025 vistas en 7 días</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 font-bold">76% Mujeres · 25-34 años (57.8%)</span>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Crecimiento exponencial: de <strong>138 vistas</strong> (23 Sep) a <strong>7,404 vistas</strong> (29 Sep). ¡Un incremento de <strong>+5,200%</strong>!
-            </p>
-            <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 text-xs text-slate-300 space-y-1.5">
-              <p class="font-bold text-pink-400">🔍 Estrategia de SEO & Copy Personal:</p>
-              <p>• <strong>Texto en pantalla:</strong> Ganchos de madurez, estándares altos y lealtad masculina.</p>
-              <p>• <strong>Keywords en Copy:</strong> <code>madurar a los 20s</code> · <code>hombre enfocado construyendo futuro</code> · <code>prioridades claras</code></p>
-              <p>• <strong>Puente de Conversión:</strong> Enlace a @s_thiago7 en la bio para capitalizar seguidoras hacia Instagram.</p>
+
+            <div class="space-y-2 text-xs text-slate-300">
+              <p>• <strong>Público Real:</strong> 89.6% Colombia. 97% del tráfico llega de <strong>For You</strong>. Es un consumo emocional: buscan madurez, lealtad y valores.</p>
+              <p>• <strong>Desconexión Detectada:</strong> 29K vistas (+1,061%) pero comentarios -82.9% y solo +5 seguidores nuevos. Los que te ven (76% mujeres jóvenes a las 6 PM) no están convirtiendo en tu perfil.</p>
+              <p>• <strong>Objetivo del Perfil:</strong> Ser un embudo de tráfico masivo hacia tu <strong>Instagram (@s_thiago7)</strong> donde sí se fidelizan.</p>
+            </div>
+
+            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-pink-500/30 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-pink-400 uppercase tracking-wider">Bio Recomendada (≤ 80 caracteres):</span>
+                <button onclick="copyToClipboard('23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7', this)" class="text-[10px] px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 hover:bg-pink-500/30">Copiar</button>
+              </div>
+              <p class="text-xs text-slate-100 font-mono bg-black/50 p-2 rounded border border-slate-800">
+                "23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7"
+              </p>
+              <p class="text-[10px] text-slate-400">64 caracteres · Establece identidad, arquetipo deseable y puente directo a Instagram.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Estrategia 90% Femenina -->
+      <!-- Estrategia de Contenido Diferenciada por Cuenta -->
       <div class="glass-card rounded-2xl p-6">
         <div class="pb-6 border-b border-slate-800">
           <h2 class="text-xl font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-heart text-pink-500"></i> Matriz de Viralidad para el 90% de Audiencia Femenina
+            <i class="fa-solid fa-arrows-split-up-and-left text-cyan-400"></i> Estrategia Diferenciada: TikTok Personal vs. TikTok Nodo
           </h2>
-          <p class="text-xs text-slate-400 mt-1">Por qué explota: Las mujeres en TikTok interactúan y comparten masivamente videos masculinos con estándares altos, lealtad y madurez emocional.</p>
+          <p class="text-xs text-slate-400 mt-1">Cómo abordar cada cuenta según su demografía real para maximizar retención y conversión.</p>
         </div>
 
-        <div id="tiktok-matrix-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          <!-- Dynamically populated -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800 space-y-3">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> @santiagoquevedo71 (Embudo Emocional)
+            </h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li>• <strong>Formato:</strong> Cortos de 6-10s con texto en pantalla + b-roll estético.</li>
+              <li>• <strong>Ángulo:</strong> Madurez a los 20s, estándares altos, lealtad masculina y ambición en silencio.</li>
+              <li>• <strong>Gatillo de Comentarios:</strong> Convertir frases cerradas en preguntas de debate (<em>"¿Maduro o aburrido?"</em> / <em>"¿A o B?"</em>).</li>
+              <li>• <strong>Puente a Instagram:</strong> Usar el copy: <em>"En mis historias de IG hablo más de esto hoy 👉 @s_thiago7"</em>.</li>
+            </ul>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800 space-y-3">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span> @nodotechgrowth (Embudo B2B PYMES)
+            </h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li>• <strong>Formato:</strong> Storytelling de 30-45s cara a cámara (el formato que generó tu récord de 690 vistas).</li>
+              <li>• <strong>Ángulo:</strong> Dolores operativos reales (clientes perdidos en WhatsApp personal, cotizaciones en visto).</li>
+              <li>• <strong>Regla de Oro:</strong> Cero burst posting (máximo 2 videos al día espaciados 5 horas).</li>
+              <li>• <strong>Conversión:</strong> CTA claro a <code>conectanodo.com</code> para agendar diagnóstico gratuito de automatización.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -458,6 +499,182 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: CALCULADORA PROYECCIÓN 10K SEGUIDORES -->
+    <section id="tab-calculator" class="space-y-8 hidden">
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/30 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i class="fa-solid fa-bullseye"></i> Road to 10K Followers · Simulador Inteligente
+            </div>
+            <h2 class="text-2xl font-black text-white mt-2 flex items-center gap-2">
+              Calculadora de Proyección: ¿Cuándo alcanzamos los 10.000 seguidores?
+            </h2>
+            <p class="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
+              Calcula matemáticamente la fecha estimada para llegar a 10K en cada una de tus 4 cuentas, comparando tu <strong>ritmo actual medido</strong> versus tu <strong>ritmo acelerado</strong> aplicando las recomendaciones de contenido.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+              Objetivo: 10,000 / cuenta
+            </span>
+          </div>
+        </div>
+
+        <!-- 4 Tarjetas de Proyección de Cuentas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" id="calculator-cards">
+          <!-- Card 1: IG Personal -->
+          <div class="border border-slate-800 hover:border-pink-500/40 bg-slate-950/80 rounded-2xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">IG Personal</span>
+                <i class="fa-brands fa-instagram text-pink-400"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mt-2">@s_thiago7</h3>
+              <div class="mt-3 space-y-1 text-xs text-slate-300">
+                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono" id="calc-ig-p-cur">1,793</strong></div>
+                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-pink-300 font-mono" id="calc-ig-p-rem">8,207</strong></div>
+                <div class="flex justify-between"><span>Ritmo diario actual:</span> <strong class="text-emerald-400 font-mono">+87 seg/día</strong></div>
+              </div>
+              
+              <div class="mt-4 p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Tiempo estimado al ritmo actual:</p>
+                <p class="text-xl font-black text-emerald-400 font-mono" id="calc-ig-p-days">94 días (~3 meses)</p>
+                <p class="text-[11px] text-slate-400" id="calc-ig-p-date">Fecha estimada: Enero 2027</p>
+              </div>
+
+              <!-- Input Interactivo de Ritmo -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1">
+                <label class="text-[11px] text-slate-400 font-semibold block">Simular otro ritmo diario:</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-ig-p-rate" value="87" min="1" max="1000" oninput="recalcAccount('ig-p', 1793, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white font-mono">
+                  <span class="text-xs text-slate-400 shrink-0">seg/día</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[10px] text-slate-500 italic">Es tu canal más acelerado y con tracción probada en Reels.</p>
+          </div>
+
+          <!-- Card 2: TikTok Personal -->
+          <div class="border border-slate-800 hover:border-cyan-500/40 bg-slate-950/80 rounded-2xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">TikTok Personal</span>
+                <i class="fa-brands fa-tiktok text-cyan-400"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mt-2">@santiagoquevedo71</h3>
+              <div class="mt-3 space-y-1 text-xs text-slate-300">
+                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono" id="calc-tt-p-cur">1,211</strong></div>
+                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-cyan-300 font-mono" id="calc-tt-p-rem">8,789</strong></div>
+                <div class="flex justify-between"><span>Ritmo semanal real:</span> <strong class="text-amber-400 font-mono">+5 seg/semana (0.7/día)</strong></div>
+              </div>
+              
+              <div class="mt-4 p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Tiempo estimado (Optimizando Bio):</p>
+                <p class="text-xl font-black text-cyan-400 font-mono" id="calc-tt-p-days">293 días (~9.7 meses)</p>
+                <p class="text-[11px] text-slate-400" id="calc-tt-p-date">Con +30 seg/día (0.5% conv. de 29K views)</p>
+              </div>
+
+              <!-- Input Interactivo -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1">
+                <label class="text-[11px] text-slate-400 font-semibold block">Simular ritmo diario (con bio nueva):</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-tt-p-rate" value="30" min="1" max="1000" oninput="recalcAccount('tt-p', 1211, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white font-mono">
+                  <span class="text-xs text-slate-400 shrink-0">seg/día</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[10px] text-slate-500 italic">Tienes 29K vistas semanales. Si solo el 0.5% te sigue, sumas 30 seg/día.</p>
+          </div>
+
+          <!-- Card 3: TikTok Nodo B2B -->
+          <div class="border border-slate-800 hover:border-emerald-500/40 bg-slate-950/80 rounded-2xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">TikTok B2B</span>
+                <i class="fa-brands fa-tiktok text-emerald-400"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mt-2">@nodotechgrowth</h3>
+              <div class="mt-3 space-y-1 text-xs text-slate-300">
+                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono" id="calc-tt-n-cur">72</strong></div>
+                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-emerald-300 font-mono" id="calc-tt-n-rem">9,928</strong></div>
+                <div class="flex justify-between"><span>Ritmo con Storytelling:</span> <strong class="text-emerald-400 font-mono">+12 seg/día proyectado</strong></div>
+              </div>
+              
+              <div class="mt-4 p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Tiempo estimado (12 seg/día):</p>
+                <p class="text-xl font-black text-emerald-400 font-mono" id="calc-tt-n-days">827 días (~27 meses)</p>
+                <p class="text-[11px] text-slate-400" id="calc-tt-n-date">En B2B 10K son dueños de negocio</p>
+              </div>
+
+              <!-- Input Interactivo -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1">
+                <label class="text-[11px] text-slate-400 font-semibold block">Simular ritmo diario (con formato viral):</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-tt-n-rate" value="12" min="1" max="1000" oninput="recalcAccount('tt-n', 72, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white font-mono">
+                  <span class="text-xs text-slate-400 shrink-0">seg/día</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[10px] text-slate-500 italic">En B2B 1,000 seguidores calificados valen más que 50K curiosos.</p>
+          </div>
+
+          <!-- Card 4: IG Nodo B2B -->
+          <div class="border border-slate-800 hover:border-sky-500/40 bg-slate-950/80 rounded-2xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">IG Nodo B2B</span>
+                <i class="fa-brands fa-instagram text-sky-400"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mt-2">@nodo_tg</h3>
+              <div class="mt-3 space-y-1 text-xs text-slate-300">
+                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono" id="calc-ig-n-cur">38</strong></div>
+                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-sky-300 font-mono" id="calc-ig-n-rem">9,962</strong></div>
+                <div class="flex justify-between"><span>Ritmo con Método RUTA:</span> <strong class="text-sky-400 font-mono">+10 seg/día proyectado</strong></div>
+              </div>
+              
+              <div class="mt-4 p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Tiempo estimado (10 seg/día):</p>
+                <p class="text-xl font-black text-sky-400 font-mono" id="calc-ig-n-days">996 días (~33 meses)</p>
+                <p class="text-[11px] text-slate-400" id="calc-ig-n-date">Con 2 Reels B2B espaciados / día</p>
+              </div>
+
+              <!-- Input Interactivo -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1">
+                <label class="text-[11px] text-slate-400 font-semibold block">Simular ritmo diario:</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-ig-n-rate" value="10" min="1" max="1000" oninput="recalcAccount('ig-n', 38, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white font-mono">
+                  <span class="text-xs text-slate-400 shrink-0">seg/día</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[10px] text-slate-500 italic">Cada seguidor aquí es un potencial lead de ticket alto para conectanodo.com.</p>
+          </div>
+        </div>
+
+        <!-- Estrategia de Aceleración para llegar antes de los 10K -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-bolt text-amber-400"></i> Plan de Aceleración: Cómo recortar el tiempo a la mitad
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
+            <div class="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800/80 space-y-1.5">
+              <p class="font-bold text-pink-400">1. Embudo TikTok → Instagram Personal</p>
+              <p>Tu TikTok personal genera 4,000 a 7,000 vistas diarias. Al poner el CTA hacia IG en cada video ("más en @s_thiago7"), puedes subir tu ritmo de Instagram de 87 a <strong>150+ seguidores/día</strong>, alcanzando 10K en menos de <strong>55 días</strong>.</p>
+            </div>
+            <div class="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800/80 space-y-1.5">
+              <p class="font-bold text-emerald-400">2. Arreglar la conversión en TikTok</p>
+              <p>Con la bio optimizada de 64 caracteres y series de debate (<em>Parte 1, Parte 2</em>), pasarás de la tasa ridícula de 0.017% a un 0.5% normal de conversión. Eso sube TikTok de +5 a <strong>+200 seguidores por semana</strong>.</p>
+            </div>
+            <div class="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800/80 space-y-1.5">
+              <p class="font-bold text-sky-400">3. El formato Storytelling en Nodo</p>
+              <p>Tu video contando la historia de un cliente llegó a 690 vistas (vs 17 del genérico). Publicando 1 storytelling diario sin burst posting, Nodo TikTok llegará a sus primeros <strong>1,000 seguidores en 60 días</strong>.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -689,7 +906,7 @@
     };
 
     function switchTab(tab) {
-      ['personal', 'nodo', 'tiktok', 'viral', 'settings'].forEach(t => {
+      ['personal', 'nodo', 'tiktok', 'viral', 'calculator', 'settings'].forEach(t => {
         const el = document.getElementById('tab-' + t);
         const btn = document.getElementById('tab-btn-' + t);
         if (el) el.classList.add('hidden');
@@ -699,6 +916,27 @@
       const activeBtn = document.getElementById('tab-btn-' + tab);
       if (activeEl) activeEl.classList.remove('hidden');
       if (activeBtn) activeBtn.className = 'py-3 px-1 active-tab flex items-center gap-2 whitespace-nowrap';
+    }
+
+    function recalcAccount(prefix, currentFollowers, dailyRate) {
+      const rate = parseFloat(dailyRate) || 1;
+      const target = 10000;
+      const remaining = Math.max(0, target - currentFollowers);
+      const days = Math.ceil(remaining / rate);
+      const months = (days / 30.4).toFixed(1);
+
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + days);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const dateStr = targetDate.toLocaleDateString('es-ES', options);
+
+      const daysEl = document.getElementById(`calc-${prefix}-days`);
+      const dateEl = document.getElementById(`calc-${prefix}-date`);
+      const remEl = document.getElementById(`calc-${prefix}-rem`);
+
+      if (daysEl) daysEl.innerText = `${days.toLocaleString()} días (~${months} meses)`;
+      if (dateEl) dateEl.innerText = `Fecha estimada: ${dateStr}`;
+      if (remEl) remEl.innerText = remaining.toLocaleString();
     }
 
     function copyToClipboard(text, btnElement) {
