@@ -1,0 +1,32 @@
+{
+  "personal": {
+    "username": "s_thiago7",
+    "name": "Thiago Quevedo | Emprendimiento & Vida",
+    "instagram_account_id": "17841400923873805",
+    "page_id": "942687925585308",
+    "page_name": "Lab marketing",
+    "access_token": "EAAPsOJOgI30BSu4xbN76W8razFEIZAZCSpabllaIAK5FH6OxjZBCiA7E5O514HOwbxtI2ZACP75L18EsIUJhBCdJhZCj5g9wYnosDSwZByI0VF29ZA5yUk3iL38wuw7mb6mJzXW4ku9KHqQHMVPZC2qWQI6GKYZAa3PkQ99O4RZC49mDZAO3qz45E0aG3v4JqCTgqfQQHbxZBXm2F5em344fADTUnnXllovAsoSlAuHikEynQMYZB",
+    "daily_target": 8
+  },
+  "nodo": {
+    "username": "nodo_tg",
+    "name": "Nodo IA | Tech & Growth 🚀",
+    "website": "https://www.conectanodo.com",
+    "instagram_account_id": "17841479477112981",
+    "page_id": "823105594229157",
+    "page_name": "Nodo.IA",
+    "access_token": "EAAUEF7T2ayYBShPyQf3OZCcfyjuzU3BJ4atoKwgfUT6r7KSIeQd8ZCxOcvJYYZAqMhop2MgnPxTbhA2jKO60dYrcVMUXlCbQd3ByGXe5Kc2ShHRo60FWhNotF0Bxp2240UvoMIf9XshB2Wid59kw0SZCQiddGkCCo0xuUPFGcFMkRkbmy7SDZAIAqxRhmUlNPXLoqJ95Fxb2uB99h3M4hW3ZAlG3L55dEgjLzb9RtlbNZAmUY52bLPPlYRWZAZB4ZD",
+    "daily_target": 2
+  },
+  "tiktok": {
+    "app_name": "Nodoapi",
+    "app_id": "7691306900553877512",
+    "client_key": "sbaw0jnugqan0iem91",
+    "client_secret": "WHllCbsH4QDm86OxALPW7qUzOGARxDGE",
+    "redirect_uri": "https://www.conectanodo.com/",
+    "accounts": [
+      "santiagoquevedo71",
+      "nodotechgrowth"
+    ]
+  }
+}
