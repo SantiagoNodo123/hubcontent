@@ -55,19 +55,22 @@
       </div>
     </div>
 
-    <!-- Navigation Tabs -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-8 text-sm border-t border-slate-800/60 overflow-x-auto">
-      <button onclick="switchTab('personal')" id="tab-btn-personal" class="py-3 px-1 active-tab flex items-center gap-2">
-        <i class="fa-brands fa-instagram text-pink-500"></i> Marca Personal (@s_thiago7)
+    <!-- Navigation Tabs (2 Plataformas + 4 Perfiles) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-6 text-sm border-t border-slate-800/60 overflow-x-auto">
+      <button onclick="switchTab('personal')" id="tab-btn-personal" class="py-3 px-1 active-tab flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-brands fa-instagram text-pink-500"></i> IG Personal (@s_thiago7)
       </button>
-      <button onclick="switchTab('nodo')" id="tab-btn-nodo" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2">
-        <i class="fa-solid fa-building text-sky-400"></i> Empresa B2B (@nodo_tg)
+      <button onclick="switchTab('nodo')" id="tab-btn-nodo" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-brands fa-instagram text-sky-400"></i> IG Nodo B2B (@nodo_tg)
       </button>
-      <button onclick="switchTab('tiktok')" id="tab-btn-tiktok" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2">
-        <i class="fa-brands fa-tiktok text-cyan-400"></i> TikTok (90% Femenino)
+      <button onclick="switchTab('tiktok')" id="tab-btn-tiktok" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-brands fa-tiktok text-cyan-400"></i> TikTok Studio (@santiagoquevedo71 & @nodotechgrowth)
       </button>
-      <button onclick="switchTab('settings')" id="tab-btn-settings" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2">
-        <i class="fa-solid fa-sliders text-indigo-400"></i> Configuración & Tokens
+      <button onclick="switchTab('viral')" id="tab-btn-viral" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-fire text-amber-400"></i> Formatos Virales Rant (Nodo B2B)
+      </button>
+      <button onclick="switchTab('settings')" id="tab-btn-settings" class="py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-sliders text-indigo-400"></i> APIs & Conexiones
       </button>
     </div>
   </header>
@@ -312,6 +315,153 @@
       </div>
     </section>
 
+    <!-- TAB VIRAL: FORMATOS VIRALES RANT (NODO B2B) -->
+    <section id="tab-viral" class="space-y-8 hidden">
+      <div class="glass-card rounded-2xl p-6 border border-amber-500/20 bg-gradient-to-br from-slate-900 via-amber-950/20 to-slate-900">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <i class="fa-solid fa-fire"></i> Formato Rant de Autoridad & Psicología Inversa
+            </div>
+            <h2 class="text-2xl font-black text-white mt-2 flex items-center gap-2">
+              "¿Saben qué? Trabajen de Más... Ya me cansé de decirles que eso lo hace la IA"
+            </h2>
+            <p class="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
+              Fórmula de alto impacto: <strong>[Desafío irónico / renuncia fingida]</strong> + <strong>[El error que le cuesta plata al cliente]</strong> + <strong>[Demostración rápida de la solución en Nodo]</strong>.
+            </p>
+          </div>
+          <a href="https://github.com/SantiagoNodo123/hubcontent/blob/main/VIRAL_HOOKS_NODO.md" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center gap-2 transition-all shrink-0">
+            <i class="fa-brands fa-github"></i> Ver en GitHub
+          </a>
+        </div>
+
+        <!-- 5 Variaciones Listas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          
+          <!-- Var 1 -->
+          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">Variación 1 · WhatsApp Tardío</span>
+              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-amber-500/30 text-center">
+                <p class="text-xs text-amber-300 font-black tracking-wide leading-tight">
+                  ¿SABEN QUÉ?<br>SIGAN RESPONDIENDO<br>A LAS 3 HORAS.<br>YA ME CANSÉ DE DECIRLES<br>QUE LA IA CALIFICA<br>Y AGENDA EN 10 SEG.
+                </p>
+              </div>
+              <div class="mt-3 text-xs text-slate-300 space-y-1">
+                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
+                <p class="italic">"Sigan dejando que el cliente que escribió a las 2 PM se vaya con la competencia porque ustedes le respondieron a las 6... De verdad, sigan haciéndolo a mano. Total, ¿a quién le gusta vender más?"</p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
+              <button onclick="copyToClipboard('¿Saben qué? Sigan respondiendo a las 3 horas. Ya me cansé de decirles que la IA califica y agenda en 10 seg.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+                <i class="fa-regular fa-copy"></i> Texto
+              </button>
+              <button onclick="copyToClipboard('El 70% de las ventas por WhatsApp se las lleva el primero que responde. Si tu equipo tarda horas en calificar a un prospecto o en enviarle precios, estás regalando facturación a tu competencia.\n\nUn agente con IA conectado a tu WhatsApp oficial no se duerme, no se cansa, perfila al cliente y le agenda la reunión con tu asesor en menos de 30 segundos.\n\nDeja de perder leads por lentitud. Toca el enlace de nuestro perfil o visita conectanodo.com para estructurar tu atención comercial.\n\n#automatizacion #whatsappapi #ventasb2b #inteligenciaartificial #crm #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 text-xs">
+                <i class="fa-regular fa-paste"></i> Copy SEO
+              </button>
+            </div>
+          </div>
+
+          <!-- Var 2 -->
+          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">Variación 2 · Cotizaciones en PDF</span>
+              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-sky-500/30 text-center">
+                <p class="text-xs text-sky-300 font-black tracking-wide leading-tight">
+                  ¿SABEN QUÉ?<br>SIGAN MANDANDO<br>COTIZACIONES EN PDF<br>Y REZANDO.<br>YA ME CANSÉ DE DECIRLES<br>QUE EL CRM HACE EL<br>SEGUIMIENTO SOLO.
+                </p>
+              </div>
+              <div class="mt-3 text-xs text-slate-300 space-y-1">
+                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
+                <p class="italic">"Pásense la tarde armando propuestas divinas en PDF, envíenlas por WhatsApp y esperen un milagro a ver si les vuelven a escribir. No monten CRM, no automaticen recordatorios... esperen que el cliente les lea la mente."</p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
+              <button onclick="copyToClipboard('¿Saben qué? Sigan mandando cotizaciones en PDF y rezando. Ya me cansé de decirles que el CRM hace el seguimiento solo.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+                <i class="fa-regular fa-copy"></i> Texto
+              </button>
+              <button onclick="copyToClipboard('Enviar una cotización y no hacer seguimiento estructurado es lo mismo que tirar tu tiempo a la basura.\n\nEl 80% de los cierres se dan entre el 3er y el 5to contacto, pero la mayoría de empresas solo preguntan una vez y olvidan el lead.\n\nCon un embudo automatizado en Kommo, el sistema sabe cuándo el cliente abrió la propuesta, le dispara recordatorios por WhatsApp y alerta a tu asesor.\n\nComenta SEGUIMIENTO o entra a conectanodo.com para dejar de depender de la memoria.\n\n#kommo #crmparaempresas #seguimientodeventas #automatizacionb2b #ventascolombia #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs">
+                <i class="fa-regular fa-paste"></i> Copy SEO
+              </button>
+            </div>
+          </div>
+
+          <!-- Var 3 -->
+          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Variación 3 · Esclavos de Excel</span>
+              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-emerald-500/30 text-center">
+                <p class="text-xs text-emerald-300 font-black tracking-wide leading-tight">
+                  ¿SABEN QUÉ?<br>QUÉDENSE HASTA LAS 9 PM<br>COPIANDO DATOS EN EXCEL.<br>YA ME CANSÉ DE DECIRLES<br>QUE ESO LO CONECTA<br>UNA AUTOMATIZACIÓN.
+                </p>
+              </div>
+              <div class="mt-3 text-xs text-slate-300 space-y-1">
+                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
+                <p class="italic">"Disfruten esas 4 horas al día pasando contactos del chat a un Excel, armando reportes a mano y corrigiendo errores de tipeo. Sigan así, seguro para eso crearon su empresa..."</p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
+              <button onclick="copyToClipboard('¿Saben qué? Quédense hasta las 9 PM copiando datos en Excel. Ya me cansé de decirles que eso lo conecta una automatización.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+                <i class="fa-regular fa-copy"></i> Texto
+              </button>
+              <button onclick="copyToClipboard('Si tu trabajo o el de tu equipo consiste en copiar información de una pestaña a otra, no tienes un empleo estratégico: estás haciendo el trabajo de un script de 3 líneas.\n\nLas herramientas modernas conectan tus formularios, tus mensajes de WhatsApp, tu facturación y tu base de datos en tiempo real sin tocar una tecla.\n\nTu tiempo vale demasiado. Descubre cómo sistematizar tu flujo en conectanodo.com.\n\n#productividad #automatizaciondeprocesos #n8n #operaciones #negociosinteligentes #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-xs">
+                <i class="fa-regular fa-paste"></i> Copy SEO
+              </button>
+            </div>
+          </div>
+
+          <!-- Var 4 -->
+          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-rose-500/10 text-rose-300 border border-rose-500/20">Variación 4 · Celulares Personales</span>
+              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-rose-500/30 text-center">
+                <p class="text-xs text-rose-300 font-black tracking-wide leading-tight">
+                  ¿SABEN QUÉ?<br>DEJEN QUE SUS ASESORES<br>MANEJEN CLIENTES<br>EN SU CEL PERSONAL.<br>YA ME CANSÉ DE DECIRLES<br>QUE SE LLEVAN LA BASE.
+                </p>
+              </div>
+              <div class="mt-3 text-xs text-slate-300 space-y-1">
+                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
+                <p class="italic">"Sigan permitiendo que cada vendedor atienda clientes desde su número personal. El día que ese asesor renuncie o se vaya con la competencia, ahí sí van a entender por qué necesitaban una sola línea centralizada."</p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
+              <button onclick="copyToClipboard('¿Saben qué? Dejen que sus asesores manejen clientes en su cel personal. Ya me cansé de decirles que se van a llevar la base.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+                <i class="fa-regular fa-copy"></i> Texto
+              </button>
+              <button onclick="copyToClipboard('El activo más valioso de tu empresa son sus contactos y su historial de conversaciones.\n\nSi tus vendedores atienden desde sus números privados no sabes qué prometen, no mides tiempos de respuesta y cuando se van, se llevan tus clientes.\n\nCon WhatsApp Cloud API toda tu empresa atiende desde el mismo número oficial con auditoría y base de datos protegida.\n\nCentraliza tu operación hoy en conectanodo.com.\n\n#whatsappempresas #seguridadcomercial #equipodeventas #crm #gestionempresarial #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/30 text-xs">
+                <i class="fa-regular fa-paste"></i> Copy SEO
+              </button>
+            </div>
+          </div>
+
+          <!-- Var 5 -->
+          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+            <div>
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">Variación 5 · "El País Está Difícil"</span>
+              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-purple-500/30 text-center">
+                <p class="text-xs text-purple-300 font-black tracking-wide leading-tight">
+                  ¿SABEN QUÉ?<br>SIGAN DICIENDO QUE<br>"EL PAÍS ESTÁ DIFÍCIL".<br>YA ME CANSÉ DE DECIRLES<br>QUE LO QUE LES FALTA<br>ES UN EMBUDO REAL.
+                </p>
+              </div>
+              <div class="mt-3 text-xs text-slate-300 space-y-1">
+                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
+                <p class="italic">"Échenle la culpa a la economía, al dólar o a la temporada. Mientras tanto, hay empresas en su mismo sector llenando sus agendas todas las semanas porque tienen un sistema que convierte visitas en llamadas automáticamente."</p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
+              <button onclick="copyToClipboard('¿Saben qué? Sigan diciendo que el país está difícil. Ya me cansé de decirles que lo que les falta es un embudo real.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+                <i class="fa-regular fa-copy"></i> Texto
+              </button>
+              <button onclick="copyToClipboard('El problema nunca es la falta de clientes; el problema es que no tienes un mecanismo predecible para captarlos, nutrirlos y cerrarlos.\n\nUn negocio no sobrevive posteando al azar. Necesitas tráfico calificado, filtro automático de curiosos y seguimiento implacable hasta el cierre.\n\nEse es el Método NODO RUTA. Diseña tu sistema en conectanodo.com.\n\n#ventasb2b #estrategiacomercial #embudosdeventas #crecimientoempresarial #nodoia', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-xs">
+                <i class="fa-regular fa-paste"></i> Copy SEO
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- TAB 4: CONFIGURACIÓN & APIS -->
     <section id="tab-settings" class="space-y-8 hidden">
       <div class="glass-card rounded-2xl p-6">
@@ -353,12 +503,16 @@
 
   <script>
     function switchTab(tab) {
-      ['personal', 'nodo', 'tiktok', 'settings'].forEach(t => {
-        document.getElementById('tab-' + t).classList.add('hidden');
-        document.getElementById('tab-btn-' + t).className = 'py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2';
+      ['personal', 'nodo', 'tiktok', 'viral', 'settings'].forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (el) el.classList.add('hidden');
+        if (btn) btn.className = 'py-3 px-1 text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap';
       });
-      document.getElementById('tab-' + tab).classList.remove('hidden');
-      document.getElementById('tab-btn-' + tab).className = 'py-3 px-1 active-tab flex items-center gap-2';
+      const activeEl = document.getElementById('tab-' + tab);
+      const activeBtn = document.getElementById('tab-btn-' + tab);
+      if (activeEl) activeEl.classList.remove('hidden');
+      if (activeBtn) activeBtn.className = 'py-3 px-1 active-tab flex items-center gap-2 whitespace-nowrap';
     }
 
     function copyToClipboard(text, btnElement) {
