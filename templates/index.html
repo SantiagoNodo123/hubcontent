@@ -229,16 +229,16 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#1f242e] gap-4">
           <div>
             <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
-              Guiones B2B · Enfoque Soluciones Comerciales
+              Guiones B2B · Formato Ganador (Frases de 8s para Compartir)
             </h2>
-            <p class="text-sm text-slate-400 mt-1">Enfoque: Cuellos de botella en ventas, pérdidas de leads en WhatsApp personal y Método NODO RUTA</p>
+            <p class="text-sm text-slate-400 mt-1">Dolores operativos directos, procesos manuales y cuellos de botella en WhatsApp diseñados para loop y compartidos por DM</p>
           </div>
           <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-slate-300 border border-white/10 font-mono">
             conectanodo.com
           </span>
         </div>
 
-        <div id="nodo-reels-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div id="nodo-reels-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           <!-- Dynamically loaded -->
         </div>
       </div>
@@ -330,10 +330,10 @@
             <div class="bg-[#111318] p-4 rounded-xl border border-[#1f242e] space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-xs font-mono text-slate-400 uppercase font-semibold">Bio Recomendada (≤ 80 caracteres):</span>
-                <button onclick="copyToClipboard('23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7', this)" class="text-xs px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-medium">Copiar</button>
+                <button onclick="copyToClipboard('26 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7', this)" class="text-xs px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-medium">Copiar</button>
               </div>
               <p class="text-sm text-slate-100 font-mono bg-black/60 p-2.5 rounded border border-[#1e222b]">
-                "23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7"
+                "26 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7"
               </p>
               <p class="text-xs text-slate-400 font-mono">64 caracteres · Establece identidad y puente directo a Instagram.</p>
             </div>
@@ -368,12 +368,36 @@
               <span class="w-2 h-2 rounded-full bg-slate-300"></span> @nodotechgrowth (Embudo B2B PYMES)
             </h3>
             <ul class="text-sm text-slate-300 space-y-2.5">
-              <li>• <strong>Formato:</strong> Storytelling de 30-45s cara a cámara (el formato que generó tu récord de 690 vistas).</li>
-              <li>• <strong>Ángulo:</strong> Dolores operativos reales (clientes perdidos en WhatsApp personal, cotizaciones en visto).</li>
-              <li>• <strong>Regla de Oro:</strong> Cero subidas en ráfaga (máximo 2 videos al día espaciados 5 horas).</li>
-              <li>• <strong>Conversión:</strong> CTA claro a <code>conectanodo.com</code> para agendar diagnóstico de automatización.</li>
+              <li>• <strong>Formato:</strong> Storytelling de 30-40s cara a cámara desparchado (500–700 vistas comprobadas).</li>
+              <li>• <strong>Ángulo:</strong> Casos y noticias de negocio calientes (David Vélez x Westcol, Manus AI, Mercado Libre) sin postureo de experto.</li>
+              <li>• <strong>Estrategia de Subida:</strong> Torneo en ráfaga (subir bloques de 3-4 videos) para que el algoritmo filtre el gancho con mayor retención.</li>
+              <li>• <strong>Conversión:</strong> Comentario fijado o puente natural hacia <code>conectanodo.com</code>.</li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <!-- Storytelling Desparchado TikTok Nodo -->
+      <div class="panel rounded-2xl p-7 space-y-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#1f242e] gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 text-slate-300 border border-white/10">
+              Formato Validado (500–700 Vistas) · Cero Pose de Experto
+            </div>
+            <h2 class="text-xl font-bold text-white mt-2">
+              Guiones & Disparadores de Storytelling para TikTok Nodo (30–40s)
+            </h2>
+            <p class="text-sm text-slate-400 mt-1">
+              Habla desparchado y fluido sobre temas de actualidad, tecnología y lecciones de negocio para que el espectador se quede hasta el final.
+            </p>
+          </div>
+          <span class="text-xs font-mono px-3 py-1 rounded-full bg-white/5 text-slate-300 border border-white/10">
+            4 Guiones Listos
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="tiktok-nodo-storytelling-container">
+          <!-- Populated dynamically via JS -->
         </div>
       </div>
     </section>
@@ -820,21 +844,95 @@
       nodo_plan: [
         {
           id: 1,
-          time: "12:30 PM",
-          theme: "El Cementerio de Ventas B2B",
-          line1: "El cementerio de ventas de las empresas de servicios:",
-          line2: "Enviar una cotización en PDF por WhatsApp y jamás volver a hacerle un seguimiento estructurado. El 60% de tus ventas se pierden en el silencio.",
-          copy: "Tus comerciales no necesitan más prospectos desordenados, necesitan una ruta de seguimiento medible. En NODO integramos Kommo CRM y WhatsApp API para que ninguna propuesta se quede en el olvido. Conoce el Método NODO RUTA en conectanodo.com",
-          tip: "Tomas estéticas de un correo con un archivo PDF y luego un dashboard de CRM en pantalla."
+          time: "09:30 AM",
+          theme: "Pauta Desperdiciada & Tiempos",
+          line1: "Ustedes no hacen caso parce...",
+          line2: "Siguen gastando 2 millones en pauta para que un asesor responda 'Hola precio' 4 horas después. Así quiebra cualquiera.",
+          copy: "El problema no es tu marketing, es tu tiempo de respuesta. Si un cliente interesado te escribe y nadie le contesta de inmediato, se va con la competencia. En NODO automatizamos tus ventas de 3 horas a 10 segundos. Link en bio 👉 conectanodo.com",
+          tip: "Grabación estética frente al monitor con métricas o taza de café (8 seg loop)."
         },
         {
           id: 2,
-          time: "07:30 PM",
-          theme: "El Riesgo de WhatsApp Personal",
-          line1: "El mayor riesgo operativo en una empresa B2B:",
-          line2: "Que tus clientes vivan en los WhatsApps personales de tus asesores. Si el asesor se va, tu base de datos se va con él.",
-          copy: "Centralizar la captación no es microgestión, es proteger la infraestructura de tu negocio. Diseñamos sistemas donde cada mensaje y cotización queda en tu CRM oficial. Diagnóstico en conectanodo.com",
-          tip: "Tomas de flujos en pantalla (n8n, Kommo CRM) y teclado en oficina."
+          time: "11:30 AM",
+          theme: "Procesos Manuales en 2026",
+          line1: "Ustedes y sus procesos todos manuales...",
+          line2: "Tienen un negocio de 100 millones al mes administrado en un Excel que no actualizan desde el martes pasado.",
+          copy: "Dejen de depender de la memoria de sus comerciales o de tablas de Excel desactualizadas. Un CRM con WhatsApp centraliza prospectos, tareas y cierres en automático. Conoce el Método NODO RUTA en conectanodo.com",
+          tip: "Grabando pantalla mostrando un Excel caótico vs CRM ordenado (8 seg)."
+        },
+        {
+          id: 3,
+          time: "02:00 PM",
+          theme: "El Cementerio de Cotizaciones en PDF",
+          line1: "El cementerio de ventas de las empresas:",
+          line2: "Mandan la cotización en PDF por WhatsApp y rezan para que el cliente les vuelva a escribir. Eso no es vender, es tener fe.",
+          copy: "El 60% de las ventas B2B se cierran en el seguimiento, no en el primer mensaje. Si no tienes un flujo automatizado que reactive prospectos que te dejaron en visto, estás botando plata. Diagnóstico gratis en conectanodo.com",
+          tip: "Enfocando celular dejando un mensaje en visto (8 seg)."
+        },
+        {
+          id: 4,
+          time: "04:30 PM",
+          theme: "El WhatsApp Personal del Asesor",
+          line1: "El peor error de un dueño de empresa:",
+          line2: "Dejar que los clientes hablen al número personal del vendedor. El día que renuncia, se va con tu facturación.",
+          copy: "Tu base de datos es el activo más valioso de tu empresa. Centralizar la atención en una API oficial de WhatsApp vinculada a tu CRM protege tu negocio de pérdidas catastróficas. Descubre cómo en conectanodo.com",
+          tip: "Asesor guardando el celular en el bolsillo (8 seg)."
+        },
+        {
+          id: 5,
+          time: "06:45 PM",
+          theme: "La Falsa Falta de Personal",
+          line1: "Tu problema no es que te falta personal...",
+          line2: "...tu problema es que tienes a 3 personas haciendo tareas repetitivas que una automatización resuelve en 2 segundos.",
+          copy: "Antes de salir a contratar más asesores y agrandar la nómina, arregla la infraestructura digital de tu empresa. Automatiza la respuesta inicial, el filtro de curiosos y el agendamiento. Mira cómo en conectanodo.com",
+          tip: "Oficina de noche o portátil cerrado (8 seg)."
+        },
+        {
+          id: 6,
+          time: "08:30 PM",
+          theme: "El Cliente de Viernes a las 9 PM",
+          line1: "El cliente que te escribe un viernes a las 9 PM...",
+          line2: "...no espera al lunes por la mañana. Le compra a la empresa que le cotizó en automático mientras tú dormías.",
+          copy: "Los clientes no compran en horario de oficina, compran cuando tienen el problema enfrente. Un sistema de IA responde, califica y agenda reuniones 24/7. Deja de perder ventas los fines de semana 👉 conectanodo.com",
+          tip: "Notificación de WhatsApp sonando en celular nocturno (8 seg)."
+        }
+      ],
+      tiktok_nodo_storytelling: [
+        {
+          id: 1,
+          title: "David Vélez (Nubank) x Westcol · La Lección Empresarial",
+          duration: "35 seg",
+          hook: "Parce, me vi la entrevista de Westcol con David Vélez y entendí por qué Nubank vale más que cualquier banco tradicional en Colombia.",
+          body: "El man explicaba que un banco tradicional necesita 50 sucursales físicas, cajeros, vigilantes y arriendos gigantes para atender a 100 mil personas. Nubank atiende a 100 millones de personas con pura infraestructura digital y algoritmos automáticos de crédito en segundos.",
+          takeaway: "La lección aquí para cualquier dueño de negocio es clara: no gana el que tiene más oficinas ni más empleados en nómina, gana el que tiene mejor infraestructura digital. El que sigue operando con papel y llamadas manuales se va a extinguir.",
+          cta: "¿Ustedes ya vieron esa entrevista? Cuéntenme en los comentarios qué opinan."
+        },
+        {
+          id: 2,
+          title: "Manus AI · Por Qué Me Explotó la Cabeza",
+          duration: "40 seg",
+          hook: "Parce, llevo 48 horas testeando Manus AI y todavía no creo lo que esta vaina es capaz de hacer.",
+          body: "No es como ChatGPT que solo te responde texto. Tú le dices 'analízame los competidores de mi sector, descárgate los precios y créame un reporte en Excel con una gráfica' y el agente abre el navegador solo, busca la información, la procesa y te entrega el archivo listo en 2 minutos.",
+          takeaway: "La gente sigue debatiendo si la IA va a quitar empleos... la IA no te va a quitar el empleo, te lo va a quitar la empresa que use herramientas como Manus para hacer en 1 hora lo que a ti te tomaba una semana.",
+          cta: "Si quieren que les muestre cómo la estoy usando en la empresa, dejen un comentario y les hago un tutorial rápido."
+        },
+        {
+          id: 3,
+          title: "La Empresa que Factura Millones pero Atiende como Tienda de Barrio",
+          duration: "35 seg",
+          hook: "Ayer me pasó algo con una empresa en Medellín que de verdad me dio risa pero a la vez rabia.",
+          body: "Veo un anuncio brutal en Instagram, un servicio de 800 mil pesos, le doy clic a WhatsApp para comprarlo con la tarjeta lista... y me sale: 'Hola, en este momento estamos fuera de horario, nuestro horario de atención es de 8 AM a 5 PM'.",
+          takeaway: "Parce, año 2026. Te gastas millones en pauta para que la gente te escriba a las 8 de la noche con ganas de comprar, ¿y los dejas esperando hasta el otro día? En ese lapso ya le compré a la competencia que tenía un bot que me cobró en 10 segundos.",
+          cta: "¿A cuántos de ustedes les ha pasado que quieren comprar algo y los dejan en visto? Confirmen en comentarios."
+        },
+        {
+          id: 4,
+          title: "Mercado Libre Arruinó la Paciencia de los Clientes",
+          duration: "30 seg",
+          hook: "Mercado Libre arruinó la paciencia de todos los clientes en Colombia, y si no entiendes esto tu negocio va a sufrir.",
+          body: "Uno compra hoy a las 4 de la tarde y a las 9 de la noche ya tiene el paquete en la puerta de la casa. El cerebro del cliente se acostumbró a la respuesta inmediata.",
+          takeaway: "Entonces cuando ese mismo cliente le escribe a tu empresa y tú te demoras 3 horas en pasarle una cotización, siente que le estás faltando al respeto. La velocidad hoy en día es la mejor estrategia de ventas.",
+          cta: "¿Ustedes cuánto es lo máximo que esperan antes de irse con otro proveedor? Los leo."
         }
       ],
       tiktok_profiles: [
@@ -975,32 +1073,34 @@
 
     function renderPersonalPlan(plan) {
       const container = document.getElementById('personal-reels-container');
+      if (!container) return;
       container.innerHTML = '';
       plan.forEach(r => {
         const card = document.createElement('div');
-        card.className = 'border border-slate-800/80 hover:border-slate-700 bg-[#0d1424]/90 rounded-2xl p-6 flex flex-col justify-between space-y-5 transition-all shadow-md';
+        card.className = 'p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm';
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">Reel #${r.id}</span>
-              <span class="text-sm font-semibold text-slate-300 font-mono"><i class="fa-regular fa-clock text-sky-400"></i> ${r.time}</span>
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Reel #${r.id}</span>
+              <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> ${r.time}</span>
             </div>
-            <h3 class="text-lg font-bold text-white mt-3">${r.theme}</h3>
-            <div class="mt-4 p-4 bg-black/60 rounded-xl border border-slate-800/80 space-y-2">
-              <p class="text-xs text-slate-400 uppercase tracking-wider font-bold">Texto en Pantalla (Hooks):</p>
-              <p class="text-base text-slate-100 font-medium leading-snug">"${r.line1}"</p>
-              <p class="text-base text-sky-300 font-semibold leading-snug">"${r.line2}"</p>
+            <h3 class="text-base font-bold text-white mt-3">${r.theme}</h3>
+            <div class="mt-3 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1.5">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Texto Pantalla (Gancho):</p>
+              <p class="text-sm text-slate-200 leading-snug">"${r.line1}"</p>
+              <p class="text-sm text-white font-semibold leading-snug">"${r.line2}"</p>
             </div>
-            <div class="mt-4 space-y-1.5">
-              <p class="text-xs text-slate-400 uppercase tracking-wider font-bold">Copy / Descripción SEO:</p>
-              <p class="text-sm text-slate-200 leading-relaxed italic bg-slate-900/60 p-3 rounded-xl border border-slate-800">"${r.copy}"</p>
+            <div class="mt-3 p-3.5 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Copy / Descripción:</p>
+              <p class="text-xs text-slate-300 leading-relaxed italic">"${r.copy}"</p>
             </div>
+            <p class="text-xs text-slate-400 mt-3 flex items-center gap-1.5"><i class="fa-solid fa-video text-slate-500"></i> ${r.tip}</p>
           </div>
-          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
-            <button onclick="copyToClipboard('${r.line1} ${r.line2}', this)" class="flex-1 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-sm font-semibold text-slate-100 transition-all flex items-center justify-center gap-2">
+          <div class="pt-4 border-t border-[#1a1d24] flex items-center gap-2.5">
+            <button onclick="copyToClipboard('${r.line1} ${r.line2}', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b] flex items-center justify-center gap-1.5">
               <i class="fa-regular fa-copy"></i> Texto Pantalla
             </button>
-            <button onclick="copyToClipboard('${r.copy}', this)" class="flex-1 py-2.5 px-4 rounded-xl bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 text-sm font-semibold border border-sky-500/30 transition-all flex items-center justify-center gap-2">
+            <button onclick="copyToClipboard('${r.copy}', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold flex items-center justify-center gap-1.5">
               <i class="fa-regular fa-paste"></i> Copiar Copy
             </button>
           </div>
@@ -1011,34 +1111,83 @@
 
     function renderNodoPlan(plan) {
       const container = document.getElementById('nodo-reels-container');
+      if (!container) return;
       container.innerHTML = '';
       plan.forEach(r => {
         const card = document.createElement('div');
-        card.className = 'border border-slate-800/80 hover:border-emerald-500/40 bg-[#0d1424]/90 rounded-2xl p-7 flex flex-col justify-between space-y-5 transition-all shadow-md';
+        card.className = 'p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm';
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Reel B2B #${r.id}</span>
-              <span class="text-sm font-semibold text-slate-300 font-mono"><i class="fa-regular fa-clock text-emerald-400"></i> ${r.time}</span>
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Reel B2B #${r.id}</span>
+              <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> ${r.time}</span>
             </div>
-            <h3 class="text-xl font-bold text-white mt-3">${r.theme}</h3>
-            <div class="mt-4 p-4 bg-black/60 rounded-xl border border-slate-800 space-y-2">
-              <p class="text-xs text-slate-400 uppercase tracking-wider font-bold">Texto en Pantalla:</p>
-              <p class="text-base text-slate-100 font-medium leading-snug">"${r.line1}"</p>
-              <p class="text-base text-emerald-300 font-semibold leading-snug">"${r.line2}"</p>
+            <h3 class="text-base font-bold text-white mt-3">${r.theme}</h3>
+            <div class="mt-3 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1.5">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Frase Gancho (Loop 8s):</p>
+              <p class="text-sm text-slate-200 leading-snug">"${r.line1}"</p>
+              <p class="text-sm text-white font-semibold leading-snug">"${r.line2}"</p>
             </div>
-            <div class="mt-4 space-y-1.5">
-              <p class="text-xs text-slate-400 uppercase tracking-wider font-bold">Copy B2B de Conversión:</p>
-              <p class="text-sm text-slate-200 leading-relaxed italic bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">"${r.copy}"</p>
+            <div class="mt-3 p-3.5 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Copy B2B de Conversión:</p>
+              <p class="text-xs text-slate-300 leading-relaxed italic">"${r.copy}"</p>
             </div>
-            <p class="text-sm text-slate-400 mt-4 flex items-center gap-2"><i class="fa-solid fa-video text-emerald-400"></i> <strong class="text-slate-300">Visual:</strong> ${r.tip}</p>
+            <p class="text-xs text-slate-400 mt-3 flex items-center gap-1.5"><i class="fa-solid fa-video text-slate-500"></i> ${r.tip}</p>
           </div>
-          <div class="pt-5 border-t border-slate-800/80 flex items-center gap-3">
-            <button onclick="copyToClipboard('${r.line1} ${r.line2}', this)" class="flex-1 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-sm font-semibold text-slate-100 flex items-center justify-center gap-2">
-              <i class="fa-regular fa-copy"></i> Copiar Texto Pantalla
+          <div class="pt-4 border-t border-[#1a1d24] flex items-center gap-2.5">
+            <button onclick="copyToClipboard('${r.line1} ${r.line2}', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b] flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-copy"></i> Texto Pantalla
             </button>
-            <button onclick="copyToClipboard('${r.copy}', this)" class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 text-sm font-semibold border border-emerald-500/30 flex items-center justify-center gap-2">
-              <i class="fa-regular fa-paste"></i> Copiar Copy B2B
+            <button onclick="copyToClipboard('${r.copy}', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-paste"></i> Copiar Copy
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderTikTokNodoStorytelling(list) {
+      const container = document.getElementById('tiktok-nodo-storytelling-container');
+      if (!container) return;
+      container.innerHTML = '';
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Caso #${item.id}</span>
+              <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> ${item.duration}</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-3">${item.title}</h3>
+            
+            <div class="mt-4 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1.5">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">1. Gancho Inicial (0-3s):</p>
+              <p class="text-sm text-slate-100 font-medium italic">"${item.hook}"</p>
+            </div>
+
+            <div class="mt-3 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1.5">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">2. Historia / Datos de Valor (4-20s):</p>
+              <p class="text-sm text-slate-300 leading-relaxed">${item.body}</p>
+            </div>
+
+            <div class="mt-3 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1.5">
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">3. Tu Punto de Vista (21-32s):</p>
+              <p class="text-sm text-slate-200 leading-relaxed font-medium">${item.takeaway}</p>
+            </div>
+
+            <div class="mt-3 text-xs text-slate-400 font-mono">
+              <strong>4. Pregunta al Público:</strong> "${item.cta}"
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-[#1a1d24] flex gap-2.5">
+            <button onclick="copyToClipboard('${item.hook}', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b] flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-copy"></i> Copiar Gancho
+            </button>
+            <button onclick="copyToClipboard('${item.hook}\\n\\n${item.body}\\n\\n${item.takeaway}\\n\\n${item.cta}', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-paste"></i> Copiar Guion Completo
             </button>
           </div>
         `;
@@ -1060,24 +1209,24 @@
               </div>
               <div>
                 <h3 class="text-base font-bold text-white">${p.nickname}</h3>
-                <p class="text-xs text-cyan-400 font-medium">@${p.username}</p>
+                <p class="text-xs text-slate-400 font-mono">@${p.username}</p>
               </div>
             </div>
-            <a href="https://www.tiktok.com/@${p.username}" target="_blank" class="text-xs px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700">Ver Perfil ↗</a>
+            <a href="https://www.tiktok.com/@${p.username}" target="_blank" class="text-xs px-3 py-1 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-slate-300 border border-[#272d3b] font-mono">Ver Perfil ↗</a>
           </div>
-          <p class="text-xs text-slate-300 italic">"${p.bio || 'Sin biografía'}"</p>
-          <div class="grid grid-cols-3 gap-3 pt-3 border-t border-slate-800/80 text-center">
-            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-              <p class="text-xs text-slate-400 font-semibold uppercase">Seguidores</p>
-              <p class="text-lg font-extrabold text-white mt-0.5">${p.followers.toLocaleString()}</p>
+          <p class="text-xs text-slate-400 italic">"${p.bio || 'Sin biografía'}"</p>
+          <div class="grid grid-cols-3 gap-3 pt-3 border-t border-[#1a1d24] text-center">
+            <div class="bg-[#111318] p-2.5 rounded-xl border border-[#1f242e]">
+              <p class="text-xs text-slate-400 font-mono uppercase">Seguidores</p>
+              <p class="text-lg font-bold text-white font-mono mt-0.5">${p.followers.toLocaleString()}</p>
             </div>
-            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-              <p class="text-xs text-slate-400 font-semibold uppercase">Likes Totales</p>
-              <p class="text-lg font-extrabold text-pink-400 mt-0.5">${p.likes.toLocaleString()}</p>
+            <div class="bg-[#111318] p-2.5 rounded-xl border border-[#1f242e]">
+              <p class="text-xs text-slate-400 font-mono uppercase">Likes Totales</p>
+              <p class="text-lg font-bold text-slate-200 font-mono mt-0.5">${p.likes.toLocaleString()}</p>
             </div>
-            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-              <p class="text-xs text-slate-400 font-semibold uppercase">Videos</p>
-              <p class="text-lg font-extrabold text-sky-400 mt-0.5">${p.videos.toLocaleString()}</p>
+            <div class="bg-[#111318] p-2.5 rounded-xl border border-[#1f242e]">
+              <p class="text-xs text-slate-400 font-mono uppercase">Videos</p>
+              <p class="text-lg font-bold text-slate-300 font-mono mt-0.5">${p.videos.toLocaleString()}</p>
             </div>
           </div>
         `;
@@ -1087,16 +1236,17 @@
 
     function renderTikTokMatrix(matrix) {
       const container = document.getElementById('tiktok-matrix-container');
+      if (!container) return;
       container.innerHTML = '';
       matrix.forEach(cat => {
         const col = document.createElement('div');
-        col.className = 'border border-slate-800 bg-slate-900/30 rounded-xl p-5 space-y-4 flex flex-col justify-between';
+        col.className = 'border border-[#1a1d24] bg-[#0c0e12] rounded-xl p-5 space-y-4 flex flex-col justify-between';
         let hooksHTML = '';
         cat.hooks.forEach(h => {
           hooksHTML += `
-            <div class="p-3 bg-slate-950/60 rounded-lg border border-slate-800/80 space-y-2">
-              <p class="text-xs text-slate-200">"${h.setup}" <span class="text-pink-400 font-semibold">${h.punchline}</span></p>
-              <button onclick="copyToClipboard('${h.setup} ${h.punchline}', this)" class="w-full py-1 text-xs bg-slate-800/70 hover:bg-slate-800 text-slate-300 rounded flex items-center justify-center gap-1">
+            <div class="p-3 bg-[#111318] rounded-lg border border-[#1f242e] space-y-2">
+              <p class="text-xs text-slate-300">"${h.setup}" <span class="text-white font-semibold">${h.punchline}</span></p>
+              <button onclick="copyToClipboard('${h.setup} ${h.punchline}', this)" class="w-full py-1 text-xs bg-[#161922] hover:bg-[#1e2330] text-slate-300 rounded border border-[#272d3b] flex items-center justify-center gap-1">
                 <i class="fa-regular fa-copy"></i> Copiar Gancho
               </button>
             </div>
@@ -1105,7 +1255,7 @@
         col.innerHTML = `
           <div>
             <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
-              <i class="fa-solid fa-sparkles text-pink-400"></i> ${cat.category}
+              <i class="fa-solid fa-bolt text-slate-400"></i> ${cat.category}
             </h3>
             <p class="text-xs text-slate-400 mt-1">${cat.why_it_works}</p>
             <div class="space-y-3 mt-4">${hooksHTML}</div>
@@ -1220,6 +1370,7 @@
       renderTikTokAccounts(EMBEDDED_DATA.tiktok_profiles);
       renderTikTokMatrix(EMBEDDED_DATA.tiktok_matrix);
       renderTikTokStudio(EMBEDDED_DATA.tiktok_studio);
+      renderTikTokNodoStorytelling(EMBEDDED_DATA.tiktok_nodo_storytelling);
 
       if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 400);
     }
