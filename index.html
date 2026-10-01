@@ -3,114 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NODO · Intelligence & Content Hub</title>
+  <title>NODO · Intelligence & Content Operations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            nodo: {
-              50: '#f8fafc',
-              100: '#f1f5f9',
-              800: '#1e293b',
-              900: '#0f172a',
-              950: '#060a12',
-              cyan: '#00F2FE',
-              blue: '#4FACFE',
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    body { 
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      background-color: #06090e;
-      color: #f1f5f9;
-      letter-spacing: -0.01em;
+    :root {
+      --bg-base: #090a0d;
+      --card-bg: #111318;
+      --card-border: #1e222b;
+      --card-hover: #262b36;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #e5e7eb;
     }
-    .glass-card { 
-      background: rgba(13, 19, 33, 0.85); 
-      backdrop-filter: blur(16px); 
-      border: 1px solid rgba(255, 255, 255, 0.1); 
+    body { 
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      letter-spacing: -0.015em;
+    }
+    .panel { 
+      background: var(--card-bg); 
+      border: 1px solid var(--card-border); 
+    }
+    .panel-sub { 
+      background: #0c0e12; 
+      border: 1px solid #1a1d24; 
     }
     .active-tab { 
-      border-bottom: 2px solid #38bdf8; 
+      border-bottom: 2px solid #ffffff; 
       color: #ffffff; 
       font-weight: 700; 
-      background: rgba(56, 189, 248, 0.06);
+      background: rgba(255, 255, 255, 0.04);
     }
-    /* Mejora de legibilidad para vista descansada */
     p, span, div {
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
   </style>
 </head>
-<body class="bg-[#06090e] text-slate-100 min-h-screen flex flex-col antialiased">
+<body class="bg-[#090a0d] text-slate-100 min-h-screen flex flex-col antialiased">
 
-  <!-- Header Branding Ejecutivo NODO -->
-  <header class="border-b border-slate-800/80 bg-[#0a0f18]/90 sticky top-0 z-50 backdrop-blur-md">
+  <!-- Header Editorial NODO -->
+  <header class="border-b border-[#1c202a] bg-[#0d0f14]/95 sticky top-0 z-50 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center space-x-4">
-        <!-- Logo NODO -->
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 via-sky-500 to-indigo-600 flex items-center justify-center font-extrabold text-slate-950 text-xl shadow-lg shadow-sky-500/20">
+        <!-- Logo Monograma NODO en platino mate -->
+        <div class="w-11 h-11 rounded-xl bg-white text-black font-extrabold text-xl flex items-center justify-center tracking-tighter shadow-md">
           N
         </div>
         <div>
-          <div class="flex items-center gap-2.5">
-            <h1 class="text-xl font-extrabold tracking-tight text-white">
-              NODO <span class="text-slate-400 font-medium text-base">| Content & Growth Hub</span>
+          <div class="flex items-center gap-3">
+            <h1 class="text-xl font-bold tracking-tight text-white">
+              NODO <span class="text-slate-400 font-normal text-base">| Content Operations</span>
             </h1>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-semibold uppercase tracking-wider">
+            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-white/10 text-slate-200 border border-white/15 font-mono uppercase tracking-wider">
               B2B & Personal
             </span>
           </div>
           <p class="text-sm text-slate-400 mt-0.5">
-            Estrategia de Crecimiento Multicanal · Meta Graph & TikTok Engine
+            Plataforma Estratégica de Crecimiento · Meta Graph & TikTok Engine
           </p>
         </div>
       </div>
-      <div class="flex items-center space-x-4">
-        <button onclick="renderAll()" class="px-4 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 text-sm font-semibold border border-slate-700 flex items-center gap-2 transition-all shadow-sm">
-          <i id="sync-icon" class="fa-solid fa-arrows-rotate"></i> Recargar Datos
+      <div class="flex items-center space-x-3">
+        <button onclick="renderAll()" class="px-4 py-2 rounded-xl bg-[#161922] hover:bg-[#1e2330] text-slate-200 text-sm font-medium border border-[#272d3b] flex items-center gap-2 transition-all">
+          <i id="sync-icon" class="fa-solid fa-arrows-rotate text-slate-400"></i> Sincronizar Datos
         </button>
-        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Sistema Activo
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Conectado
         </span>
       </div>
     </div>
 
-    <!-- Navigation Tabs (2 Grandes Plataformas + Calculadora 10K) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-2 text-base border-t border-slate-800/80 overflow-x-auto">
-      <button onclick="switchTab('personal')" id="tab-btn-personal" class="py-3.5 px-4 active-tab flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold transition-all">
-        <i class="fa-brands fa-instagram text-pink-500 text-base"></i> IG Personal (@s_thiago7)
+    <!-- Navigation Tabs Sobrias -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-1 text-sm border-t border-[#1a1e28] overflow-x-auto">
+      <button onclick="switchTab('personal')" id="tab-btn-personal" class="py-3.5 px-4 active-tab flex items-center gap-2.5 whitespace-nowrap font-medium transition-all">
+        <i class="fa-brands fa-instagram text-slate-300"></i> IG Personal (@s_thiago7)
       </button>
-      <button onclick="switchTab('nodo')" id="tab-btn-nodo" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold transition-all">
-        <i class="fa-brands fa-instagram text-sky-400 text-base"></i> IG Nodo B2B (@nodo_tg)
+      <button onclick="switchTab('nodo')" id="tab-btn-nodo" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap font-medium transition-all">
+        <i class="fa-solid fa-building text-slate-400"></i> IG Nodo B2B (@nodo_tg)
       </button>
-      <button onclick="switchTab('tiktok')" id="tab-btn-tiktok" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold transition-all">
-        <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i> TikTok Studio & Audiencia Real
+      <button onclick="switchTab('tiktok')" id="tab-btn-tiktok" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap font-medium transition-all">
+        <i class="fa-brands fa-tiktok text-slate-400"></i> TikTok Studio & Audiencia
       </button>
-      <button onclick="switchTab('viral')" id="tab-btn-viral" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold transition-all">
-        <i class="fa-solid fa-fire text-amber-400 text-base"></i> Formatos Virales Rant (IA & B2B)
+      <button onclick="switchTab('viral')" id="tab-btn-viral" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap font-medium transition-all">
+        <i class="fa-solid fa-bolt text-slate-400"></i> Formatos de Autoridad (Nodo)
       </button>
-      <button onclick="switchTab('calculator')" id="tab-btn-calculator" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold transition-all">
-        <i class="fa-solid fa-chart-line text-emerald-400 text-base"></i> Meta 10K Seguidores & Proyección
+      <button onclick="switchTab('calculator')" id="tab-btn-calculator" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap font-medium transition-all">
+        <i class="fa-solid fa-chart-line text-slate-400"></i> Meta 10K Seguidores
       </button>
-      <button onclick="switchTab('settings')" id="tab-btn-settings" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold transition-all">
-        <i class="fa-solid fa-sliders text-indigo-400 text-base"></i> APIs & Conexiones
+      <button onclick="switchTab('settings')" id="tab-btn-settings" class="py-3.5 px-4 text-slate-400 hover:text-slate-200 flex items-center gap-2.5 whitespace-nowrap font-medium transition-all">
+        <i class="fa-solid fa-sliders text-slate-400"></i> APIs & Estado
       </button>
     </div>
   </header>
@@ -122,63 +109,63 @@
     <section id="tab-personal" class="space-y-8">
       <!-- KPI Row -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>SEGUIDORES EN VIVO</span>
-            <i class="fa-solid fa-users text-sky-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Seguidores Meta</span>
+            <i class="fa-solid fa-users text-slate-500"></i>
           </div>
-          <div class="mt-3 flex items-baseline gap-2.5">
-            <span id="p-followers" class="text-4xl font-extrabold text-white font-mono">1,793</span>
-            <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">+87 últimas 24h</span>
+          <div class="mt-3 flex items-baseline gap-3">
+            <span id="p-followers" class="text-3xl font-bold text-white font-mono">1,793</span>
+            <span class="text-xs font-mono font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">+87 / 24h</span>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">Crecimiento orgánico validado por Meta API</p>
+          <p class="text-xs text-slate-400 mt-2">Crecimiento orgánico en Instagram</p>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>PUBLICACIONES</span>
-            <i class="fa-solid fa-film text-pink-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Publicaciones</span>
+            <i class="fa-solid fa-film text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <span id="p-media" class="text-4xl font-extrabold text-white font-mono">258</span>
+            <span id="p-media" class="text-3xl font-bold text-white font-mono">258</span>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">100% Reels en formato vertical</p>
+          <p class="text-xs text-slate-400 mt-2">100% Formato vertical Reels</p>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>ÁNGULO REINA (HOY)</span>
-            <i class="fa-solid fa-fire text-amber-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Enfoque Narrativo</span>
+            <i class="fa-regular fa-compass text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <span class="text-xl font-bold text-amber-300">Amor & Citas a los 20s</span>
+            <span class="text-lg font-bold text-white">Madurez & Citas a los 20s</span>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">Score viral de interacción: 427.0</p>
+          <p class="text-xs text-slate-400 mt-2">Audiencia: 76% mujeres / 89% Colombia</p>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>META DEL DÍA</span>
-            <i class="fa-solid fa-clock text-indigo-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Frecuencia Sugerida</span>
+            <i class="fa-regular fa-clock text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <span class="text-3xl font-extrabold text-white font-mono">8 Reels</span>
+            <span class="text-3xl font-bold text-white font-mono">6 - 8 Reels</span>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">Intervalo estricto: 1.5 a 2 horas</p>
+          <p class="text-xs text-slate-400 mt-2">Intervalo estricto: 1.5h mínimo</p>
         </div>
       </div>
 
       <!-- Plan Diario de Guiones -->
-      <div class="glass-card rounded-2xl p-7 border border-slate-800/90 shadow-xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+      <div class="panel rounded-2xl p-7 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#1f242e] gap-4">
           <div>
-            <h2 class="text-2xl font-bold text-white flex items-center gap-3">
-              <i class="fa-solid fa-wand-magic-sparkles text-sky-400"></i> Los 8 Reels de Hoy — Guiones Listos
+            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+              Guiones para Reels · Marca Personal
             </h2>
-            <p class="text-sm text-slate-300 mt-1.5">Estrategia algorítmica: B-roll estético (6-8s) + Texto en pantalla + Copy con gatillo de comentarios</p>
+            <p class="text-sm text-slate-400 mt-1">Estructura editorial: Hook visual (6-8s) + Texto reflexivo en pantalla + Copy con debate abierto</p>
           </div>
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-            <i class="fa-solid fa-triangle-exclamation"></i> Espaciar publicaciones 1.5h mínimo
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-slate-300 border border-white/10 font-mono">
+            Evitar subidas en ráfaga
           </span>
         </div>
 
@@ -192,62 +179,62 @@
     <section id="tab-nodo" class="space-y-8 hidden">
       <!-- KPI Row -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>SEGUIDORES NODO</span>
-            <i class="fa-solid fa-building text-sky-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Seguidores Nodo</span>
+            <i class="fa-solid fa-building text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <span id="n-followers" class="text-4xl font-extrabold text-white font-mono">38</span>
+            <span id="n-followers" class="text-3xl font-bold text-white font-mono">38</span>
           </div>
-          <p class="text-sm text-amber-400 mt-2.5 font-medium"><i class="fa-solid fa-arrow-trend-up"></i> Reiniciando estrategia B2B</p>
+          <p class="text-xs text-slate-400 mt-2 font-mono">Reiniciando posicionamiento B2B</p>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>TOTAL POSTS</span>
-            <i class="fa-solid fa-database text-purple-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Histórico Posts</span>
+            <i class="fa-solid fa-database text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <span id="n-media" class="text-4xl font-extrabold text-white font-mono">143</span>
+            <span id="n-media" class="text-3xl font-bold text-white font-mono">143</span>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">Fin del formato "experto hablando"</p>
+          <p class="text-xs text-slate-400 mt-2">Transición a casos reales y dolores</p>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>ENLACE OFICIAL</span>
-            <i class="fa-solid fa-link text-emerald-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Dominio Corporativo</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <a href="https://www.conectanodo.com" target="_blank" class="text-base font-bold text-emerald-400 hover:underline">conectanodo.com ↗</a>
+            <a href="https://www.conectanodo.com" target="_blank" class="text-base font-bold text-white hover:underline font-mono">conectanodo.com ↗</a>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">Kommo CRM · WhatsApp API · IA</p>
+          <p class="text-xs text-slate-400 mt-2">Kommo CRM · WhatsApp API · IA</p>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border border-slate-800/90 shadow-lg">
-          <div class="flex items-center justify-between text-slate-300 text-sm font-semibold">
-            <span>RITMO DE PUBLICACIÓN</span>
-            <i class="fa-solid fa-shield-halved text-cyan-400 text-base"></i>
+        <div class="panel rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Ritmo Operativo</span>
+            <i class="fa-solid fa-shield text-slate-500"></i>
           </div>
           <div class="mt-3">
-            <span class="text-2xl font-extrabold text-cyan-300 font-mono">2 Reels / Día</span>
+            <span class="text-3xl font-bold text-white font-mono">2 / Día</span>
           </div>
-          <p class="text-sm text-slate-300 mt-2.5">Espaciado mínimo de 5 horas</p>
+          <p class="text-xs text-slate-400 mt-2">Espaciado mínimo de 5 horas</p>
         </div>
       </div>
 
       <!-- Guiones Nodo -->
-      <div class="glass-card rounded-2xl p-7 border border-slate-800/90 shadow-xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+      <div class="panel rounded-2xl p-7 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#1f242e] gap-4">
           <div>
-            <h2 class="text-2xl font-bold text-white flex items-center gap-3">
-              <i class="fa-solid fa-briefcase text-sky-400"></i> Guiones B2B de Dolores Reales (conectanodo.com)
+            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+              Guiones B2B · Enfoque Soluciones Comerciales
             </h2>
-            <p class="text-sm text-slate-300 mt-1.5">Enfoque: Dolores de empresas de servicios, WhatsApp desordenado, cotizaciones en PDF perdidas y Método NODO RUTA</p>
+            <p class="text-sm text-slate-400 mt-1">Enfoque: Cuellos de botella en ventas, pérdidas de leads en WhatsApp personal y Método NODO RUTA</p>
           </div>
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
-            <i class="fa-solid fa-check"></i> Fiel a conectanodo.com
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-slate-300 border border-white/10 font-mono">
+            conectanodo.com
           </span>
         </div>
 
@@ -259,19 +246,19 @@
 
     <!-- TAB 3: TIKTOK STRATEGY HUB -->
     <section id="tab-tiktok" class="space-y-8 hidden">
-      <!-- Banner Sandbox -->
-      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-800/40 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-        <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-            <i class="fa-brands fa-tiktok"></i> TikTok Sandbox Activo
+      <!-- Banner Sandbox Sobrio -->
+      <div class="panel rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+        <div class="space-y-1.5">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 text-slate-300 border border-white/10">
+            TikTok Sandbox Activo
           </div>
-          <h2 class="text-xl font-bold text-white">App Nodoapi (ID: 7691306900553877512)</h2>
-          <p class="text-xs text-slate-300 max-w-xl">
-            Client Key: <code class="bg-black/40 px-2 py-0.5 rounded text-sky-300">sbaw0jnugqan0iem91</code> · Redirect: <code class="bg-black/40 px-2 py-0.5 rounded text-sky-300">https://www.conectanodo.com/</code>
+          <h2 class="text-xl font-bold text-white">Nodoapi (ID: 7691306900553877512)</h2>
+          <p class="text-xs text-slate-400 font-mono">
+            Client Key: <code class="bg-black/50 px-2 py-0.5 rounded text-slate-300">sbaw0jnugqan0iem91</code> · Redirect: <code class="bg-black/50 px-2 py-0.5 rounded text-slate-300">https://www.conectanodo.com/</code>
           </p>
         </div>
-        <a id="tiktok-auth-btn" href="https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw0jnugqan0iem91&scope=user.info.basic%2Cuser.info.stats%2Cvideo.list&response_type=code&redirect_uri=https%3A%2F%2Fwww.conectanodo.com%2F&state=content_hub_auth" target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 flex items-center gap-2 transition-all shrink-0">
-          <i class="fa-solid fa-key"></i> Autorizar en TikTok
+        <a id="tiktok-auth-btn" href="https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw0jnugqan0iem91&scope=user.info.basic%2Cuser.info.stats%2Cvideo.list&response_type=code&redirect_uri=https%3A%2F%2Fwww.conectanodo.com%2F&state=content_hub_auth" target="_blank" class="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-200 text-black font-semibold text-sm shadow-sm flex items-center gap-2 transition-all shrink-0">
+          <i class="fa-solid fa-key"></i> Autorizar Cuenta
         </a>
       </div>
 
@@ -281,19 +268,17 @@
       </div>
 
       <!-- ANALÍTICAS OFICIALES TIKTOK STUDIO (7 DÍAS) -->
-      <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-4">
+      <div class="panel rounded-2xl p-7 space-y-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#1f242e] gap-4">
           <div>
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-chart-column text-emerald-400"></i> Métricas Oficiales de TikTok Studio (Últimos 7 Días)
+            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+              Métricas Oficiales de TikTok Studio · Últimos 7 Días
             </h2>
-            <p class="text-xs text-slate-400 mt-1">Datos crudos exportados de Overview.csv: Comparativa de rendimiento real día a día</p>
+            <p class="text-sm text-slate-400 mt-1">Comparativa de rendimiento diario obtenida de los reportes oficiales</p>
           </div>
-          <div class="flex items-center gap-3">
-            <span class="text-xs px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
-              <i class="fa-solid fa-check-double"></i> Datos 100% Verificados
-            </span>
-          </div>
+          <span class="text-xs font-mono px-3 py-1 rounded-full bg-white/5 text-slate-300 border border-white/10">
+            Datos Verificados
+          </span>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="tiktok-studio-tables">
@@ -301,115 +286,115 @@
         </div>
 
         <!-- DIAGNÓSTICO PROFUNDO & SEO ESTRATÉGICO -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-800">
-          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#1f242e]">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] space-y-4">
             <div class="flex items-center justify-between">
-              <h3 class="text-sm font-bold text-sky-400 flex items-center gap-1.5">
-                <i class="fa-solid fa-lightbulb"></i> Nodo B2B (@nodotechgrowth)
+              <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-building text-slate-400"></i> Nodo B2B (@nodotechgrowth)
               </h3>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-bold">72% Hombres · 25-34 años (52.3%)</span>
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300">72% Hombres · 25-34 años</span>
             </div>
             
-            <div class="space-y-2 text-xs text-slate-300">
+            <div class="space-y-2 text-sm text-slate-300 leading-relaxed">
               <p>• <strong>Público Real:</strong> Dueños de PYMES y comerciales en Colombia (86.1%). Siguen cuentas como <em>TikTok For Small Business</em> y <em>EDteam</em>.</p>
-              <p>• <strong>Por qué el pico de 690 vs caída de 17:</strong> El video ganador fue un <strong>storytelling de 36s cara a cámara</strong>. Los videos cortos genéricos o subidos en ráfaga (con 7 minutos de diferencia) fueron penalizados por el algoritmo.</p>
-              <p>• <strong>Objetivo del Perfil:</strong> Generar leads B2B hacia <code>conectanodo.com</code>.</p>
+              <p>• <strong>Rendimiento:</strong> El pico de <strong>690 vistas</strong> fue un storytelling de 36s cara a cámara. Los videos genéricos o subidos con 7 minutos de diferencia fueron castigados por el algoritmo.</p>
+              <p>• <strong>Objetivo Comercial:</strong> Atraer leads B2B hacia <code>conectanodo.com</code>.</p>
             </div>
 
-            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-sky-500/30 space-y-2">
+            <div class="bg-[#111318] p-4 rounded-xl border border-[#1f242e] space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider">Bio Recomendada (≤ 80 caracteres):</span>
-                <button onclick="copyToClipboard('Bajamos el tiempo de respuesta de tu empresa de 3h a 10s con IA ⚡ Nodo B2B', this)" class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 hover:bg-sky-500/30">Copiar</button>
+                <span class="text-xs font-mono text-slate-400 uppercase font-semibold">Bio Recomendada (≤ 80 caracteres):</span>
+                <button onclick="copyToClipboard('Bajamos el tiempo de respuesta de tu empresa de 3h a 10s con IA ⚡ Nodo B2B', this)" class="text-xs px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-medium">Copiar</button>
               </div>
-              <p class="text-xs text-slate-100 font-mono bg-black/50 p-2 rounded border border-slate-800">
+              <p class="text-sm text-slate-100 font-mono bg-black/60 p-2.5 rounded border border-[#1e222b]">
                 "Bajamos el tiempo de respuesta de tu empresa de 3h a 10s con IA ⚡ Nodo B2B"
               </p>
-              <p class="text-[10px] text-slate-400">72 caracteres · Pega en el dolor directo del gerente y destaca tu solución.</p>
+              <p class="text-xs text-slate-400 font-mono">72 caracteres · Pega en el dolor directo y comunica la solución.</p>
             </div>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-4">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] space-y-4">
             <div class="flex items-center justify-between">
-              <h3 class="text-sm font-bold text-pink-400 flex items-center gap-1.5">
-                <i class="fa-solid fa-fire"></i> Personal (@santiagoquevedo71)
+              <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-user text-slate-400"></i> Personal (@santiagoquevedo71)
               </h3>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 font-bold">76% Mujeres · 25-34 años (57.8%)</span>
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300">76% Mujeres · 25-34 años</span>
             </div>
 
-            <div class="space-y-2 text-xs text-slate-300">
-              <p>• <strong>Público Real:</strong> 89.6% Colombia. 97% del tráfico llega de <strong>For You</strong>. Es un consumo emocional: buscan madurez, lealtad y valores.</p>
-              <p>• <strong>Desconexión Detectada:</strong> 29K vistas (+1,061%) pero comentarios -82.9% y solo +5 seguidores nuevos. Los que te ven (76% mujeres jóvenes a las 6 PM) no están convirtiendo en tu perfil.</p>
-              <p>• <strong>Objetivo del Perfil:</strong> Ser un embudo de tráfico masivo hacia tu <strong>Instagram (@s_thiago7)</strong> donde sí se fidelizan.</p>
+            <div class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <p>• <strong>Público Real:</strong> 89.6% Colombia. 97% del tráfico viene de <strong>For You</strong>. Búsqueda de madurez, relaciones de valor y lealtad.</p>
+              <p>• <strong>Desconexión Clave:</strong> 29K vistas (+1,061%) pero comentarios -82.9% y solo +5 seguidores nuevos. El público ve el video pero no visita el perfil.</p>
+              <p>• <strong>Embudo Estratégico:</strong> Usar TikTok para derivar tráfico a <strong>Instagram (@s_thiago7)</strong> donde se fidelizan.</p>
             </div>
 
-            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-pink-500/30 space-y-2">
+            <div class="bg-[#111318] p-4 rounded-xl border border-[#1f242e] space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold text-pink-400 uppercase tracking-wider">Bio Recomendada (≤ 80 caracteres):</span>
-                <button onclick="copyToClipboard('23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7', this)" class="text-[10px] px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 hover:bg-pink-500/30">Copiar</button>
+                <span class="text-xs font-mono text-slate-400 uppercase font-semibold">Bio Recomendada (≤ 80 caracteres):</span>
+                <button onclick="copyToClipboard('23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7', this)" class="text-xs px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-medium">Copiar</button>
               </div>
-              <p class="text-xs text-slate-100 font-mono bg-black/50 p-2 rounded border border-slate-800">
+              <p class="text-sm text-slate-100 font-mono bg-black/60 p-2.5 rounded border border-[#1e222b]">
                 "23 · Enfoque, lealtad y mis 20s en silencio 🇨🇴 Más de mí en IG: @s_thiago7"
               </p>
-              <p class="text-[10px] text-slate-400">64 caracteres · Establece identidad, arquetipo deseable y puente directo a Instagram.</p>
+              <p class="text-xs text-slate-400 font-mono">64 caracteres · Establece identidad y puente directo a Instagram.</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Estrategia de Contenido Diferenciada por Cuenta -->
-      <div class="glass-card rounded-2xl p-6">
-        <div class="pb-6 border-b border-slate-800">
-          <h2 class="text-xl font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-arrows-split-up-and-left text-cyan-400"></i> Estrategia Diferenciada: TikTok Personal vs. TikTok Nodo
+      <div class="panel rounded-2xl p-7 shadow-sm">
+        <div class="pb-5 border-b border-[#1f242e]">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+            Estrategia de Contenido: TikTok Personal vs. TikTok Nodo
           </h2>
-          <p class="text-xs text-slate-400 mt-1">Cómo abordar cada cuenta según su demografía real para maximizar retención y conversión.</p>
+          <p class="text-sm text-slate-400 mt-1">Cómo abordar cada cuenta según su demografía real para maximizar retención y conversión.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800 space-y-3">
-            <h3 class="text-sm font-bold text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> @santiagoquevedo71 (Embudo Emocional)
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] space-y-3">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-slate-300"></span> @santiagoquevedo71 (Embudo Emocional)
             </h3>
-            <ul class="text-xs text-slate-300 space-y-2">
+            <ul class="text-sm text-slate-300 space-y-2.5">
               <li>• <strong>Formato:</strong> Cortos de 6-10s con texto en pantalla + b-roll estético.</li>
               <li>• <strong>Ángulo:</strong> Madurez a los 20s, estándares altos, lealtad masculina y ambición en silencio.</li>
               <li>• <strong>Gatillo de Comentarios:</strong> Convertir frases cerradas en preguntas de debate (<em>"¿Maduro o aburrido?"</em> / <em>"¿A o B?"</em>).</li>
-              <li>• <strong>Puente a Instagram:</strong> Usar el copy: <em>"En mis historias de IG hablo más de esto hoy 👉 @s_thiago7"</em>.</li>
+              <li>• <strong>Puente a Instagram:</strong> Usar en el copy: <em>"En mis historias de IG hablo más de esto hoy 👉 @s_thiago7"</em>.</li>
             </ul>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800 space-y-3">
-            <h3 class="text-sm font-bold text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span> @nodotechgrowth (Embudo B2B PYMES)
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] space-y-3">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-slate-300"></span> @nodotechgrowth (Embudo B2B PYMES)
             </h3>
-            <ul class="text-xs text-slate-300 space-y-2">
+            <ul class="text-sm text-slate-300 space-y-2.5">
               <li>• <strong>Formato:</strong> Storytelling de 30-45s cara a cámara (el formato que generó tu récord de 690 vistas).</li>
               <li>• <strong>Ángulo:</strong> Dolores operativos reales (clientes perdidos en WhatsApp personal, cotizaciones en visto).</li>
-              <li>• <strong>Regla de Oro:</strong> Cero burst posting (máximo 2 videos al día espaciados 5 horas).</li>
-              <li>• <strong>Conversión:</strong> CTA claro a <code>conectanodo.com</code> para agendar diagnóstico gratuito de automatización.</li>
+              <li>• <strong>Regla de Oro:</strong> Cero subidas en ráfaga (máximo 2 videos al día espaciados 5 horas).</li>
+              <li>• <strong>Conversión:</strong> CTA claro a <code>conectanodo.com</code> para agendar diagnóstico de automatización.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB VIRAL: FORMATOS VIRALES RANT (NODO B2B) -->
+    <!-- TAB VIRAL: FORMATOS DE AUTORIDAD (NODO B2B) -->
     <section id="tab-viral" class="space-y-8 hidden">
-      <div class="glass-card rounded-2xl p-6 border border-amber-500/20 bg-gradient-to-br from-slate-900 via-amber-950/20 to-slate-900">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div class="panel rounded-2xl p-7 shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#1f242e]">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              <i class="fa-solid fa-fire"></i> Formato Rant de Autoridad & Psicología Inversa
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-slate-300 border border-white/10">
+              Formato de Autoridad & Psicología Inversa
             </div>
-            <h2 class="text-2xl font-black text-white mt-2 flex items-center gap-2">
-              "¿Saben qué? Trabajen de Más... Ya me cansé de decirles que eso lo hace la IA"
+            <h2 class="text-2xl font-bold text-white mt-3">
+              "¿Saben qué? Trabajen de más... Ya me cansé de decirles que eso lo hace la IA"
             </h2>
-            <p class="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
-              Fórmula de alto impacto: <strong>[Desafío irónico / renuncia fingida]</strong> + <strong>[El error que le cuesta plata al cliente]</strong> + <strong>[Demostración rápida de la solución en Nodo]</strong>.
+            <p class="text-sm text-slate-400 mt-1 max-w-3xl leading-relaxed">
+              Fórmula de alto impacto: [Desafío irónico / renuncia fingida] + [El error operativo que le cuesta dinero a la empresa] + [Demostración de la solución en Nodo].
             </p>
           </div>
-          <a href="https://github.com/SantiagoNodo123/hubcontent/blob/main/VIRAL_HOOKS_NODO.md" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center gap-2 transition-all shrink-0">
-            <i class="fa-brands fa-github"></i> Ver en GitHub
+          <a href="https://github.com/SantiagoNodo123/hubcontent/blob/main/VIRAL_HOOKS_NODO.md" target="_blank" class="px-4 py-2 rounded-xl bg-[#161922] hover:bg-[#1e2330] text-sm font-medium text-slate-200 border border-[#272d3b] flex items-center gap-2 transition-all shrink-0">
+            <i class="fa-brands fa-github text-slate-400"></i> Ver Documentación
           </a>
         </div>
 
@@ -417,121 +402,121 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           
           <!-- Var 1 -->
-          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm">
             <div>
-              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">Variación 1 · WhatsApp Tardío</span>
-              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-amber-500/30 text-center">
-                <p class="text-xs text-amber-300 font-black tracking-wide leading-tight">
-                  ¿SABEN QUÉ?<br>SIGAN RESPONDIENDO<br>A LAS 3 HORAS.<br>YA ME CANSÉ DE DECIRLES<br>QUE LA IA CALIFICA<br>Y AGENDA EN 10 SEG.
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Variación 1 · WhatsApp Tardío</span>
+              <div class="mt-4 p-4 bg-[#111318] rounded-xl border border-[#1f242e] text-center">
+                <p class="text-sm text-white font-bold tracking-wide leading-snug">
+                  ¿SABEN QUÉ?<br>SIGAN RESPONDIENDO A LAS 3 HORAS.<br>YA ME CANSÉ DE DECIRLES QUE LA IA CALIFICA Y AGENDA EN 10 SEG.
                 </p>
               </div>
-              <div class="mt-3 text-xs text-slate-300 space-y-1">
-                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
-                <p class="italic">"Sigan dejando que el cliente que escribió a las 2 PM se vaya con la competencia porque ustedes le respondieron a las 6... De verdad, sigan haciéndolo a mano. Total, ¿a quién le gusta vender más?"</p>
+              <div class="mt-4 text-sm text-slate-300 space-y-1.5">
+                <p class="text-slate-400 font-mono uppercase text-xs">Guion a cámara (15s):</p>
+                <p class="italic text-slate-300">"Sigan dejando que el cliente que escribió a las 2 PM se vaya con la competencia porque ustedes le respondieron a las 6... De verdad, sigan haciéndolo a mano. Total, ¿a quién le gusta vender más?"</p>
               </div>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
-              <button onclick="copyToClipboard('¿Saben qué? Sigan respondiendo a las 3 horas. Ya me cansé de decirles que la IA califica y agenda en 10 seg.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+            <div class="pt-4 border-t border-[#1a1d24] flex gap-2.5">
+              <button onclick="copyToClipboard('¿Saben qué? Sigan respondiendo a las 3 horas. Ya me cansé de decirles que la IA califica y agenda en 10 seg.', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b]">
                 <i class="fa-regular fa-copy"></i> Texto
               </button>
-              <button onclick="copyToClipboard('El 70% de las ventas por WhatsApp se las lleva el primero que responde. Si tu equipo tarda horas en calificar a un prospecto o en enviarle precios, estás regalando facturación a tu competencia.\n\nUn agente con IA conectado a tu WhatsApp oficial no se duerme, no se cansa, perfila al cliente y le agenda la reunión con tu asesor en menos de 30 segundos.\n\nDeja de perder leads por lentitud. Toca el enlace de nuestro perfil o visita conectanodo.com para estructurar tu atención comercial.\n\n#automatizacion #whatsappapi #ventasb2b #inteligenciaartificial #crm #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 text-xs">
-                <i class="fa-regular fa-paste"></i> Copy SEO
+              <button onclick="copyToClipboard('El 70% de las ventas por WhatsApp se las lleva el primero que responde. Si tu equipo tarda horas en calificar a un prospecto o en enviarle precios, estás regalando facturación a tu competencia.\n\nUn agente con IA conectado a tu WhatsApp oficial no se duerme, no se cansa, perfila al cliente y le agenda la reunión con tu asesor en menos de 30 segundos.\n\nDeja de perder leads por lentitud. Visita conectanodo.com para estructurar tu atención comercial.\n\n#automatizacion #whatsappapi #ventasb2b #crm #nodo', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold">
+                <i class="fa-regular fa-paste"></i> Copiar Copy
               </button>
             </div>
           </div>
 
           <!-- Var 2 -->
-          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm">
             <div>
-              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">Variación 2 · Cotizaciones en PDF</span>
-              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-sky-500/30 text-center">
-                <p class="text-xs text-sky-300 font-black tracking-wide leading-tight">
-                  ¿SABEN QUÉ?<br>SIGAN MANDANDO<br>COTIZACIONES EN PDF<br>Y REZANDO.<br>YA ME CANSÉ DE DECIRLES<br>QUE EL CRM HACE EL<br>SEGUIMIENTO SOLO.
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Variación 2 · Cotizaciones en PDF</span>
+              <div class="mt-4 p-4 bg-[#111318] rounded-xl border border-[#1f242e] text-center">
+                <p class="text-sm text-white font-bold tracking-wide leading-snug">
+                  ¿SABEN QUÉ?<br>SIGAN MANDANDO COTIZACIONES EN PDF Y REZANDO.<br>YA ME CANSÉ DE DECIRLES QUE EL CRM HACE EL SEGUIMIENTO SOLO.
                 </p>
               </div>
-              <div class="mt-3 text-xs text-slate-300 space-y-1">
-                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
-                <p class="italic">"Pásense la tarde armando propuestas divinas en PDF, envíenlas por WhatsApp y esperen un milagro a ver si les vuelven a escribir. No monten CRM, no automaticen recordatorios... esperen que el cliente les lea la mente."</p>
+              <div class="mt-4 text-sm text-slate-300 space-y-1.5">
+                <p class="text-slate-400 font-mono uppercase text-xs">Guion a cámara (15s):</p>
+                <p class="italic text-slate-300">"Pásense la tarde armando propuestas divinas en PDF, envíenlas por WhatsApp y esperen un milagro a ver si les vuelven a escribir. No monten CRM, no automaticen recordatorios... esperen que el cliente les lea la mente."</p>
               </div>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
-              <button onclick="copyToClipboard('¿Saben qué? Sigan mandando cotizaciones en PDF y rezando. Ya me cansé de decirles que el CRM hace el seguimiento solo.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+            <div class="pt-4 border-t border-[#1a1d24] flex gap-2.5">
+              <button onclick="copyToClipboard('¿Saben qué? Sigan mandando cotizaciones en PDF y rezando. Ya me cansé de decirles que el CRM hace el seguimiento solo.', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b]">
                 <i class="fa-regular fa-copy"></i> Texto
               </button>
-              <button onclick="copyToClipboard('Enviar una cotización y no hacer seguimiento estructurado es lo mismo que tirar tu tiempo a la basura.\n\nEl 80% de los cierres se dan entre el 3er y el 5to contacto, pero la mayoría de empresas solo preguntan una vez y olvidan el lead.\n\nCon un embudo automatizado en Kommo, el sistema sabe cuándo el cliente abrió la propuesta, le dispara recordatorios por WhatsApp y alerta a tu asesor.\n\nComenta SEGUIMIENTO o entra a conectanodo.com para dejar de depender de la memoria.\n\n#kommo #crmparaempresas #seguimientodeventas #automatizacionb2b #ventascolombia #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs">
-                <i class="fa-regular fa-paste"></i> Copy SEO
+              <button onclick="copyToClipboard('Enviar una cotización y no hacer seguimiento estructurado es lo mismo que tirar tu tiempo a la basura.\n\nEl 80% de los cierres se dan entre el 3er y el 5to contacto, pero la mayoría de empresas solo preguntan una vez y olvidan el lead.\n\nCon un embudo automatizado en Kommo, el sistema sabe cuándo el cliente abrió la propuesta, le dispara recordatorios por WhatsApp y alerta a tu asesor.\n\nComenta SEGUIMIENTO o entra a conectanodo.com para dejar de depender de la memoria.\n\n#kommo #crmparaempresas #seguimientodeventas #nodo', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold">
+                <i class="fa-regular fa-paste"></i> Copiar Copy
               </button>
             </div>
           </div>
 
           <!-- Var 3 -->
-          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm">
             <div>
-              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Variación 3 · Esclavos de Excel</span>
-              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-emerald-500/30 text-center">
-                <p class="text-xs text-emerald-300 font-black tracking-wide leading-tight">
-                  ¿SABEN QUÉ?<br>QUÉDENSE HASTA LAS 9 PM<br>COPIANDO DATOS EN EXCEL.<br>YA ME CANSÉ DE DECIRLES<br>QUE ESO LO CONECTA<br>UNA AUTOMATIZACIÓN.
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Variación 3 · Esclavos de Excel</span>
+              <div class="mt-4 p-4 bg-[#111318] rounded-xl border border-[#1f242e] text-center">
+                <p class="text-sm text-white font-bold tracking-wide leading-snug">
+                  ¿SABEN QUÉ?<br>QUÉDENSE HASTA LAS 9 PM COPIANDO EN EXCEL.<br>YA ME CANSÉ DE DECIRLES QUE ESO LO CONECTA UNA AUTOMATIZACIÓN.
                 </p>
               </div>
-              <div class="mt-3 text-xs text-slate-300 space-y-1">
-                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
-                <p class="italic">"Disfruten esas 4 horas al día pasando contactos del chat a un Excel, armando reportes a mano y corrigiendo errores de tipeo. Sigan así, seguro para eso crearon su empresa..."</p>
+              <div class="mt-4 text-sm text-slate-300 space-y-1.5">
+                <p class="text-slate-400 font-mono uppercase text-xs">Guion a cámara (15s):</p>
+                <p class="italic text-slate-300">"Disfruten esas 4 horas al día pasando contactos del chat a un Excel, armando reportes a mano y corrigiendo errores de tipeo. Sigan así, seguro para eso crearon su empresa..."</p>
               </div>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
-              <button onclick="copyToClipboard('¿Saben qué? Quédense hasta las 9 PM copiando datos en Excel. Ya me cansé de decirles que eso lo conecta una automatización.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+            <div class="pt-4 border-t border-[#1a1d24] flex gap-2.5">
+              <button onclick="copyToClipboard('¿Saben qué? Quédense hasta las 9 PM copiando datos en Excel. Ya me cansé de decirles que eso lo conecta una automatización.', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b]">
                 <i class="fa-regular fa-copy"></i> Texto
               </button>
-              <button onclick="copyToClipboard('Si tu trabajo o el de tu equipo consiste en copiar información de una pestaña a otra, no tienes un empleo estratégico: estás haciendo el trabajo de un script de 3 líneas.\n\nLas herramientas modernas conectan tus formularios, tus mensajes de WhatsApp, tu facturación y tu base de datos en tiempo real sin tocar una tecla.\n\nTu tiempo vale demasiado. Descubre cómo sistematizar tu flujo en conectanodo.com.\n\n#productividad #automatizaciondeprocesos #n8n #operaciones #negociosinteligentes #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-xs">
-                <i class="fa-regular fa-paste"></i> Copy SEO
+              <button onclick="copyToClipboard('Si tu trabajo o el de tu equipo consiste en copiar información de una pestaña a otra, no tienes un empleo estratégico: estás haciendo el trabajo de un script de 3 líneas.\n\nLas herramientas modernas conectan tus formularios, tus mensajes de WhatsApp, tu facturación y tu base de datos en tiempo real.\n\nTu tiempo vale demasiado. Descubre cómo sistematizar tu flujo en conectanodo.com.\n\n#productividad #automatizaciondeprocesos #n8n #nodo', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold">
+                <i class="fa-regular fa-paste"></i> Copiar Copy
               </button>
             </div>
           </div>
 
           <!-- Var 4 -->
-          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm">
             <div>
-              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-rose-500/10 text-rose-300 border border-rose-500/20">Variación 4 · Celulares Personales</span>
-              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-rose-500/30 text-center">
-                <p class="text-xs text-rose-300 font-black tracking-wide leading-tight">
-                  ¿SABEN QUÉ?<br>DEJEN QUE SUS ASESORES<br>MANEJEN CLIENTES<br>EN SU CEL PERSONAL.<br>YA ME CANSÉ DE DECIRLES<br>QUE SE LLEVAN LA BASE.
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Variación 4 · Celulares Personales</span>
+              <div class="mt-4 p-4 bg-[#111318] rounded-xl border border-[#1f242e] text-center">
+                <p class="text-sm text-white font-bold tracking-wide leading-snug">
+                  ¿SABEN QUÉ?<br>DEJEN QUE SUS ASESORES USEN SU CEL PERSONAL.<br>YA ME CANSÉ DE DECIRLES QUE SE LLEVAN LA BASE.
                 </p>
               </div>
-              <div class="mt-3 text-xs text-slate-300 space-y-1">
-                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
-                <p class="italic">"Sigan permitiendo que cada vendedor atienda clientes desde su número personal. El día que ese asesor renuncie o se vaya con la competencia, ahí sí van a entender por qué necesitaban una sola línea centralizada."</p>
+              <div class="mt-4 text-sm text-slate-300 space-y-1.5">
+                <p class="text-slate-400 font-mono uppercase text-xs">Guion a cámara (15s):</p>
+                <p class="italic text-slate-300">"Sigan permitiendo que cada vendedor atienda clientes desde su número personal. El día que ese asesor renuncie o se vaya con la competencia, ahí sí van a entender por qué necesitaban una sola línea centralizada."</p>
               </div>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
-              <button onclick="copyToClipboard('¿Saben qué? Dejen que sus asesores manejen clientes en su cel personal. Ya me cansé de decirles que se van a llevar la base.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+            <div class="pt-4 border-t border-[#1a1d24] flex gap-2.5">
+              <button onclick="copyToClipboard('¿Saben qué? Dejen que sus asesores manejen clientes en su cel personal. Ya me cansé de decirles que se van a llevar la base.', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b]">
                 <i class="fa-regular fa-copy"></i> Texto
               </button>
-              <button onclick="copyToClipboard('El activo más valioso de tu empresa son sus contactos y su historial de conversaciones.\n\nSi tus vendedores atienden desde sus números privados no sabes qué prometen, no mides tiempos de respuesta y cuando se van, se llevan tus clientes.\n\nCon WhatsApp Cloud API toda tu empresa atiende desde el mismo número oficial con auditoría y base de datos protegida.\n\nCentraliza tu operación hoy en conectanodo.com.\n\n#whatsappempresas #seguridadcomercial #equipodeventas #crm #gestionempresarial #nodo', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/30 text-xs">
-                <i class="fa-regular fa-paste"></i> Copy SEO
+              <button onclick="copyToClipboard('El activo más valioso de tu empresa son sus contactos y su historial de conversaciones.\n\nSi tus vendedores atienden desde sus números privados no sabes qué prometen, no mides tiempos de respuesta y cuando se van, se llevan tus clientes.\n\nCon WhatsApp Cloud API toda tu empresa atiende desde el mismo número oficial con auditoría y base de datos protegida.\n\nCentraliza tu operación hoy en conectanodo.com.\n\n#whatsappempresas #seguridadcomercial #nodo', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold">
+                <i class="fa-regular fa-paste"></i> Copiar Copy
               </button>
             </div>
           </div>
 
           <!-- Var 5 -->
-          <div class="border border-slate-800 hover:border-amber-500/40 bg-slate-950/70 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm">
             <div>
-              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">Variación 5 · "El País Está Difícil"</span>
-              <div class="mt-3 p-3 bg-black/70 rounded-lg border border-purple-500/30 text-center">
-                <p class="text-xs text-purple-300 font-black tracking-wide leading-tight">
-                  ¿SABEN QUÉ?<br>SIGAN DICIENDO QUE<br>"EL PAÍS ESTÁ DIFÍCIL".<br>YA ME CANSÉ DE DECIRLES<br>QUE LO QUE LES FALTA<br>ES UN EMBUDO REAL.
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Variación 5 · "El País Está Difícil"</span>
+              <div class="mt-4 p-4 bg-[#111318] rounded-xl border border-[#1f242e] text-center">
+                <p class="text-sm text-white font-bold tracking-wide leading-snug">
+                  ¿SABEN QUÉ?<br>SIGAN DICIENDO QUE EL PAÍS ESTÁ DIFÍCIL.<br>YA ME CANSÉ DE DECIRLES QUE LES FALTA UN EMBUDO REAL.
                 </p>
               </div>
-              <div class="mt-3 text-xs text-slate-300 space-y-1">
-                <p class="text-slate-400 font-semibold uppercase text-[10px]">Guion a cámara (15s):</p>
-                <p class="italic">"Échenle la culpa a la economía, al dólar o a la temporada. Mientras tanto, hay empresas en su mismo sector llenando sus agendas todas las semanas porque tienen un sistema que convierte visitas en llamadas automáticamente."</p>
+              <div class="mt-4 text-sm text-slate-300 space-y-1.5">
+                <p class="text-slate-400 font-mono uppercase text-xs">Guion a cámara (15s):</p>
+                <p class="italic text-slate-300">"Échenle la culpa a la economía, al dólar o a la temporada. Mientras tanto, hay empresas en su mismo sector llenando sus agendas todas las semanas porque tienen un sistema que convierte visitas en llamadas automáticamente."</p>
               </div>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex gap-2">
-              <button onclick="copyToClipboard('¿Saben qué? Sigan diciendo que el país está difícil. Ya me cansé de decirles que lo que les falta es un embudo real.', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200">
+            <div class="pt-4 border-t border-[#1a1d24] flex gap-2.5">
+              <button onclick="copyToClipboard('¿Saben qué? Sigan diciendo que el país está difícil. Ya me cansé de decirles que lo que les falta es un embudo real.', this)" class="flex-1 py-2 px-3 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-xs font-medium text-slate-200 border border-[#272d3b]">
                 <i class="fa-regular fa-copy"></i> Texto
               </button>
-              <button onclick="copyToClipboard('El problema nunca es la falta de clientes; el problema es que no tienes un mecanismo predecible para captarlos, nutrirlos y cerrarlos.\n\nUn negocio no sobrevive posteando al azar. Necesitas tráfico calificado, filtro automático de curiosos y seguimiento implacable hasta el cierre.\n\nEse es el Método NODO RUTA. Diseña tu sistema en conectanodo.com.\n\n#ventasb2b #estrategiacomercial #embudosdeventas #crecimientoempresarial #nodoia', this)" class="flex-1 py-1.5 px-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-xs">
-                <i class="fa-regular fa-paste"></i> Copy SEO
+              <button onclick="copyToClipboard('El problema nunca es la falta de clientes; el problema es que no tienes un mecanismo predecible para captarlos, nutrirlos y cerrarlos.\n\nUn negocio no sobrevive posteando al azar. Necesitas tráfico calificado, filtro automático de curiosos y seguimiento implacable hasta el cierre.\n\nEse es el Método NODO RUTA. Diseña tu sistema en conectanodo.com.\n\n#ventasb2b #estrategiacomercial #nodo', this)" class="flex-1 py-2 px-3 rounded-lg bg-white hover:bg-slate-200 text-black text-xs font-semibold">
+                <i class="fa-regular fa-paste"></i> Copiar Copy
               </button>
             </div>
           </div>
@@ -542,21 +527,21 @@
 
     <!-- TAB 5: CALCULADORA PROYECCIÓN 10K SEGUIDORES -->
     <section id="tab-calculator" class="space-y-8 hidden">
-      <div class="glass-card rounded-2xl p-6 border border-emerald-500/30 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 space-y-6">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div class="panel rounded-2xl p-7 space-y-6 shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#1f242e]">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <i class="fa-solid fa-bullseye"></i> Road to 10K Followers · Simulador Inteligente
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-slate-300 border border-white/10">
+              Road to 10K Followers · Modelo Predictivo
             </div>
-            <h2 class="text-2xl font-black text-white mt-2 flex items-center gap-2">
-              Calculadora de Proyección: ¿Cuándo alcanzamos los 10.000 seguidores?
+            <h2 class="text-2xl font-bold text-white mt-3">
+              Calculadora de Crecimiento: Meta 10.000 Seguidores
             </h2>
-            <p class="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
-              Calcula matemáticamente la fecha estimada para llegar a 10K en cada una de tus 4 cuentas, comparando tu <strong>ritmo actual medido</strong> versus tu <strong>ritmo acelerado</strong> aplicando las recomendaciones de contenido.
+            <p class="text-sm text-slate-400 mt-1 max-w-3xl leading-relaxed">
+              Calcula matemáticamente la fecha estimada para alcanzar 10.000 seguidores en cada una de tus 4 cuentas, comparando tu <strong>ritmo diario verificado</strong> contra escenarios optimizados.
             </p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+            <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-[#0c0e12] text-slate-300 border border-[#1a1d24]">
               Objetivo: 10,000 / cuenta
             </span>
           </div>
@@ -565,151 +550,151 @@
         <!-- 4 Tarjetas de Proyección de Cuentas -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="calculator-cards">
           <!-- Card 1: IG Personal -->
-          <div class="border border-slate-800/90 hover:border-pink-500/50 bg-[#0d1424]/90 rounded-2xl p-6 flex flex-col justify-between space-y-5 transition-all shadow-md">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-5 shadow-sm">
             <div>
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">IG Personal</span>
-                <i class="fa-brands fa-instagram text-pink-400 text-lg"></i>
+                <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300">IG Personal</span>
+                <i class="fa-brands fa-instagram text-slate-400"></i>
               </div>
               <h3 class="text-lg font-bold text-white mt-3">@s_thiago7</h3>
-              <div class="mt-4 space-y-2 text-sm text-slate-200">
-                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono text-base" id="calc-ig-p-cur">1,793</strong></div>
-                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-pink-300 font-mono text-base" id="calc-ig-p-rem">8,207</strong></div>
-                <div class="flex justify-between"><span>Ritmo diario actual:</span> <strong class="text-emerald-400 font-mono text-base">+87 seg/día</strong></div>
+              <div class="mt-4 space-y-2 text-sm text-slate-300 font-mono">
+                <div class="flex justify-between"><span>Actual:</span> <strong class="text-white" id="calc-ig-p-cur">1,793</strong></div>
+                <div class="flex justify-between"><span>Faltan:</span> <strong class="text-slate-300" id="calc-ig-p-rem">8,207</strong></div>
+                <div class="flex justify-between"><span>Ritmo diario:</span> <strong class="text-emerald-400">+87 / día</strong></div>
               </div>
               
-              <div class="mt-5 p-4 bg-black/60 rounded-xl border border-slate-800 space-y-1.5">
-                <p class="text-xs text-slate-400 uppercase font-bold">Tiempo estimado al ritmo actual:</p>
-                <p class="text-2xl font-black text-emerald-400 font-mono" id="calc-ig-p-days">94 días (~3 meses)</p>
-                <p class="text-xs text-slate-300 font-medium" id="calc-ig-p-date">Fecha estimada: Enero 2027</p>
+              <div class="mt-5 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
+                <p class="text-xs text-slate-400 font-mono uppercase font-semibold">Al ritmo medido hoy:</p>
+                <p class="text-2xl font-bold text-white font-mono" id="calc-ig-p-days">94 días (~3 meses)</p>
+                <p class="text-xs text-slate-400 font-mono" id="calc-ig-p-date">Fecha estimada: Enero 2027</p>
               </div>
 
               <!-- Input Interactivo de Ritmo -->
-              <div class="mt-5 pt-4 border-t border-slate-800/80 space-y-2">
-                <label class="text-xs text-slate-300 font-semibold block">Simular otro ritmo diario:</label>
-                <div class="flex items-center gap-2.5">
-                  <input type="number" id="input-ig-p-rate" value="87" min="1" max="1000" oninput="recalcAccount('ig-p', 1793, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white font-mono focus:border-sky-500 focus:outline-none">
-                  <span class="text-xs text-slate-400 shrink-0 font-medium">seg/día</span>
+              <div class="mt-5 pt-4 border-t border-[#1a1d24] space-y-2">
+                <label class="text-xs text-slate-400 font-medium block">Simular ritmo diario:</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-ig-p-rate" value="87" min="1" max="1000" oninput="recalcAccount('ig-p', 1793, this.value)" class="w-full bg-[#111318] border border-[#272d3b] rounded-lg px-3 py-1.5 text-sm text-white font-mono focus:border-white focus:outline-none">
+                  <span class="text-xs text-slate-400 shrink-0 font-mono">seg/día</span>
                 </div>
               </div>
             </div>
-            <p class="text-xs text-slate-400 italic">Es tu canal más acelerado y con tracción probada en Reels.</p>
+            <p class="text-xs text-slate-400 italic">Canal con mayor tracción orgánica verificada.</p>
           </div>
 
           <!-- Card 2: TikTok Personal -->
-          <div class="border border-slate-800/90 hover:border-cyan-500/50 bg-[#0d1424]/90 rounded-2xl p-6 flex flex-col justify-between space-y-5 transition-all shadow-md">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-5 shadow-sm">
             <div>
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">TikTok Personal</span>
-                <i class="fa-brands fa-tiktok text-cyan-400 text-lg"></i>
+                <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300">TikTok Personal</span>
+                <i class="fa-brands fa-tiktok text-slate-400"></i>
               </div>
               <h3 class="text-lg font-bold text-white mt-3">@santiagoquevedo71</h3>
-              <div class="mt-4 space-y-2 text-sm text-slate-200">
-                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono text-base" id="calc-tt-p-cur">1,211</strong></div>
-                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-cyan-300 font-mono text-base" id="calc-tt-p-rem">8,789</strong></div>
-                <div class="flex justify-between"><span>Ritmo semanal real:</span> <strong class="text-amber-400 font-mono text-base">+5 seg/semana (0.7/día)</strong></div>
+              <div class="mt-4 space-y-2 text-sm text-slate-300 font-mono">
+                <div class="flex justify-between"><span>Actual:</span> <strong class="text-white" id="calc-tt-p-cur">1,211</strong></div>
+                <div class="flex justify-between"><span>Faltan:</span> <strong class="text-slate-300" id="calc-tt-p-rem">8,789</strong></div>
+                <div class="flex justify-between"><span>Ritmo semanal:</span> <strong class="text-slate-400">+5 / semana</strong></div>
               </div>
               
-              <div class="mt-5 p-4 bg-black/60 rounded-xl border border-slate-800 space-y-1.5">
-                <p class="text-xs text-slate-400 uppercase font-bold">Tiempo estimado (Optimizando Bio):</p>
-                <p class="text-2xl font-black text-cyan-400 font-mono" id="calc-tt-p-days">293 días (~9.7 meses)</p>
-                <p class="text-xs text-slate-300 font-medium" id="calc-tt-p-date">Con +30 seg/día (0.5% conv. de 29K views)</p>
+              <div class="mt-5 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
+                <p class="text-xs text-slate-400 font-mono uppercase font-semibold">Con bio optimizada (0.5% conv):</p>
+                <p class="text-2xl font-bold text-white font-mono" id="calc-tt-p-days">293 días (~9.7 meses)</p>
+                <p class="text-xs text-slate-400 font-mono" id="calc-tt-p-date">Simulado con +30 seg/día</p>
               </div>
 
               <!-- Input Interactivo -->
-              <div class="mt-5 pt-4 border-t border-slate-800/80 space-y-2">
-                <label class="text-xs text-slate-300 font-semibold block">Simular ritmo diario (con bio nueva):</label>
-                <div class="flex items-center gap-2.5">
-                  <input type="number" id="input-tt-p-rate" value="30" min="1" max="1000" oninput="recalcAccount('tt-p', 1211, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white font-mono focus:border-cyan-500 focus:outline-none">
-                  <span class="text-xs text-slate-400 shrink-0 font-medium">seg/día</span>
+              <div class="mt-5 pt-4 border-t border-[#1a1d24] space-y-2">
+                <label class="text-xs text-slate-400 font-medium block">Simular ritmo diario:</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-tt-p-rate" value="30" min="1" max="1000" oninput="recalcAccount('tt-p', 1211, this.value)" class="w-full bg-[#111318] border border-[#272d3b] rounded-lg px-3 py-1.5 text-sm text-white font-mono focus:border-white focus:outline-none">
+                  <span class="text-xs text-slate-400 shrink-0 font-mono">seg/día</span>
                 </div>
               </div>
             </div>
-            <p class="text-xs text-slate-400 italic">Tienes 29K vistas semanales. Si solo el 0.5% te sigue, sumas 30 seg/día.</p>
+            <p class="text-xs text-slate-400 italic">29K vistas semanales que esperan ser convertidas.</p>
           </div>
 
           <!-- Card 3: TikTok Nodo B2B -->
-          <div class="border border-slate-800/90 hover:border-emerald-500/50 bg-[#0d1424]/90 rounded-2xl p-6 flex flex-col justify-between space-y-5 transition-all shadow-md">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-5 shadow-sm">
             <div>
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">TikTok B2B</span>
-                <i class="fa-brands fa-tiktok text-emerald-400 text-lg"></i>
+                <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300">TikTok B2B</span>
+                <i class="fa-brands fa-tiktok text-slate-400"></i>
               </div>
               <h3 class="text-lg font-bold text-white mt-3">@nodotechgrowth</h3>
-              <div class="mt-4 space-y-2 text-sm text-slate-200">
-                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono text-base" id="calc-tt-n-cur">72</strong></div>
-                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-emerald-300 font-mono text-base" id="calc-tt-n-rem">9,928</strong></div>
-                <div class="flex justify-between"><span>Ritmo con Storytelling:</span> <strong class="text-emerald-400 font-mono text-base">+12 seg/día proyectado</strong></div>
+              <div class="mt-4 space-y-2 text-sm text-slate-300 font-mono">
+                <div class="flex justify-between"><span>Actual:</span> <strong class="text-white" id="calc-tt-n-cur">72</strong></div>
+                <div class="flex justify-between"><span>Faltan:</span> <strong class="text-slate-300" id="calc-tt-n-rem">9,928</strong></div>
+                <div class="flex justify-between"><span>Ritmo estimado:</span> <strong class="text-slate-400">+12 / día</strong></div>
               </div>
               
-              <div class="mt-5 p-4 bg-black/60 rounded-xl border border-slate-800 space-y-1.5">
-                <p class="text-xs text-slate-400 uppercase font-bold">Tiempo estimado (12 seg/día):</p>
-                <p class="text-2xl font-black text-emerald-400 font-mono" id="calc-tt-n-days">827 días (~27 meses)</p>
-                <p class="text-xs text-slate-300 font-medium" id="calc-tt-n-date">En B2B 10K son dueños de negocio</p>
+              <div class="mt-5 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
+                <p class="text-xs text-slate-400 font-mono uppercase font-semibold">Proyección con Storytelling:</p>
+                <p class="text-2xl font-bold text-white font-mono" id="calc-tt-n-days">827 días (~27 meses)</p>
+                <p class="text-xs text-slate-400 font-mono" id="calc-tt-n-date">Audiencia calificada de empresas</p>
               </div>
 
               <!-- Input Interactivo -->
-              <div class="mt-5 pt-4 border-t border-slate-800/80 space-y-2">
-                <label class="text-xs text-slate-300 font-semibold block">Simular ritmo diario (formato viral):</label>
-                <div class="flex items-center gap-2.5">
-                  <input type="number" id="input-tt-n-rate" value="12" min="1" max="1000" oninput="recalcAccount('tt-n', 72, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white font-mono focus:border-emerald-500 focus:outline-none">
-                  <span class="text-xs text-slate-400 shrink-0 font-medium">seg/día</span>
+              <div class="mt-5 pt-4 border-t border-[#1a1d24] space-y-2">
+                <label class="text-xs text-slate-400 font-medium block">Simular ritmo diario:</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-tt-n-rate" value="12" min="1" max="1000" oninput="recalcAccount('tt-n', 72, this.value)" class="w-full bg-[#111318] border border-[#272d3b] rounded-lg px-3 py-1.5 text-sm text-white font-mono focus:border-white focus:outline-none">
+                  <span class="text-xs text-slate-400 shrink-0 font-mono">seg/día</span>
                 </div>
               </div>
             </div>
-            <p class="text-xs text-slate-400 italic">En B2B 1,000 seguidores calificados valen más que 50K curiosos.</p>
+            <p class="text-xs text-slate-400 italic">En B2B 1,000 seguidores calificados mueven ventas altas.</p>
           </div>
 
           <!-- Card 4: IG Nodo B2B -->
-          <div class="border border-slate-800/90 hover:border-sky-500/50 bg-[#0d1424]/90 rounded-2xl p-6 flex flex-col justify-between space-y-5 transition-all shadow-md">
+          <div class="p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-5 shadow-sm">
             <div>
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">IG Nodo B2B</span>
-                <i class="fa-brands fa-instagram text-sky-400 text-lg"></i>
+                <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-slate-300">IG Nodo B2B</span>
+                <i class="fa-brands fa-instagram text-slate-400"></i>
               </div>
               <h3 class="text-lg font-bold text-white mt-3">@nodo_tg</h3>
-              <div class="mt-4 space-y-2 text-sm text-slate-200">
-                <div class="flex justify-between"><span>Seguidores actuales:</span> <strong class="text-white font-mono text-base" id="calc-ig-n-cur">38</strong></div>
-                <div class="flex justify-between"><span>Faltan para 10K:</span> <strong class="text-sky-300 font-mono text-base" id="calc-ig-n-rem">9,962</strong></div>
-                <div class="flex justify-between"><span>Ritmo con Método RUTA:</span> <strong class="text-sky-400 font-mono text-base">+10 seg/día proyectado</strong></div>
+              <div class="mt-4 space-y-2 text-sm text-slate-300 font-mono">
+                <div class="flex justify-between"><span>Actual:</span> <strong class="text-white" id="calc-ig-n-cur">38</strong></div>
+                <div class="flex justify-between"><span>Faltan:</span> <strong class="text-slate-300" id="calc-ig-n-rem">9,962</strong></div>
+                <div class="flex justify-between"><span>Ritmo estimado:</span> <strong class="text-slate-400">+10 / día</strong></div>
               </div>
               
-              <div class="mt-5 p-4 bg-black/60 rounded-xl border border-slate-800 space-y-1.5">
-                <p class="text-xs text-slate-400 uppercase font-bold">Tiempo estimado (10 seg/día):</p>
-                <p class="text-2xl font-black text-sky-400 font-mono" id="calc-ig-n-days">996 días (~33 meses)</p>
-                <p class="text-xs text-slate-300 font-medium" id="calc-ig-n-date">Con 2 Reels B2B espaciados / día</p>
+              <div class="mt-5 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
+                <p class="text-xs text-slate-400 font-mono uppercase font-semibold">Proyección con Método RUTA:</p>
+                <p class="text-2xl font-bold text-white font-mono" id="calc-ig-n-days">996 días (~33 meses)</p>
+                <p class="text-xs text-slate-400 font-mono" id="calc-ig-n-date">2 publicaciones espaciadas / día</p>
               </div>
 
               <!-- Input Interactivo -->
-              <div class="mt-5 pt-4 border-t border-slate-800/80 space-y-2">
-                <label class="text-xs text-slate-300 font-semibold block">Simular ritmo diario:</label>
-                <div class="flex items-center gap-2.5">
-                  <input type="number" id="input-ig-n-rate" value="10" min="1" max="1000" oninput="recalcAccount('ig-n', 38, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white font-mono focus:border-sky-500 focus:outline-none">
-                  <span class="text-xs text-slate-400 shrink-0 font-medium">seg/día</span>
+              <div class="mt-5 pt-4 border-t border-[#1a1d24] space-y-2">
+                <label class="text-xs text-slate-400 font-medium block">Simular ritmo diario:</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="input-ig-n-rate" value="10" min="1" max="1000" oninput="recalcAccount('ig-n', 38, this.value)" class="w-full bg-[#111318] border border-[#272d3b] rounded-lg px-3 py-1.5 text-sm text-white font-mono focus:border-white focus:outline-none">
+                  <span class="text-xs text-slate-400 shrink-0 font-mono">seg/día</span>
                 </div>
               </div>
             </div>
-            <p class="text-xs text-slate-400 italic">Cada seguidor aquí es un potencial lead de ticket alto para conectanodo.com.</p>
+            <p class="text-xs text-slate-400 italic">Cada seguidor es un cliente potencial de conectanodo.com.</p>
           </div>
         </div>
 
-        <!-- Estrategia de Aceleración para llegar antes de los 10K -->
-        <div class="p-7 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-5">
-          <h3 class="text-lg font-bold text-white flex items-center gap-2.5">
-            <i class="fa-solid fa-bolt text-amber-400"></i> Plan de Aceleración: Cómo recortar el tiempo a la mitad
+        <!-- Estrategia de Aceleración -->
+        <div class="p-7 rounded-2xl bg-[#0c0e12] border border-[#1a1d24] space-y-4">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            Palancas Estratégicas para Acelerar la Meta
           </h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm text-slate-200">
-            <div class="p-5 bg-black/50 rounded-xl border border-slate-800 space-y-2">
-              <p class="font-bold text-pink-400 text-base">1. Embudo TikTok → Instagram Personal</p>
-              <p class="leading-relaxed text-slate-300">Tu TikTok personal genera 4,000 a 7,000 vistas diarias. Al poner el CTA hacia IG en cada video ("más en @s_thiago7"), puedes subir tu ritmo de Instagram de 87 a <strong>150+ seguidores/día</strong>, alcanzando 10K en menos de <strong>55 días</strong>.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm text-slate-300">
+            <div class="p-5 bg-[#111318] rounded-xl border border-[#1f242e] space-y-2">
+              <p class="font-bold text-white text-sm">1. Embudo TikTok → Instagram Personal</p>
+              <p class="text-slate-400 leading-relaxed">Tu TikTok personal ya genera 4,000 a 7,000 vistas diarias. Al colocar un llamado directo a Instagram en cada video ("más en @s_thiago7"), puedes acelerar tu ritmo en IG a <strong>150+ seguidores/día</strong>, llegando a 10K en menos de <strong>55 días</strong>.</p>
             </div>
-            <div class="p-5 bg-black/50 rounded-xl border border-slate-800 space-y-2">
-              <p class="font-bold text-emerald-400 text-base">2. Arreglar la conversión en TikTok</p>
-              <p class="leading-relaxed text-slate-300">Con la bio optimizada de 64 caracteres y series de debate (<em>Parte 1, Parte 2</em>), pasarás de la tasa ridícula de 0.017% a un 0.5% normal de conversión. Eso sube TikTok de +5 a <strong>+200 seguidores por semana</strong>.</p>
+            <div class="p-5 bg-[#111318] rounded-xl border border-[#1f242e] space-y-2">
+              <p class="font-bold text-white text-sm">2. Corrección de Conversión en TikTok</p>
+              <p class="text-slate-400 leading-relaxed">Con la bio optimizada de 64 caracteres y videos de debate con preguntas abiertas, el ratio de conversión pasará de 0.017% a un 0.5% normal. Eso sube tu crecimiento a <strong>+200 seguidores por semana</strong>.</p>
             </div>
-            <div class="p-5 bg-black/50 rounded-xl border border-slate-800 space-y-2">
-              <p class="font-bold text-sky-400 text-base">3. El formato Storytelling en Nodo</p>
-              <p class="leading-relaxed text-slate-300">Tu video contando la historia de un cliente llegó a 690 vistas (vs 17 del genérico). Publicando 1 storytelling diario sin burst posting, Nodo TikTok llegará a sus primeros <strong>1,000 seguidores en 60 días</strong>.</p>
+            <div class="p-5 bg-[#111318] rounded-xl border border-[#1f242e] space-y-2">
+              <p class="font-bold text-white text-sm">3. Storytelling B2B en Nodo</p>
+              <p class="text-slate-400 leading-relaxed">Tu video narrando la historia real de un cliente llegó a 690 vistas (contra 17 del formato genérico). Manteniendo este formato diario y evitando subidas en ráfaga, Nodo alcanzará tracción sostenida.</p>
             </div>
           </div>
         </div>
