@@ -249,26 +249,36 @@ async def api_tiktok_live(request):
         token = get_valid_tiktok_token(account)
         if not token:
             return JSONResponse({"success": False, "error": f"No TikTok token for {account}"}, status_code=404)
-        user_info = get_tiktok_api_user(token)
-        videos = get_tiktok_api_videos(token, max_count=10)
+        user_info = get_tiktok_api_user(token) or {}
+        live_prof = get_tiktok_live_profile(account) or {}
+        if live_prof.get("bio"):
+            user_info["bio"] = live_prof["bio"]
+        if live_prof.get("avatar") and not user_info.get("avatar_url"):
+            user_info["avatar_url"] = live_prof["avatar"]
+        videos = get_tiktok_api_videos(token, max_count=12)
         return JSONResponse({"success": True, "account": account, "user": user_info, "videos": videos})
         
     results = {}
     for acc in ["santiagoquevedo71", "nodotechgrowth"]:
         tok = get_valid_tiktok_token(acc)
         if tok:
-            u = get_tiktok_api_user(tok)
-            v = get_tiktok_api_videos(tok, max_count=10)
+            u = get_tiktok_api_user(tok) or {}
+            live_prof = get_tiktok_live_profile(acc) or {}
+            if live_prof.get("bio"):
+                u["bio"] = live_prof["bio"]
+            if live_prof.get("avatar") and not u.get("avatar_url"):
+                u["avatar_url"] = live_prof["avatar"]
+            if not u.get("follower_count") and live_prof.get("followers"):
+                u["follower_count"] = live_prof["followers"]
+            v = get_tiktok_api_videos(tok, max_count=12)
             results[acc] = {"connected": True, "user": u, "videos": v}
         else:
-            results[acc] = {"connected": False, "user": None, "videos": []}
+            live_prof = get_tiktok_live_profile(acc) or {}
+            results[acc] = {"connected": False, "user": live_prof, "videos": []}
             
-    primary = results.get("santiagoquevedo71", {})
     return JSONResponse({
         "success": True,
-        "accounts": results,
-        "user": primary.get("user"),
-        "videos": primary.get("videos", [])
+        "accounts": results
     })
 
 from services.analytics_engine import (
