@@ -6,12 +6,33 @@ import os
 
 TIKTOK_TOKENS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'tiktok_tokens.json')
 
-def get_valid_tiktok_token():
+def get_valid_tiktok_token(account="santiagoquevedo71"):
     if not os.path.exists(TIKTOK_TOKENS_PATH):
         return None
-    with open(TIKTOK_TOKENS_PATH, 'r', encoding='utf-8') as f:
-        tok_data = json.load(f)
-    return tok_data.get('access_token')
+    try:
+        with open(TIKTOK_TOKENS_PATH, 'r', encoding='utf-8') as f:
+            tok_data = json.load(f)
+        if account in tok_data:
+            return tok_data[account].get('access_token')
+        elif "access_token" in tok_data and account == "santiagoquevedo71":
+            return tok_data.get('access_token')
+    except Exception as e:
+        print(f"Error loading TikTok token for {account}: {e}")
+    return None
+
+def save_tiktok_account_token(account, token_dict):
+    data = {}
+    if os.path.exists(TIKTOK_TOKENS_PATH):
+        try:
+            with open(TIKTOK_TOKENS_PATH, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            if "access_token" in data and "santiagoquevedo71" not in data:
+                data = {"santiagoquevedo71": data}
+        except Exception:
+            data = {}
+    data[account] = token_dict
+    with open(TIKTOK_TOKENS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
 
 def get_tiktok_api_user(access_token):
     url = "https://open.tiktokapis.com/v2/user/info/"

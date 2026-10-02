@@ -22,7 +22,8 @@ from services.tiktok_service import (
     get_tiktok_live_profile,
     get_tiktok_api_user,
     get_tiktok_api_videos,
-    get_valid_tiktok_token
+    get_valid_tiktok_token,
+    save_tiktok_account_token
 )
 
 from services.token_manager import (
@@ -76,6 +77,16 @@ async def api_status(request):
         
     tiktok_tokens_file = os.path.join(BASE_DIR, "data", "tiktok_tokens.json")
     has_tiktok_tokens = os.path.exists(tiktok_tokens_file)
+    connected_accounts = []
+    if has_tiktok_tokens:
+        try:
+            with open(tiktok_tokens_file, "r", encoding="utf-8") as f:
+                tt_data = json.load(f)
+            for acc in config["tiktok"]["accounts"]:
+                if acc in tt_data or (acc == "santiagoquevedo71" and "access_token" in tt_data):
+                    connected_accounts.append(acc)
+        except Exception:
+            pass
 
     return JSONResponse({
         "status": "online",
@@ -96,7 +107,8 @@ async def api_status(request):
             "client_key": config["tiktok"]["client_key"],
             "redirect_uri": config["tiktok"]["redirect_uri"],
             "accounts": config["tiktok"]["accounts"],
-            "has_tokens": has_tiktok_tokens
+            "connected_accounts": connected_accounts,
+            "has_tokens": len(connected_accounts) > 0
         }
     })
 
@@ -226,15 +238,32 @@ async def api_tiktok_callback(request):
         return HTMLResponse(f"<h3>Error al intercambiar código de TikTok: {e}</h3>", status_code=500)
 
 async def api_tiktok_live(request):
-    token = get_valid_tiktok_token()
-    if not token:
-        return JSONResponse({"success": False, "error": "No TikTok token available"}, status_code=404)
-    user_info = get_tiktok_api_user(token)
-    videos = get_tiktok_api_videos(token, max_count=10)
+    account = request.query_params.get("account")
+    
+    if account:
+        token = get_valid_tiktok_token(account)
+        if not token:
+            return JSONResponse({"success": False, "error": f"No TikTok token for {account}"}, status_code=404)
+        user_info = get_tiktok_api_user(token)
+        videos = get_tiktok_api_videos(token, max_count=10)
+        return JSONResponse({"success": True, "account": account, "user": user_info, "videos": videos})
+        
+    results = {}
+    for acc in ["santiagoquevedo71", "nodotechgrowth"]:
+        tok = get_valid_tiktok_token(acc)
+        if tok:
+            u = get_tiktok_api_user(tok)
+            v = get_tiktok_api_videos(tok, max_count=10)
+            results[acc] = {"connected": True, "user": u, "videos": v}
+        else:
+            results[acc] = {"connected": False, "user": None, "videos": []}
+            
+    primary = results.get("santiagoquevedo71", {})
     return JSONResponse({
         "success": True,
-        "user": user_info,
-        "videos": videos
+        "accounts": results,
+        "user": primary.get("user"),
+        "videos": primary.get("videos", [])
     })
 
 routes = [
