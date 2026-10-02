@@ -1036,32 +1036,25 @@
           username: "nodotechgrowth",
           nickname: "nodotechgrowth",
           bio: "NODO. Automatización comercial B2B + IA.",
-          followers: 71,
-          likes: 875,
-          videos: 169
+          followers: 73,
+          likes: 931,
+          videos: 174
         }
       ],
       tiktok_live_videos: [
         {
-          id: "7692138118325062920",
-          duration: 9,
-          view_count: 68,
-          like_count: 2,
-          share_url: "https://www.tiktok.com/@santiagoquevedo71/video/7692138118325062920",
-          title: "Enfoque, disciplina y prioridades claras. 🎯 No estoy para perder el tiempo en distracciones...",
-          create_time: 1790965476
-        },
-        {
-          id: "7692124808527482130",
-          duration: 10,
-          view_count: 333,
-          like_count: 15,
-          share_url: "https://www.tiktok.com/@santiagoquevedo71/video/7692124808527482130",
-          title: "Prioridades que separan etapas en tus 20s",
-          create_time: 1790962375
+          id: "7691391537669852423",
+          account: "nodotechgrowth",
+          duration: 23,
+          view_count: 796,
+          like_count: 19,
+          share_url: "https://www.tiktok.com/@nodotechgrowth/video/7691391537669852423",
+          title: "Análisis Nubank & CEO más rico de Colombia con Westcol 🚀 #nu #nubank",
+          create_time: 1790791649
         },
         {
           id: "7691887115667279112",
+          account: "santiagoquevedo71",
           duration: 6,
           view_count: 615,
           like_count: 28,
@@ -1070,7 +1063,18 @@
           create_time: 1790907036
         },
         {
+          id: "7691387924306201857",
+          account: "nodotechgrowth",
+          duration: 39,
+          view_count: 590,
+          like_count: 23,
+          share_url: "https://www.tiktok.com/@nodotechgrowth/video/7691387924306201857",
+          title: "Por qué Manus es mi IA favorita y cómo usarla en tu empresa 🤖",
+          create_time: 1790790809
+        },
+        {
           id: "7691755174104173831",
+          account: "santiagoquevedo71",
           duration: 5,
           view_count: 586,
           like_count: 7,
@@ -1079,13 +1083,24 @@
           create_time: 1790876318
         },
         {
-          id: "7691724513981025544",
+          id: "7691455769081875730",
+          account: "nodotechgrowth",
           duration: 8,
-          view_count: 324,
-          like_count: 10,
-          share_url: "https://www.tiktok.com/@santiagoquevedo71/video/7691724513981025544",
-          title: "Una bandida escondida?",
-          create_time: 1790869175
+          view_count: 412,
+          like_count: 7,
+          share_url: "https://www.tiktok.com/@nodotechgrowth/video/7691455769081875730",
+          title: "El 70% de las ventas por WhatsApp se las lleva el primero que responde ⚡ Agentes IA",
+          create_time: 1790806607
+        },
+        {
+          id: "7692124808527482130",
+          account: "santiagoquevedo71",
+          duration: 10,
+          view_count: 333,
+          like_count: 15,
+          share_url: "https://www.tiktok.com/@santiagoquevedo71/video/7692124808527482130",
+          title: "Prioridades que separan etapas en tus 20s",
+          create_time: 1790962375
         }
       ],
       tiktok_studio: {
@@ -1906,24 +1921,33 @@
         const res = await fetch('/api/tiktok/live');
         if (res.ok) {
           const data = await res.json();
-          if (data.success && data.user) {
+          if (data.success && data.accounts) {
+            const accSantiago = data.accounts.santiagoquevedo71;
+            const accNodo = data.accounts.nodotechgrowth;
             const liveProfiles = [
               {
                 username: "santiagoquevedo71",
-                nickname: data.user.display_name || "Santiago",
+                nickname: accSantiago?.user?.display_name || "Santiago",
                 bio: EMBEDDED_DATA.tiktok_profiles[0].bio,
-                followers: data.user.follower_count,
-                likes: data.user.likes_count,
-                videos: data.user.video_count
+                followers: accSantiago?.user?.follower_count || EMBEDDED_DATA.tiktok_profiles[0].followers,
+                likes: accSantiago?.user?.likes_count || EMBEDDED_DATA.tiktok_profiles[0].likes,
+                videos: accSantiago?.user?.video_count || EMBEDDED_DATA.tiktok_profiles[0].videos
               },
-              EMBEDDED_DATA.tiktok_profiles[1]
+              {
+                username: "nodotechgrowth",
+                nickname: accNodo?.user?.display_name || "nodotechgrowth",
+                bio: EMBEDDED_DATA.tiktok_profiles[1].bio,
+                followers: accNodo?.user?.follower_count || EMBEDDED_DATA.tiktok_profiles[1].followers,
+                likes: accNodo?.user?.likes_count || EMBEDDED_DATA.tiktok_profiles[1].likes,
+                videos: accNodo?.user?.video_count || EMBEDDED_DATA.tiktok_profiles[1].videos
+              }
             ];
             renderTikTokAccounts(liveProfiles);
-            if (data.videos && data.videos.length > 0) {
-              renderTikTokLiveVideos(data.videos);
-            } else {
-              renderTikTokLiveVideos(EMBEDDED_DATA.tiktok_live_videos);
-            }
+            const allVideos = [
+              ...(accNodo?.videos || []),
+              ...(accSantiago?.videos || [])
+            ];
+            renderTikTokLiveVideos(allVideos.length > 0 ? allVideos : EMBEDDED_DATA.tiktok_live_videos);
           } else {
             renderTikTokAccounts(EMBEDDED_DATA.tiktok_profiles);
             renderTikTokLiveVideos(EMBEDDED_DATA.tiktok_live_videos);
