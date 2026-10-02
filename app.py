@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import requests
 import uvicorn
 
 # Ensure UTF-8 output on Windows terminal
@@ -21,6 +22,13 @@ from services.tiktok_service import (
     get_tiktok_live_profile
 )
 
+from services.token_manager import (
+    extend_meta_user_token,
+    get_permanent_page_token,
+    exchange_tiktok_code,
+    refresh_tiktok_token
+)
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "data", "config.json")
 TEMPLATE_PATH = os.path.join(BASE_DIR, "templates", "index.html")
@@ -29,6 +37,10 @@ def load_config():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def save_config(cfg):
+    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+        json.dump(cfg, f, indent=2)
+
 async def homepage(request):
     with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
         html_content = f.read()
@@ -36,13 +48,53 @@ async def homepage(request):
 
 async def api_status(request):
     config = load_config()
+    
+    personal_valid = False
+    personal_error = None
+    try:
+        r = requests.get(f"https://graph.facebook.com/v21.0/{config['personal']['instagram_account_id']}?fields=username&access_token={config['personal']['access_token']}", timeout=3).json()
+        if "error" not in r:
+            personal_valid = True
+        else:
+            personal_error = r["error"].get("message")
+    except Exception as e:
+        personal_error = str(e)
+
+    nodo_valid = False
+    nodo_error = None
+    try:
+        r = requests.get(f"https://graph.facebook.com/v21.0/{config['nodo']['instagram_account_id']}?fields=username&access_token={config['nodo']['access_token']}", timeout=3).json()
+        if "error" not in r:
+            nodo_valid = True
+        else:
+            nodo_error = r["error"].get("message")
+    except Exception as e:
+        nodo_error = str(e)
+        
+    tiktok_tokens_file = os.path.join(BASE_DIR, "data", "tiktok_tokens.json")
+    has_tiktok_tokens = os.path.exists(tiktok_tokens_file)
+
     return JSONResponse({
         "status": "online",
-        "personal_account": config["personal"]["username"],
-        "nodo_account": config["nodo"]["username"],
-        "tiktok_accounts": config["tiktok"]["accounts"],
-        "tiktok_app": config["tiktok"]["app_name"],
-        "tiktok_client_key": config["tiktok"]["client_key"]
+        "personal": {
+            "account": config["personal"]["username"],
+            "page_id": config["personal"]["page_id"],
+            "valid": personal_valid,
+            "error": personal_error
+        },
+        "nodo": {
+            "account": config["nodo"]["username"],
+            "page_id": config["nodo"]["page_id"],
+            "valid": nodo_valid,
+            "error": nodo_error
+        },
+        "tiktok": {
+            "app_name": config["tiktok"]["app_name"],
+            "client_key": config["tiktok"]["client_key"],
+            "redirect_uri": config["tiktok"]["redirect_uri"],
+            "accounts": config["tiktok"]["accounts"],
+            "has_tokens": has_tiktok_tokens
+        }
     })
 
 async def api_personal_stats(request):
@@ -105,6 +157,71 @@ async def api_tiktok_studio(request):
             return JSONResponse({"success": True, "studio": json.load(f)})
     return JSONResponse({"success": False, "error": "No studio data found"}, status_code=404)
 
+async def api_extend_meta(request):
+    try:
+        body = await request.json()
+        short_token = body.get("short_token")
+        app_id = body.get("app_id")
+        app_secret = body.get("app_secret")
+        account = body.get("account", "personal")
+        page_id = body.get("page_id")
+        
+        if not short_token or not app_id or not app_secret:
+            return JSONResponse({"success": False, "error": "Faltan short_token, app_id o app_secret"}, status_code=400)
+            
+        long_user_token = extend_meta_user_token(short_token, app_id, app_secret)
+        
+        permanent_token = None
+        if page_id:
+            try:
+                permanent_token = get_permanent_page_token(long_user_token, page_id)
+            except Exception as pe:
+                print(f"Page token notice: {pe}")
+                
+        final_token = permanent_token or long_user_token
+        is_permanent = permanent_token is not None
+        
+        cfg = load_config()
+        if account in cfg:
+            cfg[account]["access_token"] = final_token
+            save_config(cfg)
+            
+        return JSONResponse({
+            "success": True, 
+            "is_permanent": is_permanent,
+            "token_type": "Page Access Token (Permanente)" if is_permanent else "User Token (60 Días)",
+            "account": account
+        })
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
+async def api_tiktok_callback(request):
+    code = request.query_params.get("code")
+    if not code:
+        return HTMLResponse("<h3>Error: No se recibió el código de autorización de TikTok.</h3>", status_code=400)
+    
+    cfg = load_config()
+    try:
+        tok_data = exchange_tiktok_code(
+            code=code,
+            client_key=cfg["tiktok"]["client_key"],
+            client_secret=cfg["tiktok"]["client_secret"],
+            redirect_uri=cfg["tiktok"]["redirect_uri"]
+        )
+        tokens_path = os.path.join(BASE_DIR, "data", "tiktok_tokens.json")
+        with open(tokens_path, "w", encoding="utf-8") as f:
+            json.dump(tok_data, f, indent=2)
+            
+        return HTMLResponse("""
+            <div style="font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 30px; background: #0c0e12; color: white; border-radius: 16px; border: 1px solid #1e222b; text-align: center;">
+                <h2 style="color: #10b981;">✅ ¡Autorización de TikTok Exitosa!</h2>
+                <p style="color: #94a3b8;">Los tokens de acceso (24h) y de refresco (365 días) han sido guardados correctamente en Nodo Content Hub.</p>
+                <a href="/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: white; color: black; font-weight: bold; border-radius: 8px; text-decoration: none;">Volver al Dashboard</a>
+            </div>
+        """)
+    except Exception as e:
+        return HTMLResponse(f"<h3>Error al intercambiar código de TikTok: {e}</h3>", status_code=500)
+
 routes = [
     Route("/", homepage),
     Route("/api/status", api_status),
@@ -114,6 +231,8 @@ routes = [
     Route("/api/nodo/plan", api_nodo_plan),
     Route("/api/tiktok/matrix", api_tiktok_data),
     Route("/api/tiktok/studio", api_tiktok_studio),
+    Route("/api/tiktok/callback", api_tiktok_callback),
+    Route("/api/meta/extend", api_extend_meta, methods=["POST"]),
 ]
 
 app = Starlette(debug=True, routes=routes)

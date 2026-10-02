@@ -619,36 +619,195 @@
 
     <!-- TAB 4: CONFIGURACIÓN & APIS -->
     <section id="tab-settings" class="space-y-8 hidden">
-      <div class="glass-card rounded-2xl p-6">
-        <h2 class="text-xl font-bold text-white pb-4 border-b border-slate-800 flex items-center gap-2">
-          <i class="fa-solid fa-network-wired text-indigo-400"></i> Estado de Credenciales y APIs
-        </h2>
+      <!-- Status Cards -->
+      <div class="panel rounded-2xl p-6">
+        <div class="flex items-center justify-between pb-4 border-b border-[#1e222b]">
+          <div>
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-network-wired text-slate-300"></i> Estado de Credenciales y Conexiones
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">Monitoreo de tokens de Meta Graph API v21.0 y credenciales OAuth de TikTok</p>
+          </div>
+          <button onclick="checkApiStatus()" class="px-3 py-1.5 rounded-lg bg-[#161922] hover:bg-[#1e2330] text-slate-300 text-xs border border-[#272d3b] flex items-center gap-1.5 transition-all">
+            <i class="fa-solid fa-rotate-right"></i> Verificar Estado
+          </button>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          <div class="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
-            <div class="flex items-center justify-between">
-              <span class="font-bold text-sm text-white">Meta API (@s_thiago7)</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-emerald-500/20 text-emerald-400 font-semibold">ACTIVO</span>
+          <!-- Personal -->
+          <div class="border border-[#1e222b] rounded-xl p-5 bg-[#0c0e12] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-white flex items-center gap-2">
+                  <i class="fa-brands fa-instagram text-slate-400"></i> IG Personal
+                </span>
+                <span id="badge-meta-personal" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">VERIFICANDO...</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-3 font-medium">@s_thiago7</p>
+              <p class="text-[11px] text-slate-400 mt-1">Página: Lab marketing (942687925585308)</p>
+              <p class="text-[11px] text-slate-400">Instagram ID: 17841400923873805</p>
+              <p id="msg-meta-personal" class="text-[11px] text-slate-500 mt-2 font-mono break-all"></p>
             </div>
-            <p class="text-xs text-slate-400 mt-2">Página: Lab marketing (942687925585308)</p>
-            <p class="text-xs text-slate-400">Instagram ID: 17841400923873805</p>
+            <div class="mt-4 pt-3 border-t border-[#1a1d24]">
+              <button onclick="prefillTokenForm('personal')" class="w-full text-xs py-2 bg-[#161922] hover:bg-[#202533] text-slate-200 border border-[#272d3b] rounded-lg transition-all font-medium">
+                Renovar Token Personal
+              </button>
+            </div>
           </div>
 
-          <div class="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
-            <div class="flex items-center justify-between">
-              <span class="font-bold text-sm text-white">Meta API (@nodo_tg)</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-emerald-500/20 text-emerald-400 font-semibold">ACTIVO</span>
+          <!-- Nodo -->
+          <div class="border border-[#1e222b] rounded-xl p-5 bg-[#0c0e12] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-white flex items-center gap-2">
+                  <i class="fa-solid fa-building text-slate-400"></i> IG Nodo B2B
+                </span>
+                <span id="badge-meta-nodo" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">VERIFICANDO...</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-3 font-medium">@nodo_tg</p>
+              <p class="text-[11px] text-slate-400 mt-1">Página: Nodo.IA (823105594229157)</p>
+              <p class="text-[11px] text-slate-400">Instagram ID: 17841479477112981</p>
+              <p id="msg-meta-nodo" class="text-[11px] text-slate-500 mt-2 font-mono break-all"></p>
             </div>
-            <p class="text-xs text-slate-400 mt-2">Página: Nodo.IA (823105594229157)</p>
-            <p class="text-xs text-slate-400">Instagram ID: 17841479477112981</p>
+            <div class="mt-4 pt-3 border-t border-[#1a1d24]">
+              <button onclick="prefillTokenForm('nodo')" class="w-full text-xs py-2 bg-[#161922] hover:bg-[#202533] text-slate-200 border border-[#272d3b] rounded-lg transition-all font-medium">
+                Renovar Token Nodo
+              </button>
+            </div>
           </div>
 
-          <div class="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
-            <div class="flex items-center justify-between">
-              <span class="font-bold text-sm text-white">TikTok Sandbox</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-cyan-500/20 text-cyan-400 font-semibold">CONFIGURADO</span>
+          <!-- TikTok -->
+          <div class="border border-[#1e222b] rounded-xl p-5 bg-[#0c0e12] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-white flex items-center gap-2">
+                  <i class="fa-brands fa-tiktok text-slate-400"></i> TikTok OAuth
+                </span>
+                <span id="badge-tiktok" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">CONFIGURADO</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-3 font-medium">App: Nodoapi</p>
+              <p class="text-[11px] text-slate-400 mt-1">Client Key: sbaw0jnugqan0iem91</p>
+              <p class="text-[11px] text-slate-400">Redirect: https://www.conectanodo.com/</p>
+              <p class="text-[11px] text-slate-500 mt-1">Cuentas: @nodotechgrowth · @santiagoquevedo71</p>
             </div>
-            <p class="text-xs text-slate-400 mt-2">App: Nodoapi (7691306900553877512)</p>
-            <p class="text-xs text-slate-400">Redirect: https://www.conectanodo.com/</p>
+            <div class="mt-4 pt-3 border-t border-[#1a1d24]">
+              <a href="https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw0jnugqan0iem91&scope=user.info.basic,user.info.stats,video.list&response_type=code&redirect_uri=https%3A%2F%2Fwww.conectanodo.com%2F&state=nodo_auth" target="_blank" class="block text-center w-full text-xs py-2 bg-white text-black font-semibold rounded-lg hover:bg-slate-200 transition-all">
+                <i class="fa-solid fa-key"></i> Autorizar TikTok OAuth
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Auto Extender Card -->
+      <div class="panel rounded-2xl p-6">
+        <div class="pb-4 border-b border-[#1e222b]">
+          <span class="text-[10px] font-mono tracking-wider px-2 py-0.5 bg-white/10 text-slate-200 rounded border border-white/15 uppercase">Herramienta 1-Click</span>
+          <h2 class="text-lg font-bold text-white mt-2 flex items-center gap-2">
+            <i class="fa-solid fa-bolt text-slate-300"></i> Extensor Automático de Tokens Meta (60 Días o Permanente)
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Pega tu Short-Lived User Token extraído de Graph API Explorer. La app se encarga de llamar a los endpoints de intercambio de Meta, solicitar el Token de Página Permanente y actualizar tu configuración automáticamente.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Cuenta Objetivo</label>
+              <select id="token-account-select" class="w-full bg-[#0c0e12] border border-[#272d3b] rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-white">
+                <option value="personal">IG Personal (@s_thiago7 - Lab marketing)</option>
+                <option value="nodo">IG Nodo B2B (@nodo_tg - Nodo.IA)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Short-Lived User Token (De Graph API Explorer)</label>
+              <textarea id="token-short-input" rows="3" placeholder="Pega aquí el token temporal que comienza por EAA..." class="w-full bg-[#0c0e12] border border-[#272d3b] rounded-xl p-3 text-xs text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-white"></textarea>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Meta App ID</label>
+                <input id="token-app-id" type="text" placeholder="Ej: 123456789012345" class="w-full bg-[#0c0e12] border border-[#272d3b] rounded-xl px-4 py-2.5 text-xs text-white font-mono focus:outline-none focus:border-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Meta App Secret</label>
+                <input id="token-app-secret" type="password" placeholder="App Secret de Meta" class="w-full bg-[#0c0e12] border border-[#272d3b] rounded-xl px-4 py-2.5 text-xs text-white font-mono focus:outline-none focus:border-white">
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button onclick="extendMetaToken()" class="w-full py-3 bg-white text-black font-bold text-xs rounded-xl hover:bg-slate-200 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-arrows-rotate"></i> Extender y Guardar en Hub (60 Días / Permanente)
+              </button>
+            </div>
+
+            <div id="token-feedback" class="hidden"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guías Paso a Paso -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Guía Meta -->
+        <div class="panel rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-[#1e222b]">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-brands fa-meta text-slate-300"></i> Paso a Paso: Tokens de 60 Días / Permanentes en Meta
+            </h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-slate-300">Oficial Meta</span>
+          </div>
+
+          <div class="space-y-3 text-xs text-slate-300">
+            <div class="p-3.5 rounded-xl bg-[#0c0e12] border border-[#1a1d24]">
+              <p class="font-bold text-white mb-1">Paso 1: Generar Token Temporal</p>
+              <p class="text-slate-400">Entra a <a href="https://developers.facebook.com/tools/explorer/" target="_blank" class="text-white underline font-semibold">Graph API Explorer</a>, selecciona tu App y agrega los permisos: <code class="text-slate-200">instagram_basic, pages_show_list, pages_read_engagement, instagram_manage_insights</code>. Da clic en "Generate Access Token".</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-[#0c0e12] border border-[#1a1d24]">
+              <p class="font-bold text-white mb-1">Paso 2: Extender a 60 Días (En 2 Clics sin programar)</p>
+              <p class="text-slate-400">Abre el <a href="https://developers.facebook.com/tools/debug/accesstoken/" target="_blank" class="text-white underline font-semibold">Access Token Debugger de Meta</a>. Pega el token temporal y pulsa <b>Depurar</b>. Baja hasta el final de la página y pulsa el botón azul <b>"Ampliar token de acceso"</b>. Tendrás un User Token de 60 días listo para usar.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-[#0c0e12] border border-[#1a1d24]">
+              <p class="font-bold text-white mb-1">Paso 3: Obtener Token Permanente (NUNCA EXPIRA)</p>
+              <p class="text-slate-400">Copia ese token de 60 días, vuelve a <a href="https://developers.facebook.com/tools/explorer/" target="_blank" class="text-white underline">Graph Explorer</a>, pégalo en "Access Token" y haz la consulta: <code class="text-slate-200">GET /{page_id}?fields=access_token</code>.<br>
+              • Lab marketing (Personal): <code class="text-slate-200">942687925585308</code><br>
+              • Nodo.IA (B2B): <code class="text-slate-200">823105594229157</code><br>
+              El token devuelto es un <b>Page Access Token Permanente</b> que nunca caduca.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guía TikTok -->
+        <div class="panel rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-[#1e222b]">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-brands fa-tiktok text-slate-300"></i> TikTok Developer: Sandbox Hoy & Producción en 3 Días
+            </h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">OAuth v2</span>
+          </div>
+
+          <div class="space-y-3 text-xs text-slate-300">
+            <div class="p-3.5 rounded-xl bg-[#0c0e12] border border-[#1a1d24]">
+              <p class="font-bold text-white mb-1">Fase 1: Sandbox Inmediato (Funciona HOY)</p>
+              <p class="text-slate-400">1. Entra a <a href="https://developers.tiktok.com/" target="_blank" class="text-white underline font-semibold">TikTok for Developers</a> > Apps > <b>Nodoapi</b>.<br>
+              2. En el menú ve a <b>Sandbox > Test Accounts</b>.<br>
+              3. Agrega <code class="text-slate-200">@nodotechgrowth</code> y <code class="text-slate-200">@santiagoquevedo71</code>.<br>
+              4. En tu celular, abre TikTok > Bandeja de entrada > Mensaje del Sistema > <b>Aceptar invitación de prueba</b>.<br>
+              5. Da clic arriba en <b>"Autorizar TikTok OAuth"</b> para guardar el Refresh Token de 365 días.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-[#0c0e12] border border-[#1a1d24]">
+              <p class="font-bold text-white mb-1">Fase 2: Enviar a Revisión de Producción (2 a 3 Días)</p>
+              <p class="text-slate-400">1. En <b>Nodoapi > Permissions</b>, solicita: <code class="text-slate-200">user.info.basic, user.info.stats, video.list</code>.<br>
+              2. En <b>App Details</b>, sube el logo cuadrado de Nodo y pon <code class="text-slate-200">https://www.conectanodo.com</code> como Privacy Policy y Terms.<br>
+              3. En la descripción de uso pega: <i>"Plataforma interna de analítica y optimización de contenido en video para nuestra agencia Nodo Tech & Growth."</i><br>
+              4. Haz clic en <b>Submit for Review</b>. TikTok aprueba la app en 48 a 72 horas para acceso universal.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1491,9 +1650,136 @@
       });
     }
 
+    function prefillTokenForm(account) {
+      const sel = document.getElementById('token-account-select');
+      if (sel) sel.value = account;
+      const input = document.getElementById('token-short-input');
+      if (input) {
+        input.focus();
+        input.placeholder = `Pega aquí el nuevo User Token generado para ${account === 'personal' ? '@s_thiago7' : '@nodo_tg'}...`;
+      }
+      const el = document.getElementById('token-short-input');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    async function checkApiStatus() {
+      const personalBadge = document.getElementById('badge-meta-personal');
+      const nodoBadge = document.getElementById('badge-meta-nodo');
+      const tiktokBadge = document.getElementById('badge-tiktok');
+      const personalMsg = document.getElementById('msg-meta-personal');
+      const nodoMsg = document.getElementById('msg-meta-nodo');
+
+      if (personalBadge) personalBadge.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> VERIFICANDO...';
+      if (nodoBadge) nodoBadge.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> VERIFICANDO...';
+
+      try {
+        const res = await fetch('/api/status');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.personal) {
+            if (data.personal.valid) {
+              personalBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+              personalBadge.innerText = 'CONECTADO (ACTIVO)';
+              if (personalMsg) personalMsg.innerText = 'Token válido y respondiendo a Graph API.';
+            } else {
+              personalBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20';
+              personalBadge.innerText = 'EXPIRADO (RENOVAR)';
+              if (personalMsg) personalMsg.innerText = data.personal.error || 'Token expirado.';
+            }
+          }
+
+          if (data.nodo) {
+            if (data.nodo.valid) {
+              nodoBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+              nodoBadge.innerText = 'CONECTADO (ACTIVO)';
+              if (nodoMsg) nodoMsg.innerText = 'Token válido y respondiendo a Graph API.';
+            } else {
+              nodoBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20';
+              nodoBadge.innerText = 'EXPIRADO (RENOVAR)';
+              if (nodoMsg) nodoMsg.innerText = data.nodo.error || 'Token expirado.';
+            }
+          }
+
+          if (data.tiktok) {
+            if (data.tiktok.has_tokens) {
+              tiktokBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+              tiktokBadge.innerText = 'TOKENS GUARDADOS';
+            } else {
+              tiktokBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20';
+              tiktokBadge.innerText = 'SANDBOX CONFIGURADO';
+            }
+          }
+        }
+      } catch (e) {
+        if (personalBadge) {
+          personalBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-500/10 text-slate-400 border border-slate-500/20';
+          personalBadge.innerText = 'MODO ESTÁTICO / GH-PAGES';
+        }
+        if (nodoBadge) {
+          nodoBadge.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-500/10 text-slate-400 border border-slate-500/20';
+          nodoBadge.innerText = 'MODO ESTÁTICO / GH-PAGES';
+        }
+      }
+    }
+
+    async function extendMetaToken() {
+      const account = document.getElementById('token-account-select').value;
+      const appId = document.getElementById('token-app-id').value.trim();
+      const appSecret = document.getElementById('token-app-secret').value.trim();
+      const shortToken = document.getElementById('token-short-input').value.trim();
+      const feedbackEl = document.getElementById('token-feedback');
+
+      if (!shortToken || !appId || !appSecret) {
+        feedbackEl.innerHTML = `<div class="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-xs font-medium">
+          <i class="fa-solid fa-circle-exclamation"></i> Por favor ingresa el Short-Lived Token, Meta App ID y Meta App Secret.
+        </div>`;
+        feedbackEl.classList.remove('hidden');
+        return;
+      }
+
+      feedbackEl.innerHTML = `<div class="p-3 bg-white/5 border border-white/10 rounded-xl text-slate-300 text-xs font-medium">
+        <i class="fa-solid fa-spinner fa-spin"></i> Conectando con Meta Graph API v21.0 para extender token...
+      </div>`;
+      feedbackEl.classList.remove('hidden');
+
+      try {
+        const pageId = account === 'personal' ? '942687925585308' : '823105594229157';
+        const res = await fetch('/api/meta/extend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            account: account,
+            app_id: appId,
+            app_secret: appSecret,
+            short_token: shortToken,
+            page_id: pageId
+          })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          feedbackEl.innerHTML = `<div class="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 text-xs font-medium">
+            <i class="fa-solid fa-circle-check font-bold"></i> ¡Token generado y guardado con éxito! Tipo: <b>${data.token_type}</b> para <b>${account === 'personal' ? '@s_thiago7' : '@nodo_tg'}</b>.
+          </div>`;
+          checkApiStatus();
+        } else {
+          feedbackEl.innerHTML = `<div class="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-xs">
+            <i class="fa-solid fa-triangle-exclamation"></i> Error de Meta: ${data.error}
+          </div>`;
+        }
+      } catch (err) {
+        feedbackEl.innerHTML = `<div class="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-xs">
+          <i class="fa-solid fa-triangle-exclamation"></i> Error al conectar con el servidor: ${err.message}. Asegúrate de ejecutar <code>python app.py</code> localmente.
+        </div>`;
+      }
+    }
+
     async function renderAll() {
       const icon = document.getElementById('sync-icon');
       if (icon) icon.classList.add('animate-spin');
+
+      // Check API tokens health
+      checkApiStatus();
 
       // Try local server first if available, otherwise fallback to embedded data seamlessly
       try {
