@@ -122,8 +122,10 @@ async def api_personal_stats(request):
         return JSONResponse({"success": False, "error": str(e)}, status_code=500)
 
 async def api_personal_plan(request):
-    plan = generate_personal_plan()
-    return JSONResponse({"success": True, "plan": plan})
+    data = generate_personal_plan()
+    if isinstance(data, dict):
+        return JSONResponse({"success": True, "diagnostic_24h": data.get("diagnostic_24h"), "plan": data.get("plan", [])})
+    return JSONResponse({"success": True, "plan": data})
 
 async def api_nodo_stats(request):
     config = load_config()
@@ -135,8 +137,10 @@ async def api_nodo_stats(request):
         return JSONResponse({"success": False, "error": str(e)}, status_code=500)
 
 async def api_nodo_plan(request):
-    plan = generate_nodo_plan()
-    return JSONResponse({"success": True, "plan": plan})
+    data = generate_nodo_plan()
+    if isinstance(data, dict):
+        return JSONResponse({"success": True, "diagnostic_24h": data.get("diagnostic_24h"), "plan": data.get("plan", [])})
+    return JSONResponse({"success": True, "plan": data})
 
 async def api_tiktok_data(request):
     config = load_config()

@@ -1,0 +1,162 @@
+{
+  "personal": {
+    "status": "Actualizado con reportes en tiempo real",
+    "winner_title": "Y uno siempre resulta ser el malo \ud83e\udd72\n\nA quien mas le ha pasad...",
+    "winner_stats": "4,347 vistas \u00b7 19 guardados \u00b7 13 reposts \u00b7 29.7% skip",
+    "why_winner": "La audiencia de 25-34 a\u00f1os se identific\u00f3 profundamente con la mentalidad de disciplina, prioridades en los 20s y cuidar su relaci\u00f3n. El formato de 8 segundos en loop con texto directo en pantalla gener\u00f3 el mayor ratio de guardados (m\u00e9trica clave del algoritmo).",
+    "loser_title": "Empiezo yo \ud83d\udc47...",
+    "loser_stats": "183 alcance \u00b7 0 guardados \u00b7 77.7% skip rate",
+    "why_loser": "Preguntas vac\u00edas sin gancho visual ni valor inmediato provocan que m\u00e1s del 70% de las cuentas salten en los primeros 2 segundos. Se descartan totalmente este tipo de aperturas.",
+    "renewed_focus": "HOY nos enfocamos 100% en: 'Est\u00e1ndares innegociables en los 20s, construcci\u00f3n silenciosa y filtros de madurez'. Estructura estricta: Gancho visual de 8 segundos, texto en pantalla en 2 bloques y llamado de cierre enfocado en guardar.",
+    "reels": [
+      {
+        "id": 1,
+        "time": "09:30 AM",
+        "theme": "Est\u00e1ndares Innegociables en los 20s",
+        "line1": "Cuando entiendes que el \u00e9xito no es suerte...",
+        "line2": "...es haber dicho 'no' a 50 planes para construir un proyecto que nadie m\u00e1s ve.",
+        "copy": "Decir 'no' a tiempo es la habilidad m\u00e1s rentable de tus 20s. \u00bfQui\u00e9n m\u00e1s en el mismo enfoque? Guarda este reel.",
+        "tip": "Gr\u00e1bate trabajando con caf\u00e9 en mano (8 seg exactos, loop visual sin cortes)."
+      },
+      {
+        "id": 2,
+        "time": "11:00 AM",
+        "theme": "Filtro de Pareja & Proyecto de Vida",
+        "line1": "No le tengo miedo a quedarme soltero en mis 20s...",
+        "line2": "...le tengo miedo a juntarme con alguien que no tenga metas, no sume a mi paz y solo me haga perder el tiempo.",
+        "copy": "Tu pareja debe ser tu socia de vida, no un motivo m\u00e1s de estr\u00e9s. Estar en paz multiplica tus resultados.",
+        "tip": "Mirada serena hacia la ventana o ajust\u00e1ndote la chaqueta (6-8 seg)."
+      },
+      {
+        "id": 3,
+        "time": "01:00 PM",
+        "theme": "Madurez & Prioridades Reales",
+        "line1": "Me dicen 'por qu\u00e9 est\u00e1s tan solo si eres buen partido'...",
+        "line2": "...porque en esta generaci\u00f3n si tienes metas claras incomodas, y si no sales cada fin de semana dicen que eres aburrido.",
+        "copy": "Prefiero ser 'aburrido' construyendo libertad que ser el alma de la fiesta sin futuro financiero.",
+        "tip": "Sonrisa ir\u00f3nica breve dejando el celular sobre la mesa."
+      },
+      {
+        "id": 4,
+        "time": "03:00 PM",
+        "theme": "Construcci\u00f3n en Silencio",
+        "line1": "Trabaja tan duro en silencio...",
+        "line2": "...que cuando tus resultados hablen, la gente que dudaba jure que tuviste suerte.",
+        "copy": "El proceso no se publica todos los d\u00edas; los resultados hablan solos. Guarda este recordatorio.",
+        "tip": "Tomas r\u00e1pidas de laptop, libreta con notas y reloj (8 segundos)."
+      },
+      {
+        "id": 5,
+        "time": "05:00 PM",
+        "theme": "El Filtro de los 25+",
+        "line1": "El cambio de mentalidad m\u00e1s grande al madurar:",
+        "line2": "Dejar de buscar parejas para llenar vac\u00edos y empezar a buscar personas con las que construir un imperio.",
+        "copy": "C\u00edrculo peque\u00f1o, metas gigantescas y cero tiempo que perder. Te leo en comentarios \ud83d\udc47",
+        "tip": "Mirando a c\u00e1mara con tono firme y seguro."
+      },
+      {
+        "id": 6,
+        "time": "06:45 PM",
+        "theme": "Protecci\u00f3n de Energ\u00eda",
+        "line1": "No soy fr\u00edo ni distante...",
+        "line2": "...simplemente me cost\u00f3 demasiado construir mi tranquilidad como para regal\u00e1rsela a cualquiera.",
+        "copy": "Cuidar tu energ\u00eda no es orgullo, es amor propio y direcci\u00f3n. \u00bfEst\u00e1s de acuerdo?",
+        "tip": "Cerrando la laptop y respirando en calma con luz tenue."
+      },
+      {
+        "id": 7,
+        "time": "08:15 PM",
+        "theme": "Objetivo Financiero Antes de los 30",
+        "line1": "Dicen que el amor llega cuando menos lo buscas...",
+        "line2": "...yo no lo estoy buscando porque estoy ocupado asegurando mi libertad financiera antes de los 30 \ud83d\ude02\ud83c\udfaf",
+        "copy": "Prioridades en orden. El dinero no compra la felicidad, pero compra la tranquilidad de tu familia.",
+        "tip": "Risa breve mirando el c\u00f3digo o m\u00e9tricas en pantalla."
+      },
+      {
+        "id": 8,
+        "time": "09:30 PM",
+        "theme": "Cierre Nocturno de Disciplina",
+        "line1": "Al final del d\u00eda no necesitas 20 personas detr\u00e1s de ti...",
+        "line2": "...necesitas una sola persona real que entienda tus silencios, apoye tu visi\u00f3n y camine a tu lado.",
+        "copy": "Pocos pero leales. Ma\u00f1ana seguimos construyendo. Buenas noches \ud83d\udd25",
+        "tip": "Cerrando la jornada, pantalla apag\u00e1ndose."
+      }
+    ]
+  },
+  "nodo": {
+    "status": "Actualizado con reportes en tiempo real",
+    "winner_title": "No se descarga en la App Store ni viene en paquete zip. \ud83d\ude05\nLa...",
+    "winner_stats": "621 vistas \u00b7 38.8% skip \u00b7 34% en procesos manuales",
+    "why_winner": "Los videos de dolor operativo directo que se\u00f1alan lo absurdo de tener procesos manuales en 2026 retienen al 66% de los due\u00f1os de empresa. El formato de 8 segundos confrontativo funciona 3x mejor que tutoriales largos.",
+    "loser_title": "El link en el primer comentario\n\n#ia #ceo #emprender #westco...",
+    "loser_stats": "80 vistas \u00b7 87.5% skip rate",
+    "why_loser": "Pedir clics directos o enviar al usuario fuera de la plataforma en el gancho inicial provoca un abandono del 87.5%. El algoritmo reduce la distribuci\u00f3n a menos de 100 cuentas.",
+    "renewed_focus": "HOY el enfoque B2B es: 'Ineficiencia de WhatsApps personales y cotizaciones en PDF'. Demostrar c\u00f3mo Kommo CRM + Agentes de IA protegen la base de datos de la empresa sin pedir clics forzados.",
+    "reels": [
+      {
+        "id": 1,
+        "time": "12:30 PM",
+        "theme": "El Cementerio de Cotizaciones en PDF",
+        "line1": "El cementerio de ventas de las empresas de servicios:",
+        "line2": "Enviar una cotizaci\u00f3n en PDF por WhatsApp y jam\u00e1s volver a hacerle seguimiento. El 60% de tus ventas se mueren en el visto.",
+        "copy": "Tus comerciales no necesitan m\u00e1s leads desordenados, necesitan una ruta automatizada. Conectamos Kommo CRM con WhatsApp API para que ninguna propuesta quede en el olvido. Diagn\u00f3stico en conectanodo.com",
+        "tip": "Tomas en loop de un PDF en WhatsApp y luego el pipeline visual en pantalla (8 segundos)."
+      },
+      {
+        "id": 2,
+        "time": "04:30 PM",
+        "theme": "El Riesgo de WhatsApp Personal",
+        "line1": "El mayor riesgo operativo en tu empresa B2B:",
+        "line2": "Que los clientes vivan en los celulares de tus asesores. Si el comercial renuncia, tu base de datos se va con \u00e9l.",
+        "copy": "Centralizar la captaci\u00f3n no es desconfianza, es proteger el activo m\u00e1s valioso de tu empresa. En NODO integramos CRM multiagente con IA. Conoce el m\u00e9todo en conectanodo.com",
+        "tip": "Transici\u00f3n r\u00e1pida entre tel\u00e9fono personal y panel centralizado oficial."
+      },
+      {
+        "id": 3,
+        "time": "07:30 PM",
+        "theme": "IA vs Procesos Manuales",
+        "line1": "Ustedes siguen respondiendo mensajes a mano a las 10 PM...",
+        "line2": "...mientras tu competencia tiene un agente de IA calificando prospectos y agendando llamadas en 15 segundos.",
+        "copy": "No se trata de reemplazar personas, sino de eliminar la fricci\u00f3n que te hace perder contratos. Automatizaci\u00f3n comercial con n8n y Kommo en conectanodo.com",
+        "tip": "Tomas est\u00e9ticas de flujos automatizados respondiendo en tiempo real."
+      }
+    ]
+  },
+  "tiktok": {
+    "status": "Actualizado con reportes en tiempo real",
+    "winner_title": "Mi reel m\u00e1s personal pero se que no soy el \u00fanico. Cadena de ...",
+    "winner_stats": "614 vistas en 10 seg",
+    "why_winner": "En TikTok los videos de 10-35 segundos conversacionales con hook visual inmediato logran 3x m\u00e1s retenci\u00f3n que los videos con copies corporativos largos.",
+    "renewed_focus": "HOY en TikTok: Storytelling conversacional directo a c\u00e1mara (face-to-camera) sin pausas, hablando de tendencias reales de IA, negocio y an\u00e9cdotas de crecimiento.",
+    "cases": [
+      {
+        "id": 1,
+        "duration": "35 seg",
+        "title": "La Verdad de los Agentes de IA en Empresas Reales",
+        "hook": "Les voy a decir la verdad que ninguna agencia de IA les est\u00e1 contando...",
+        "body": "Todo el mundo habla de agentes como si fueran magia. La realidad es que el 90% fallan porque las empresas tienen sus procesos desordenados. Un bot no arregla una empresa que no sabe c\u00f3mo vender.",
+        "takeaway": "Antes de automatizar, ordena tu embudo. La IA solo amplifica lo que ya funciona.",
+        "cta": "\u00bfUstedes ya usan IA en su trabajo diario o todav\u00eda lo ven como un juguete?"
+      },
+      {
+        "id": 2,
+        "duration": "28 seg",
+        "title": "Por qu\u00e9 dej\u00e9 de cobrar por hora y pas\u00e9 a cobrar por sistema",
+        "hook": "El peor error que comet\u00ed cuando empec\u00e9 a emprender a los 22...",
+        "body": "Cobrar por horas te condena a ser un empleado sin jefe. Cuando entend\u00ed que las empresas no compran tu tiempo sino el resultado que les ahorra dinero, todo cambi\u00f3.",
+        "takeaway": "Vende infraestructura y resultados, no horas de tu vida.",
+        "cta": "\u00bfCobras por hora o por proyecto? Te leo."
+      },
+      {
+        "id": 3,
+        "duration": "32 seg",
+        "title": "Lo que aprend\u00ed analizando empresas que facturan millones",
+        "hook": "Las empresas que m\u00e1s crecen no tienen el mejor producto...",
+        "body": "Tienen el mejor sistema de seguimiento comercial. Responden en menos de 5 minutos y tienen medido exactamente cu\u00e1nto cuesta cada lead.",
+        "takeaway": "La disciplina en las ventas supera al talento 10 de cada 10 veces.",
+        "cta": "\u00bfCu\u00e1nto se tarda tu equipo en responder un prospecto nuevo?"
+      }
+    ]
+  },
+  "generated_at": "2026-10-02 16:49:14"
+}

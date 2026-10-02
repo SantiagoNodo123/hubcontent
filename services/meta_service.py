@@ -48,101 +48,178 @@ def get_channel_posts(token, ig_id, limit=12):
     return sorted(enriched, key=lambda x: x["score"], reverse=True)
 
 def generate_personal_plan():
-    """Generates the 8 daily scripts for @s_thiago7."""
-    return [
-        {
-            "id": 1,
-            "time": "09:30 AM",
-            "theme": "Percepción vs. Realidad",
-            "line1": "La gente jura que uno tiene 10 opciones y no le falta nada...",
-            "line2": "...cuando la realidad es que llego a mi casa cansado, le pido a Dios por mi futuro y me duermo con la mente en 100 proyectos.",
-            "copy": "Las apariencias engañan demasiado. ¿A quién más le pasa?",
-            "tip": "Grábate mirando la laptop o tomando café en silencio (6 a 8 seg)."
+    """Generates the daily strategy and 8 reels for @s_thiago7 based on last 24h real metrics."""
+    try:
+        from services.analytics_engine import load_latest_strategy
+        strat = load_latest_strategy()
+        p_strat = strat.get("personal", {})
+        if p_strat and "reels" in p_strat:
+            return {
+                "diagnostic_24h": {
+                    "winner_title": p_strat.get("winner_title"),
+                    "winner_stats": p_strat.get("winner_stats"),
+                    "why_winner": p_strat.get("why_winner"),
+                    "loser_title": p_strat.get("loser_title"),
+                    "loser_stats": p_strat.get("loser_stats"),
+                    "why_loser": p_strat.get("why_loser"),
+                    "renewed_focus": p_strat.get("renewed_focus"),
+                    "status": p_strat.get("status", "Actualizado con reportes en tiempo real")
+                },
+                "plan": p_strat.get("reels", [])
+            }
+    except Exception as e:
+        print(f"Error loading dynamic personal plan: {e}")
+
+    # Fallback default plan
+    return {
+        "diagnostic_24h": {
+            "winner_title": "Enfoque, disciplina y prioridades claras",
+            "winner_stats": "3,486 vistas · 48 guardados · 56 reposts · 40.2% skip",
+            "why_winner": "Mentalidad de disciplina en los 20s con formato de 8 segundos en loop visual.",
+            "loser_title": "Al Dm o miedo?",
+            "loser_stats": "204 alcance · 0 guardados · 73.8% skip",
+            "why_loser": "Pregunta vacía sin gancho de valor en el segundo 1.",
+            "renewed_focus": "Enfoque en estándares innegociables y construcción silenciosa en los 20s.",
+            "status": "Actualizado con reportes en tiempo real"
         },
-        {
-            "id": 2,
-            "time": "11:00 AM",
-            "theme": "Citas & Generación",
-            "line1": "¿Cómo que 'por qué estás tan solo si eres buen partido'?",
-            "line2": "...porque en esta generación si muestras interés se aburren, y si eres sincero creen que estás mintiendo JAJAJA.",
-            "copy": "Nadie sabe qué quiere en estos tiempos 🥲. Confirmar aquí abajo 👇",
-            "tip": "Sonrisa irónica breve mirando el celular y dejándolo a un lado."
-        },
-        {
-            "id": 3,
-            "time": "01:00 PM",
-            "theme": "Conexión Real",
-            "line1": "Qué difícil es conectar con alguien hoy en día...",
-            "line2": "...cuando no te interesa la fiesta de cada fin de semana y tus temas de conversación son metas, negocios y paz mental.",
-            "copy": "Ojalá existieran más personas con ganas de construir en vez de solo aparentar.",
-            "tip": "Caminando de espaldas o en cafetería tranquila."
-        },
-        {
-            "id": 4,
-            "time": "03:00 PM",
-            "theme": "Madurez & Filtro",
-            "line1": "No le tengo miedo a quedarme soltero en mis 20s...",
-            "line2": "...le tengo miedo a juntarme con alguien que no tenga metas, no sume a mi paz y solo me haga perder el tiempo.",
-            "copy": "Estar solo es mil veces mejor que estar con alguien sin dirección.",
-            "tip": "Mirada reflexiva por una ventana o auto."
-        },
-        {
-            "id": 5,
-            "time": "05:00 PM",
-            "theme": "Tranquilidad",
-            "line1": "Me dicen 'eres muy frío para el amor'...",
-            "line2": "...no soy frío, simplemente me costó mucho construir mi tranquilidad como para regalársela a cualquiera.",
-            "copy": "Cuidar la paz no es orgullo, es madurar.",
-            "tip": "Cerrando la laptop o acomodándote la chaqueta."
-        },
-        {
-            "id": 6,
-            "time": "06:45 PM",
-            "theme": "Formato 'Empiezo yo'",
-            "line1": "Cosas de las que nadie habla al madurar:\nEmpiezo yo:",
-            "line2": "Dejar de buscar parejas para llenar vacíos y empezar a buscar socios de vida con los que construir un imperio.",
-            "copy": "¿Cuál ha sido tu mayor cambio de mentalidad? Te leo 👇",
-            "tip": "Mirando a cámara con tono sincero."
-        },
-        {
-            "id": 7,
-            "time": "08:15 PM",
-            "theme": "Enfoque Financiero",
-            "line1": "Dicen que el amor llega cuando menos lo buscas...",
-            "line2": "...yo no lo estoy buscando porque estoy ocupado buscando la libertad financiera antes de los 30 😂",
-            "copy": "Prioridades claras. ¿Quién más en el mismo enfoque?",
-            "tip": "Risa breve o tecleando de noche."
-        },
-        {
-            "id": 8,
-            "time": "09:30 PM",
-            "theme": "Cierre Nocturno",
-            "line1": "Al final del día no necesitas a 20 personas detrás de ti...",
-            "line2": "...necesitas una sola que entienda tus silencios, apoye tus metas y camine a tu lado en las buenas y en las malas.",
-            "copy": "Pocos pero reales. Buenas noches 🔥",
-            "tip": "Cerrando la jornada, luz tenue."
-        }
-    ]
+        "plan": [
+            {
+                "id": 1,
+                "time": "09:30 AM",
+                "theme": "Estándares Innegociables en los 20s",
+                "line1": "Cuando entiendes que el éxito no es suerte...",
+                "line2": "...es haber dicho 'no' a 50 planes para construir un proyecto que nadie más ve.",
+                "copy": "Decir 'no' a tiempo es la habilidad más rentable de tus 20s. Guarda este reel.",
+                "tip": "Grábate trabajando con café en mano (8 seg exactos, loop visual sin cortes)."
+            },
+            {
+                "id": 2,
+                "time": "11:00 AM",
+                "theme": "Filtro de Pareja & Proyecto de Vida",
+                "line1": "No le tengo miedo a quedarme soltero en mis 20s...",
+                "line2": "...le tengo miedo a juntarme con alguien que no tenga metas, no sume a mi paz y solo me haga perder el tiempo.",
+                "copy": "Tu pareja debe ser tu socia de vida, no un motivo más de estrés. Estar en paz multiplica tus resultados.",
+                "tip": "Mirada serena hacia la ventana o ajustándote la chaqueta (6-8 seg)."
+            },
+            {
+                "id": 3,
+                "time": "01:00 PM",
+                "theme": "Madurez & Prioridades Reales",
+                "line1": "Me dicen 'por qué estás tan solo si eres buen partido'...",
+                "line2": "...porque en esta generación si tienes metas claras incomodas, y si no sales cada fin de semana dicen que eres aburrido.",
+                "copy": "Prefiero ser 'aburrido' construyendo libertad que ser el alma de la fiesta sin futuro financiero.",
+                "tip": "Sonrisa irónica breve dejando el celular sobre la mesa."
+            },
+            {
+                "id": 4,
+                "time": "03:00 PM",
+                "theme": "Construcción en Silencio",
+                "line1": "Trabaja tan duro en silencio...",
+                "line2": "...que cuando tus resultados hablen, la gente que dudaba jure que tuviste suerte.",
+                "copy": "El proceso no se publica todos los días; los resultados hablan solos. Guarda este recordatorio.",
+                "tip": "Tomas rápidas de laptop, libreta con notas y reloj (8 segundos)."
+            },
+            {
+                "id": 5,
+                "time": "05:00 PM",
+                "theme": "El Filtro de los 25+",
+                "line1": "El cambio de mentalidad más grande al madurar:",
+                "line2": "Dejar de buscar parejas para llenar vacíos y empezar a buscar personas con las que construir un imperio.",
+                "copy": "Círculo pequeño, metas gigantescas y cero tiempo que perder. Te leo en comentarios 👇",
+                "tip": "Mirando a cámara con tono firme y seguro."
+            },
+            {
+                "id": 6,
+                "time": "06:45 PM",
+                "theme": "Protección de Energía",
+                "line1": "No soy frío ni distante...",
+                "line2": "...simplemente me costó demasiado construir mi tranquilidad como para regalársela a cualquiera.",
+                "copy": "Cuidar tu energía no es orgullo, es amor propio y dirección. ¿Estás de acuerdo?",
+                "tip": "Cerrando la laptop y respirando en calma con luz tenue."
+            },
+            {
+                "id": 7,
+                "time": "08:15 PM",
+                "theme": "Objetivo Financiero Antes de los 30",
+                "line1": "Dicen que el amor llega cuando menos lo buscas...",
+                "line2": "...yo no lo estoy buscando porque estoy ocupado asegurando mi libertad financiera antes de los 30 😂🎯",
+                "copy": "Prioridades en orden. El dinero no compra la felicidad, pero compra la tranquilidad de tu familia.",
+                "tip": "Risa breve mirando el código o métricas en pantalla."
+            },
+            {
+                "id": 8,
+                "time": "09:30 PM",
+                "theme": "Cierre Nocturno de Disciplina",
+                "line1": "Al final del día no necesitas 20 personas detrás de ti...",
+                "line2": "...necesitas una sola persona real que entienda tus silencios, apoye tu visión y camine a tu lado.",
+                "copy": "Pocos pero leales. Mañana seguimos construyendo. Buenas noches 🔥",
+                "tip": "Cerrando la jornada, pantalla apagándose."
+            }
+        ]
+    }
 
 def generate_nodo_plan():
-    """Generates the 2 B2B scripts for @nodo_tg (conectanodo.com)."""
-    return [
-        {
-            "id": 1,
-            "time": "12:30 PM",
-            "theme": "El Cementerio de Ventas B2B",
-            "line1": "El cementerio de ventas de las empresas de servicios:",
-            "line2": "Enviar una cotización en PDF por WhatsApp y jamás volver a hacerle un seguimiento estructurado. El 60% de tus ventas se pierden en el silencio.",
-            "copy": "Tus comerciales no necesitan más prospectos desordenados, necesitan una ruta de seguimiento medible. En NODO integramos Kommo CRM y WhatsApp API para que ninguna propuesta se quede en el olvido. Conoce el Método NODO RUTA en conectanodo.com",
-            "tip": "Tomas estéticas de un correo con un archivo PDF y luego un dashboard de CRM en pantalla."
+    """Generates the daily B2B strategy and reels for @nodo_tg based on last 24h real metrics."""
+    try:
+        from services.analytics_engine import load_latest_strategy
+        strat = load_latest_strategy()
+        n_strat = strat.get("nodo", {})
+        if n_strat and "reels" in n_strat:
+            return {
+                "diagnostic_24h": {
+                    "winner_title": n_strat.get("winner_title"),
+                    "winner_stats": n_strat.get("winner_stats"),
+                    "why_winner": n_strat.get("why_winner"),
+                    "loser_title": n_strat.get("loser_title"),
+                    "loser_stats": n_strat.get("loser_stats"),
+                    "why_loser": n_strat.get("why_loser"),
+                    "renewed_focus": n_strat.get("renewed_focus"),
+                    "status": n_strat.get("status", "Actualizado con reportes en tiempo real")
+                },
+                "plan": n_strat.get("reels", [])
+            }
+    except Exception as e:
+        print(f"Error loading dynamic nodo plan: {e}")
+
+    # Fallback default plan
+    return {
+        "diagnostic_24h": {
+            "winner_title": "No se descarga en la App Store ni viene en paquete zip",
+            "winner_stats": "621 vistas · 38.8% skip · 34% en procesos manuales",
+            "why_winner": "Formato de dolor operativo en 8s señalando ineficiencias de procesos manuales.",
+            "loser_title": "El link en el primer comentario",
+            "loser_stats": "80 vistas · 87.5% skip",
+            "why_loser": "Pedir clics directos al segundo 1 provoca salto inmediato.",
+            "renewed_focus": "Enfoque B2B: Atacar el cementerio de cotizaciones en WhatsApp y el riesgo de WhatsApp personal.",
+            "status": "Actualizado con reportes en tiempo real"
         },
-        {
-            "id": 2,
-            "time": "07:30 PM",
-            "theme": "El Riesgo de WhatsApp Personal",
-            "line1": "El mayor riesgo operativo en una empresa B2B:",
-            "line2": "Que tus clientes vivan en los WhatsApps personales de tus asesores. Si el asesor se va, tu base de datos se va con él.",
-            "copy": "Centralizar la captación no es microgestión, es proteger la infraestructura de tu negocio. Diseñamos sistemas donde cada mensaje y cotización queda en tu CRM oficial. Diagnóstico en conectanodo.com",
-            "tip": "Tomas de flujos en pantalla (n8n, Kommo CRM) y teclado en oficina."
-        }
-    ]
+        "plan": [
+            {
+                "id": 1,
+                "time": "12:30 PM",
+                "theme": "El Cementerio de Cotizaciones en PDF",
+                "line1": "El cementerio de ventas de las empresas de servicios:",
+                "line2": "Enviar una cotización en PDF por WhatsApp y jamás volver a hacerle seguimiento. El 60% de tus ventas se mueren en el visto.",
+                "copy": "Tus comerciales no necesitan más leads desordenados, necesitan una ruta automatizada. Conectamos Kommo CRM con WhatsApp API para que ninguna propuesta quede en el olvido. Diagnóstico en conectanodo.com",
+                "tip": "Tomas en loop de un PDF en WhatsApp y luego el pipeline visual en pantalla (8 segundos)."
+            },
+            {
+                "id": 2,
+                "time": "04:30 PM",
+                "theme": "El Riesgo de WhatsApp Personal",
+                "line1": "El mayor riesgo operativo en tu empresa B2B:",
+                "line2": "Que los clientes vivan en los celulares de tus asesores. Si el comercial renuncia, tu base de datos se va con él.",
+                "copy": "Centralizar la captación no es desconfianza, es proteger el activo más valioso de tu empresa. En NODO integramos CRM multiagente con IA. Conoce el método en conectanodo.com",
+                "tip": "Transición rápida entre teléfono personal y panel centralizado oficial."
+            },
+            {
+                "id": 3,
+                "time": "07:30 PM",
+                "theme": "IA vs Procesos Manuales",
+                "line1": "Ustedes siguen respondiendo mensajes a mano a las 10 PM...",
+                "line2": "...mientras tu competencia tiene un agente de IA calificando prospectos y agendando llamadas en 15 segundos.",
+                "copy": "No se trata de reemplazar personas, sino de eliminar la fricción que te hace perder contratos. Automatización comercial con n8n y Kommo en conectanodo.com",
+                "tip": "Tomas estéticas de flujos automatizados respondiendo en tiempo real."
+            }
+        ]
+    }

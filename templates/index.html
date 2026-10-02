@@ -347,6 +347,57 @@
         </div>
       </div>
 
+      <!-- REPORTE 24H & ENFOQUE RENOVADO DE HOY (DINÁMICO) -->
+      <div id="personal-24h-banner" class="panel rounded-2xl p-6 border-l-4 border-l-violet-500 shadow-lg space-y-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-white/10 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+            <h2 class="text-base font-bold text-white uppercase tracking-wider font-mono">
+              ⚡ Diagnóstico 24h & Enfoque Renovado de Hoy
+            </h2>
+          </div>
+          <span id="p-diag-status" class="text-xs px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-300 font-mono border border-violet-500/30">
+            Sincronizado con Meta Graph API
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Ganador 24h -->
+          <div class="bg-black/30 rounded-xl p-4 border border-emerald-500/30 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-emerald-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-trophy"></i> CONTENIDO GANADOR (ÚLTIMAS 24-48H)</span>
+              <span id="p-diag-win-stats" class="text-slate-300">3,486 views · 48 guardados</span>
+            </div>
+            <p id="p-diag-win-title" class="text-sm font-semibold text-white">"Enfoque, disciplina y prioridades claras..."</p>
+            <p id="p-diag-win-why" class="text-xs text-slate-300 leading-relaxed">
+              La audiencia de 25-34 años se identificó profundamente con la mentalidad de disciplina y construcción en sus 20s. El formato de 8s generó 48 guardados y 56 reposts con solo 40% de skip.
+            </p>
+          </div>
+
+          <!-- Perdedor 24h -->
+          <div class="bg-black/30 rounded-xl p-4 border border-rose-500/30 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-rose-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> CONTENIDO DESCARTADO / A CORREGIR</span>
+              <span id="p-diag-lose-stats" class="text-slate-300">183 alcance · 77.7% skip</span>
+            </div>
+            <p id="p-diag-lose-title" class="text-sm font-semibold text-white">"Empiezo yo 👇"</p>
+            <p id="p-diag-lose-why" class="text-xs text-slate-300 leading-relaxed">
+              Preguntas sin gancho de valor inmediato provocan más del 75% de abandono antes del segundo 2. Se descarta este formato.
+            </p>
+          </div>
+        </div>
+
+        <!-- Enfoque de Hoy -->
+        <div class="bg-gradient-to-r from-violet-950/40 to-blue-950/40 p-4 rounded-xl border border-violet-500/30">
+          <p class="text-xs font-mono uppercase tracking-wider text-violet-300 font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-bullseye"></i> Estrategia Renovada para los 8 Reels de Hoy:
+          </p>
+          <p id="p-diag-focus" class="text-sm text-slate-100 font-medium mt-1 leading-relaxed">
+            HOY nos enfocamos 100% en: 'Estándares innegociables en los 20s, construcción silenciosa y filtros de madurez'. Estructura estricta: Gancho visual de 8 segundos, texto en pantalla en 2 bloques y llamado de cierre enfocado en guardar.
+          </p>
+        </div>
+      </div>
+
       <!-- Plan Diario de Guiones -->
       <div class="panel rounded-2xl p-7 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#1f242e] gap-4">
@@ -413,6 +464,57 @@
             <span class="text-3xl font-bold text-white font-mono">2 / Día</span>
           </div>
           <p class="text-xs text-slate-400 mt-2">Espaciado mínimo de 5 horas</p>
+        </div>
+      </div>
+
+      <!-- REPORTE 24H & ENFOQUE B2B RENOVADO (DINÁMICO) -->
+      <div id="nodo-24h-banner" class="panel rounded-2xl p-6 border-l-4 border-l-blue-500 shadow-lg space-y-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-white/10 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-blue-400 animate-ping"></span>
+            <h2 class="text-base font-bold text-white uppercase tracking-wider font-mono">
+              ⚡ Diagnóstico 24h & Enfoque B2B Renovado de Hoy
+            </h2>
+          </div>
+          <span id="n-diag-status" class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-mono border border-blue-500/30">
+            Sincronizado con Meta Graph API
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Ganador 24h Nodo -->
+          <div class="bg-black/30 rounded-xl p-4 border border-emerald-500/30 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-emerald-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-trophy"></i> GANADOR B2B (ÚLTIMAS 24-48H)</span>
+              <span id="n-diag-win-stats" class="text-slate-300">621 views · 38.8% skip</span>
+            </div>
+            <p id="n-diag-win-title" class="text-sm font-semibold text-white">"No se descarga en la App Store ni viene en paquete zip"</p>
+            <p id="n-diag-win-why" class="text-xs text-slate-300 leading-relaxed">
+              Los videos que atacan el dolor de procesos manuales y sistemas comerciales a la medida tienen un skip de solo 34-38%. Funcionan 3x mejor que tutoriales largos.
+            </p>
+          </div>
+
+          <!-- Perdedor 24h Nodo -->
+          <div class="bg-black/30 rounded-xl p-4 border border-rose-500/30 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-rose-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> FORMATO DESCARTADO B2B</span>
+              <span id="n-diag-lose-stats" class="text-slate-300">80 views · 87.5% skip</span>
+            </div>
+            <p id="n-diag-lose-title" class="text-sm font-semibold text-white">"El link en el primer comentario"</p>
+            <p id="n-diag-lose-why" class="text-xs text-slate-300 leading-relaxed">
+              Pedir clics directos al segundo 1 provoca que el 87.5% de los empresarios salten el video. Se descarta cualquier llamado directo que saque al usuario de la plataforma.
+            </p>
+          </div>
+        </div>
+
+        <!-- Enfoque de Hoy Nodo -->
+        <div class="bg-gradient-to-r from-blue-950/40 to-indigo-950/40 p-4 rounded-xl border border-blue-500/30">
+          <p class="text-xs font-mono uppercase tracking-wider text-blue-300 font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-bullseye"></i> Estrategia B2B Renovada para Hoy:
+          </p>
+          <p id="n-diag-focus" class="text-sm text-slate-100 font-medium mt-1 leading-relaxed">
+            HOY el enfoque B2B es: 'Ineficiencia de WhatsApps personales y cotizaciones en PDF'. Demostrar cómo Kommo CRM + Agentes de IA protegen la base de datos de la empresa sin pedir clics forzados.
+          </p>
         </div>
       </div>
 
@@ -1029,78 +1131,98 @@
   <script>
     // Embedded Data for 100% Standalone Web Execution (Works on GitHub Pages & Local file://)
     const EMBEDDED_DATA = {
+      personal_diagnostic: {
+        winner_title: "Enfoque, disciplina y prioridades claras...",
+        winner_stats: "3,486 vistas · 2,521 alcance · 48 guardados · 56 reposts · 40.2% skip",
+        why_winner: "La audiencia de 25-34 años se identificó profundamente con la mentalidad de disciplina y construcción en sus 20s. El formato de 8s generó 48 guardados y 56 reposts con solo 40% de skip.",
+        loser_title: "Empiezo yo 👇",
+        loser_stats: "183 alcance · 0 guardados · 77.7% skip",
+        why_loser: "Preguntas sin gancho de valor inmediato provocan más del 75% de abandono antes del segundo 2. Se descarta este formato.",
+        renewed_focus: "HOY nos enfocamos 100% en: 'Estándares innegociables en los 20s, construcción silenciosa y filtros de madurez'. Estructura estricta: Gancho visual de 8 segundos, texto en pantalla en 2 bloques y llamado de cierre enfocado en guardar.",
+        status: "Actualizado con reportes en tiempo real"
+      },
+      nodo_diagnostic: {
+        winner_title: "No se descarga en la App Store ni viene en paquete zip",
+        winner_stats: "621 views · 38.8% skip · 34% en procesos manuales",
+        why_winner: "Los videos que atacan el dolor de procesos manuales y sistemas comerciales a la medida tienen un skip de solo 34-38%. Funcionan 3x mejor que tutoriales largos.",
+        loser_title: "El link en el primer comentario",
+        loser_stats: "80 views · 87.5% skip",
+        why_loser: "Pedir clics directos al segundo 1 provoca que el 87.5% de los empresarios salten el video. Se descarta cualquier llamado directo que saque al usuario de la plataforma.",
+        renewed_focus: "HOY el enfoque B2B es: 'Ineficiencia de WhatsApps personales y cotizaciones en PDF'. Demostrar cómo Kommo CRM + Agentes de IA protegen la base de datos de la empresa sin pedir clics forzados.",
+        status: "Actualizado con reportes en tiempo real"
+      },
       personal_plan: [
         {
           id: 1,
           time: "09:30 AM",
-          theme: "Percepción vs. Realidad",
-          line1: "La gente jura que uno tiene 10 opciones y no le falta nada...",
-          line2: "...cuando la realidad es que llego a mi casa cansado, le pido a Dios por mi futuro y me duermo con la mente en 100 proyectos.",
-          copy: "Las apariencias engañan demasiado. ¿A quién más le pasa?",
-          tip: "Grábate mirando la laptop o tomando café en silencio (6 a 8 seg)."
+          theme: "Estándares Innegociables en los 20s",
+          line1: "Cuando entiendes que el éxito no es suerte...",
+          line2: "...es haber dicho 'no' a 50 planes para construir un proyecto que nadie más ve.",
+          copy: "Decir 'no' a tiempo es la habilidad más rentable de tus 20s. ¿Quién más en el mismo enfoque? Guarda este reel.",
+          tip: "Grábate trabajando con café en mano (8 seg exactos, loop visual sin cortes)."
         },
         {
           id: 2,
           time: "11:00 AM",
-          theme: "Citas & Generación",
-          line1: "¿Cómo que 'por qué estás tan solo si eres buen partido'?",
-          line2: "...porque en esta generación si muestras interés se aburren, y si eres sincero creen que estás mintiendo JAJAJA.",
-          copy: "Nadie sabe qué quiere en estos tiempos 🥲. Confirmar aquí abajo 👇",
-          tip: "Sonrisa irónica breve mirando el celular y dejándolo a un lado."
+          theme: "Filtro de Pareja & Proyecto de Vida",
+          line1: "No le tengo miedo a quedarme soltero en mis 20s...",
+          line2: "...le tengo miedo a juntarme con alguien que no tenga metas, no sume a mi paz y solo me haga perder el tiempo.",
+          copy: "Tu pareja debe ser tu socia de vida, no un motivo más de estrés. Estar en paz multiplica tus resultados.",
+          tip: "Mirada serena hacia la ventana o ajustándote la chaqueta (6-8 seg)."
         },
         {
           id: 3,
           time: "01:00 PM",
-          theme: "Conexión Real",
-          line1: "Qué difícil es conectar con alguien hoy en día...",
-          line2: "...cuando no te interesa la fiesta de cada fin de semana y tus temas de conversación son metas, negocios y paz mental.",
-          copy: "Ojalá existieran más personas con ganas de construir en vez de solo aparentar.",
-          tip: "Caminando de espaldas o en cafetería tranquila."
+          theme: "Madurez & Prioridades Reales",
+          line1: "Me dicen 'por qué estás tan solo si eres buen partido'...",
+          line2: "...porque en esta generación si tienes metas claras incomodas, y si no sales cada fin de semana dicen que eres aburrido.",
+          copy: "Prefiero ser 'aburrido' construyendo libertad que ser el alma de la fiesta sin futuro financiero.",
+          tip: "Sonrisa irónica breve dejando el celular sobre la mesa."
         },
         {
           id: 4,
           time: "03:00 PM",
-          theme: "Madurez & Filtro",
-          line1: "No le tengo miedo a quedarme soltero en mis 20s...",
-          line2: "...le tengo miedo a juntarme con alguien que no tenga metas, no sume a mi paz y solo me haga perder el tiempo.",
-          copy: "Estar solo es mil veces mejor que estar con alguien sin dirección.",
-          tip: "Mirada reflexiva por una ventana o auto."
+          theme: "Construcción en Silencio",
+          line1: "Trabaja tan duro en silencio...",
+          line2: "...que cuando tus resultados hablen, la gente que dudaba jure que tuviste suerte.",
+          copy: "El proceso no se publica todos los días; los resultados hablan solos. Guarda este recordatorio.",
+          tip: "Tomas rápidas de laptop, libreta con notas y reloj (8 segundos)."
         },
         {
           id: 5,
           time: "05:00 PM",
-          theme: "Tranquilidad",
-          line1: "Me dicen 'eres muy frío para el amor'...",
-          line2: "...no soy frío, simplemente me costó mucho construir mi tranquilidad como para regalársela a cualquiera.",
-          copy: "Cuidar la paz no es orgullo, es madurar.",
-          tip: "Cerrando la laptop o acomodándote la chaqueta."
+          theme: "El Filtro de los 25+",
+          line1: "El cambio de mentalidad más grande al madurar:",
+          line2: "Dejar de buscar parejas para llenar vacíos y empezar a buscar personas con las que construir un imperio.",
+          copy: "Círculo pequeño, metas gigantescas y cero tiempo que perder. Te leo en comentarios 👇",
+          tip: "Mirando a cámara con tono firme y seguro."
         },
         {
           id: 6,
           time: "06:45 PM",
-          theme: "Formato 'Empiezo yo'",
-          line1: "Cosas de las que nadie habla al madurar:\nEmpiezo yo:",
-          line2: "Dejar de buscar parejas para llenar vacíos y empezar a buscar socios de vida con los que construir un imperio.",
-          copy: "¿Cuál ha sido tu mayor cambio de mentalidad? Te leo 👇",
-          tip: "Mirando a cámara con tono sincero."
+          theme: "Protección de Energía",
+          line1: "No soy frío ni distante...",
+          line2: "...simplemente me costó demasiado construir mi tranquilidad como para regalársela a cualquiera.",
+          copy: "Cuidar tu energía no es orgullo, es amor propio y dirección. ¿Estás de acuerdo?",
+          tip: "Cerrando la laptop y respirando en calma con luz tenue."
         },
         {
           id: 7,
           time: "08:15 PM",
-          theme: "Enfoque Financiero",
+          theme: "Objetivo Financiero Antes de los 30",
           line1: "Dicen que el amor llega cuando menos lo buscas...",
-          line2: "...yo no lo estoy buscando porque estoy ocupado buscando la libertad financiera antes de los 30 😂",
-          copy: "Prioridades claras. ¿Quién más en el mismo enfoque?",
-          tip: "Risa breve o tecleando de noche."
+          line2: "...yo no lo estoy buscando porque estoy ocupado asegurando mi libertad financiera antes de los 30 😂🎯",
+          copy: "Prioridades en orden. El dinero no compra la felicidad, pero compra la tranquilidad de tu familia.",
+          tip: "Risa breve mirando el código o métricas en pantalla."
         },
         {
           id: 8,
           time: "09:30 PM",
-          theme: "Cierre Nocturno",
-          line1: "Al final del día no necesitas a 20 personas detrás de ti...",
-          line2: "...necesitas una sola que entienda tus silencios, apoye tus metas y camine a tu lado en las buenas y en las malas.",
-          copy: "Pocos pero reales. Buenas noches 🔥",
-          tip: "Cerrando la jornada, luz tenue."
+          theme: "Cierre Nocturno de Disciplina",
+          line1: "Al final del día no necesitas 20 personas detrás de ti...",
+          line2: "...necesitas una sola persona real que entienda tus silencios, apoye tu visión y camine a tu lado.",
+          copy: "Pocos pero leales. Mañana seguimos construyendo. Buenas noches 🔥",
+          tip: "Cerrando la jornada, pantalla apagándose."
         }
       ],
       nodo_plan: [
@@ -1578,7 +1700,10 @@
         const data = await res.json();
         if (data.success) {
           document.getElementById('last-sync-time').innerText = data.summary.last_sync || new Date().toLocaleString();
-          loadIntelligenceTab(); // reload data
+          await Promise.all([
+            loadIntelligenceTab(),
+            renderAll()
+          ]);
         }
       } catch (e) {
         console.error('Error syncing:', e);
@@ -1869,11 +1994,25 @@
       });
     }
 
-    function renderPersonalPlan(plan) {
+    function renderPersonalPlan(plan, diagnostic) {
+      if (diagnostic) {
+        const setTxt = (id, txt) => {
+          const el = document.getElementById(id);
+          if (el && txt) el.innerText = txt;
+        };
+        if (diagnostic.winner_title) setTxt('p-diag-win-title', `"${diagnostic.winner_title}"`);
+        if (diagnostic.winner_stats) setTxt('p-diag-win-stats', diagnostic.winner_stats);
+        if (diagnostic.why_winner) setTxt('p-diag-win-why', diagnostic.why_winner);
+        if (diagnostic.loser_title) setTxt('p-diag-lose-title', `"${diagnostic.loser_title}"`);
+        if (diagnostic.loser_stats) setTxt('p-diag-lose-stats', diagnostic.loser_stats);
+        if (diagnostic.why_loser) setTxt('p-diag-lose-why', diagnostic.why_loser);
+        if (diagnostic.renewed_focus) setTxt('p-diag-focus', diagnostic.renewed_focus);
+        if (diagnostic.status) setTxt('p-diag-status', diagnostic.status);
+      }
       const container = document.getElementById('personal-reels-container');
       if (!container) return;
       container.innerHTML = '';
-      plan.forEach(r => {
+      (plan || []).forEach(r => {
         const card = document.createElement('div');
         card.className = 'p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm';
         card.innerHTML = `
@@ -1884,12 +2023,12 @@
             </div>
             <h3 class="text-base font-bold text-white mt-3">${r.theme}</h3>
             <div class="mt-3 p-4 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1.5">
-              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Texto Pantalla (Gancho):</p>
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Texto Pantalla (Gancho 8s):</p>
               <p class="text-sm text-slate-200 leading-snug">"${r.line1}"</p>
               <p class="text-sm text-white font-semibold leading-snug">"${r.line2}"</p>
             </div>
             <div class="mt-3 p-3.5 bg-[#111318] rounded-xl border border-[#1f242e] space-y-1">
-              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Copy / Descripción:</p>
+              <p class="text-xs font-mono uppercase text-slate-400 font-semibold">Copy / Descripción con CTA:</p>
               <p class="text-xs text-slate-300 leading-relaxed italic">"${r.copy}"</p>
             </div>
             <p class="text-xs text-slate-400 mt-3 flex items-center gap-1.5"><i class="fa-solid fa-video text-slate-500"></i> ${r.tip}</p>
@@ -1907,11 +2046,25 @@
       });
     }
 
-    function renderNodoPlan(plan) {
+    function renderNodoPlan(plan, diagnostic) {
+      if (diagnostic) {
+        const setTxt = (id, txt) => {
+          const el = document.getElementById(id);
+          if (el && txt) el.innerText = txt;
+        };
+        if (diagnostic.winner_title) setTxt('n-diag-win-title', `"${diagnostic.winner_title}"`);
+        if (diagnostic.winner_stats) setTxt('n-diag-win-stats', diagnostic.winner_stats);
+        if (diagnostic.why_winner) setTxt('n-diag-win-why', diagnostic.why_winner);
+        if (diagnostic.loser_title) setTxt('n-diag-lose-title', `"${diagnostic.loser_title}"`);
+        if (diagnostic.loser_stats) setTxt('n-diag-lose-stats', diagnostic.loser_stats);
+        if (diagnostic.why_loser) setTxt('n-diag-lose-why', diagnostic.why_loser);
+        if (diagnostic.renewed_focus) setTxt('n-diag-focus', diagnostic.renewed_focus);
+        if (diagnostic.status) setTxt('n-diag-status', diagnostic.status);
+      }
       const container = document.getElementById('nodo-reels-container');
       if (!container) return;
       container.innerHTML = '';
-      plan.forEach(r => {
+      (plan || []).forEach(r => {
         const card = document.createElement('div');
         card.className = 'p-6 rounded-xl bg-[#0c0e12] border border-[#1a1d24] flex flex-col justify-between space-y-4 shadow-sm';
         card.innerHTML = `
@@ -2374,24 +2527,24 @@
         const res = await fetch('/api/personal/plan');
         if (res.ok) {
           const data = await res.json();
-          renderPersonalPlan(data.plan);
+          renderPersonalPlan(data.plan, data.diagnostic_24h);
         } else {
-          renderPersonalPlan(EMBEDDED_DATA.personal_plan);
+          renderPersonalPlan(EMBEDDED_DATA.personal_plan, EMBEDDED_DATA.personal_diagnostic);
         }
       } catch(e) {
-        renderPersonalPlan(EMBEDDED_DATA.personal_plan);
+        renderPersonalPlan(EMBEDDED_DATA.personal_plan, EMBEDDED_DATA.personal_diagnostic);
       }
 
       try {
         const res = await fetch('/api/nodo/plan');
         if (res.ok) {
           const data = await res.json();
-          renderNodoPlan(data.plan);
+          renderNodoPlan(data.plan, data.diagnostic_24h);
         } else {
-          renderNodoPlan(EMBEDDED_DATA.nodo_plan);
+          renderNodoPlan(EMBEDDED_DATA.nodo_plan, EMBEDDED_DATA.nodo_diagnostic);
         }
       } catch(e) {
-        renderNodoPlan(EMBEDDED_DATA.nodo_plan);
+        renderNodoPlan(EMBEDDED_DATA.nodo_plan, EMBEDDED_DATA.nodo_diagnostic);
       }
 
       // TikTok live official API or fallback
