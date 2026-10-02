@@ -2,6 +2,43 @@ import urllib.parse
 import requests
 import json
 import re
+import os
+
+TIKTOK_TOKENS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'tiktok_tokens.json')
+
+def get_valid_tiktok_token():
+    if not os.path.exists(TIKTOK_TOKENS_PATH):
+        return None
+    with open(TIKTOK_TOKENS_PATH, 'r', encoding='utf-8') as f:
+        tok_data = json.load(f)
+    return tok_data.get('access_token')
+
+def get_tiktok_api_user(access_token):
+    url = "https://open.tiktokapis.com/v2/user/info/"
+    headers = {"Authorization": f"Bearer {access_token}"}
+    params = {"fields": "open_id,avatar_url,display_name,follower_count,following_count,likes_count,video_count"}
+    try:
+        res = requests.get(url, headers=headers, params=params, timeout=10).json()
+        if res.get("error", {}).get("code") == "ok":
+            return res.get("data", {}).get("user")
+    except Exception as e:
+        print(f"Error fetching TikTok user info: {e}")
+    return None
+
+def get_tiktok_api_videos(access_token, max_count=10):
+    url = "https://open.tiktokapis.com/v2/video/list/?fields=id,title,video_description,duration,create_time,share_url,view_count,like_count,comment_count,share_count"
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json"
+    }
+    data = {"max_count": max_count}
+    try:
+        res = requests.post(url, headers=headers, json=data, timeout=10).json()
+        if res.get("error", {}).get("code") == "ok":
+            return res.get("data", {}).get("videos", [])
+    except Exception as e:
+        print(f"Error fetching TikTok videos: {e}")
+    return []
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",

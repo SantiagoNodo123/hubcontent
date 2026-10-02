@@ -19,7 +19,10 @@ from services.meta_service import (
 from services.tiktok_service import (
     get_tiktok_auth_url,
     get_female_audience_matrix,
-    get_tiktok_live_profile
+    get_tiktok_live_profile,
+    get_tiktok_api_user,
+    get_tiktok_api_videos,
+    get_valid_tiktok_token
 )
 
 from services.token_manager import (
@@ -222,6 +225,18 @@ async def api_tiktok_callback(request):
     except Exception as e:
         return HTMLResponse(f"<h3>Error al intercambiar código de TikTok: {e}</h3>", status_code=500)
 
+async def api_tiktok_live(request):
+    token = get_valid_tiktok_token()
+    if not token:
+        return JSONResponse({"success": False, "error": "No TikTok token available"}, status_code=404)
+    user_info = get_tiktok_api_user(token)
+    videos = get_tiktok_api_videos(token, max_count=10)
+    return JSONResponse({
+        "success": True,
+        "user": user_info,
+        "videos": videos
+    })
+
 routes = [
     Route("/", homepage),
     Route("/api/status", api_status),
@@ -231,6 +246,7 @@ routes = [
     Route("/api/nodo/plan", api_nodo_plan),
     Route("/api/tiktok/matrix", api_tiktok_data),
     Route("/api/tiktok/studio", api_tiktok_studio),
+    Route("/api/tiktok/live", api_tiktok_live),
     Route("/api/tiktok/callback", api_tiktok_callback),
     Route("/api/meta/extend", api_extend_meta, methods=["POST"]),
 ]
