@@ -266,6 +266,43 @@ async def api_tiktok_live(request):
         "videos": primary.get("videos", [])
     })
 
+from services.analytics_engine import run_full_sync, load_latest_dashboard, load_latest_demographics, load_latest_insights, load_history
+
+async def api_analytics_sync(request):
+    try:
+        summary = run_full_sync()
+        return JSONResponse({"success": True, "summary": summary})
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
+async def api_analytics_dashboard(request):
+    try:
+        data = load_latest_dashboard()
+        return JSONResponse({"success": True, **data})
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
+async def api_analytics_demographics(request):
+    try:
+        data = load_latest_demographics()
+        return JSONResponse({"success": True, "personal": data.get("personal", {}), "nodo": data.get("nodo", {})})
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
+async def api_analytics_insights(request):
+    try:
+        data = load_latest_insights()
+        return JSONResponse({"success": True, **data})
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
+async def api_analytics_history(request):
+    try:
+        data = load_history()
+        return JSONResponse({"success": True, "history": data})
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
 routes = [
     Route("/", homepage),
     Route("/api/status", api_status),
@@ -278,7 +315,13 @@ routes = [
     Route("/api/tiktok/live", api_tiktok_live),
     Route("/api/tiktok/callback", api_tiktok_callback),
     Route("/api/meta/extend", api_extend_meta, methods=["POST"]),
+    Route("/api/analytics/sync", api_analytics_sync, methods=["POST"]),
+    Route("/api/analytics/dashboard", api_analytics_dashboard),
+    Route("/api/analytics/demographics", api_analytics_demographics),
+    Route("/api/analytics/insights", api_analytics_insights),
+    Route("/api/analytics/history", api_analytics_history),
 ]
+
 
 app = Starlette(debug=True, routes=routes)
 

@@ -1,0 +1,152 @@
+{
+  "patterns": [
+    {
+      "icon": "clock",
+      "text": "Los videos de 0-10s tienen el mejor score viral promedio (11.2)",
+      "data": {
+        "0-10s": 11.2,
+        "10-30s": 3.0,
+        "30-60s": 2.9,
+        "60s+": 2.6
+      },
+      "type": "duration"
+    },
+    {
+      "icon": "chart",
+      "text": "Instagram tiene mejor rendimiento promedio (score 16.3) vs tiktok: 3.3",
+      "data": {
+        "instagram": 16.3,
+        "tiktok": 3.3
+      },
+      "type": "platform"
+    },
+    {
+      "icon": "user",
+      "text": "La cuenta 'nodo' tiene el mejor rendimiento viral promedio (27.5)",
+      "data": {
+        "personal": 5.0,
+        "nodo": 27.5,
+        "santiagoquevedo71": 3.8,
+        "nodotechgrowth": 2.8
+      },
+      "type": "account"
+    },
+    {
+      "icon": "target",
+      "text": "Palabras clave en top performers: colombia, marketingdigital, antes, solidaridad, tienes",
+      "data": [
+        {
+          "word": "colombia",
+          "count": 7
+        },
+        {
+          "word": "marketingdigital",
+          "count": 4
+        },
+        {
+          "word": "antes",
+          "count": 4
+        },
+        {
+          "word": "solidaridad",
+          "count": 4
+        },
+        {
+          "word": "tienes",
+          "count": 3
+        },
+        {
+          "word": "terremoto",
+          "count": 3
+        },
+        {
+          "word": "terremotocolombia",
+          "count": 3
+        },
+        {
+          "word": "negocio",
+          "count": 2
+        }
+      ],
+      "type": "keywords"
+    },
+    {
+      "icon": "eye",
+      "text": "Skip rate promedio: 59.9%. Reels con bajo skip tienen score 5.9 vs 2.0",
+      "data": {
+        "avg_skip_rate": 59.9,
+        "low_skip_score": 5.9,
+        "high_skip_score": 2.0
+      },
+      "type": "retention"
+    }
+  ],
+  "seo_descriptions": [
+    {
+      "title": "Estilo Top Performer",
+      "description_template": "Basado en tu contenido con score 300.0: usa un tono narrativo con desarrollo. Usa afirmaciones contundentes.\n\nEstructura sugerida:\n- Hook directo (primera linea)\n- Narrativa fluida\n- CTA claro al final",
+      "hashtags": "#Colombia #Marketingdigital #Antes #Solidaridad",
+      "tip": "Longitud optima detectada: 194 caracteres basado en tus top performers."
+    },
+    {
+      "title": "Optimizado para Instagram Reels",
+      "description_template": "[Hook emocional o de curiosidad en 1 linea]\n\n[Desarrollo del valor en 2-3 lineas cortas]\n\nGuarda este reel si te identificas.\n\n#Colombia #Marketingdigital #Antes #Solidaridad #Tienes",
+      "hashtags": "#Colombia #Marketingdigital #Antes #Solidaridad #Tienes #Reels #Instagram",
+      "tip": "Agrega una pregunta al final para generar comentarios. Incluye CTA de guardado - tus saves son tu metrica mas valiosa."
+    },
+    {
+      "title": "Optimizado para TikTok",
+      "description_template": "[Frase corta y directa que genere curiosidad]\n\n[1-2 hashtags relevantes del nicho]\n\nFormato: texto minimo, que el video hable por si solo.",
+      "hashtags": "#Colombia #Marketingdigital #Antes #TikTok #FYP",
+      "tip": "En TikTok los captions largos no funcionan. Maximo 100 caracteres. El hook es el primer segundo del video, no el texto."
+    },
+    {
+      "title": "B2B / Nodo - Educativo",
+      "description_template": "[Problema que resuelve tu servicio en 1 linea]\n\n3 formas de solucionarlo:\n1. [Solucion rapida]\n2. [Solucion intermedia]\n3. [Tu servicio como solucion premium]\n\nAgenda tu demo gratuita. Link en bio.",
+      "hashtags": "#MarketingDigital #B2B #Automatizacion #IA #CRM",
+      "tip": "Posiciona el servicio como la solucion #3, la premium. Los primeros puntos educan y generan confianza."
+    }
+  ],
+  "content_suggestions": [
+    {
+      "format": "Video 0-10s",
+      "duration": "0-10s",
+      "hook_style": "Frase directa que identifique a la audiencia",
+      "angle": "Contenido de valor condensado",
+      "reason": "Los videos de 0-10s tienen el mejor score viral en tu contenido. Tu audiencia principal es 45-54 anios",
+      "example_caption": "Esto es lo que nadie te dice sobre colombiamarketingdigital..."
+    },
+    {
+      "format": "Reel con texto en pantalla",
+      "duration": "8-10s",
+      "hook_style": "Frase de identificacion + musica trending",
+      "angle": "Frase corta que genere guardados",
+      "reason": "Instagram premia los guardados. Tus reels cortos con frases directas tienen el mejor ratio guardados/likes.",
+      "example_caption": "Cuando entiendes que el exito no es suerte, es disciplina."
+    },
+    {
+      "format": "Reel educativo B2B",
+      "duration": "8s",
+      "hook_style": "Problema comun del empresario + solucion en 1 frase",
+      "angle": "Uno de: SEO, Meta Ads, CRM, Automatizacion IA, desarrollo web",
+      "reason": "El contenido B2B de 8 segundos con mensaje directo genera el mejor engagement en la cuenta Nodo.",
+      "example_caption": "Tu negocio pierde clientes porque no tiene CRM. Punto."
+    },
+    {
+      "format": "Video de opinion sobre tendencia",
+      "duration": "20-40s",
+      "hook_style": "Reaccionar a noticia o tendencia del momento",
+      "angle": "Tema relacionado con: colombia, marketingdigital, antes",
+      "reason": "Tu contenido sobre temas trending (noticias, tendencias) tiene mayor alcance organico que el contenido evergreen.",
+      "example_caption": "Todos hablan de colombia pero nadie menciona esto..."
+    },
+    {
+      "format": "Cross-post adaptado",
+      "duration": "Varia por plataforma",
+      "hook_style": "Mismo mensaje, diferente formato por plataforma",
+      "angle": "Publica el mismo mensaje en IG (8s visual) y TikTok (30s conversacional)",
+      "reason": "Cada plataforma tiene su formato ganador. Adapta el mismo mensaje al formato que funciona en cada una.",
+      "example_caption": "IG: Frase + musica + 8s | TikTok: Historia + cara + 30s"
+    }
+  ]
+}

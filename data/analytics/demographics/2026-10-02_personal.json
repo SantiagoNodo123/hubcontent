@@ -1,0 +1,86 @@
+{
+  "gender": {
+    "labels": [
+      "Mujeres",
+      "Hombres",
+      "No especificado"
+    ],
+    "values": [
+      257,
+      205,
+      930
+    ]
+  },
+  "age": {
+    "labels": [
+      "13-17",
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55-64",
+      "65+"
+    ],
+    "values": [
+      6,
+      96,
+      327,
+      328,
+      485,
+      146,
+      4
+    ]
+  },
+  "country": {
+    "labels": [
+      "US",
+      "CO",
+      "IN",
+      "ID",
+      "BR",
+      "MX",
+      "ES",
+      "PH",
+      "AR",
+      "VE"
+    ],
+    "values": [
+      372,
+      354,
+      307,
+      122,
+      50,
+      46,
+      26,
+      24,
+      12,
+      9
+    ]
+  },
+  "city": {
+    "labels": [
+      "Funza, Cundinamarca",
+      "Bogot\u00e1, Distrito Especial",
+      "Mosquera, Cundinamarca",
+      "Delhi, Delhi",
+      "Mumbai, Maharashtra",
+      "New York, New York",
+      "Jakarta, Jakarta",
+      "Madrid, Cundinamarca",
+      "Facatativ\u00e1, Cundinamarca",
+      "S\u00e3o Paulo, S\u00e3o Paulo (state)"
+    ],
+    "values": [
+      125,
+      97,
+      42,
+      36,
+      24,
+      18,
+      16,
+      11,
+      11,
+      10
+    ]
+  }
+}
