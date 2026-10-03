@@ -805,6 +805,67 @@
         </div>
       </div>
 
+      <!-- AI SCRIPT GENERATOR (GEMINI 3.8 FLASH) -->
+      <div class="panel rounded-2xl p-6 bg-gradient-to-br from-purple-950/40 via-slate-900/90 to-indigo-950/40 border border-purple-500/30 shadow-xl space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-violet-600 flex items-center justify-center text-white text-lg shadow-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-extrabold text-white">Generador de Guiones con IA Personalizada</h3>
+                <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold">
+                  Gemini 3.8 Flash
+                </span>
+              </div>
+              <p class="text-xs text-slate-300">Entrenado con tus mejores ángulos de viralidad (48K views, menor skip rate) y formato de 8 segundos en bucle</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="gemini-status-badge-p" class="text-xs font-mono px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Gemini 3.8 Flash Activo
+            </span>
+          </div>
+        </div>
+
+        <!-- Controls Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-xs font-mono font-semibold text-slate-300 mb-1.5 uppercase">Ángulo de Retención:</label>
+            <select id="ai-angle-select-p" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400 cursor-pointer">
+              <option value="record">🔥 Viralidad Récord (48K - Disciplina & Enfoque)</option>
+              <option value="piso_cero">💎 Valor Piso Cero (4K - Carácter vs Saldo)</option>
+              <option value="compromiso">💍 Compromiso Real (36% skip - Cerrar puertas)</option>
+              <option value="mixer">⚡ Angle Mixer (Negocios x Pareja Alto Valor)</option>
+              <option value="silencio">🤫 Ejecución Silenciosa (Trabajar 14h callado)</option>
+              <option value="custom">✍️ Ángulo / Tema Personalizado</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-semibold text-slate-300 mb-1.5 uppercase">Tono de Voz:</label>
+            <select id="ai-tone-select-p" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400 cursor-pointer">
+              <option value="santiago">Santiago Quevedo (Maduro, sobrio, sin humo)</option>
+              <option value="debate">Controversial / Debate polarizante</option>
+              <option value="educativo">Estratégico / Mentalidad & Principios</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-semibold text-slate-300 mb-1.5 uppercase">Instrucción Extra (Opcional):</label>
+            <input id="ai-custom-prompt-p" type="text" placeholder="Ej: enfatizar la soledad del emprendedor..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+          </div>
+
+          <div class="flex items-end">
+            <button id="btn-generate-ai-p" onclick="generateAiReels('personal')" class="w-full py-2 px-4 rounded-xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:opacity-90 text-white font-bold text-xs shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-95">
+              <i id="ai-gen-icon-p" class="fa-solid fa-wand-magic-sparkles"></i>
+              <span id="ai-gen-text-p">Generar 8 Guiones con Gemini</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Plan Diario de Guiones -->
       <div class="panel rounded-2xl p-7 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#1f242e] gap-4">
@@ -922,6 +983,66 @@
           <p id="n-diag-focus" class="text-sm text-slate-100 font-medium mt-1 leading-relaxed">
             HOY el enfoque B2B es: 'Ineficiencia de WhatsApps personales y cotizaciones en PDF'. Demostrar cómo Kommo CRM + Agentes de IA protegen la base de datos de la empresa sin pedir clics forzados.
           </p>
+        </div>
+      </div>
+
+      <!-- AI SCRIPT GENERATOR NODO B2B (GEMINI 3.8 FLASH) -->
+      <div class="panel rounded-2xl p-6 bg-gradient-to-br from-emerald-950/40 via-slate-900/90 to-blue-950/40 border border-emerald-500/30 shadow-xl space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-white text-lg shadow-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-extrabold text-white">Generador B2B con IA Personalizada</h3>
+                <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
+                  Gemini 3.8 Flash
+                </span>
+              </div>
+              <p class="text-xs text-slate-300">Entrenado en dolores operativos, automatización de ventas WhatsApp y Kommo CRM (menor skip rate 34%)</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="gemini-status-badge-n" class="text-xs font-mono px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Gemini 3.8 Flash Activo
+            </span>
+          </div>
+        </div>
+
+        <!-- Controls Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-xs font-mono font-semibold text-slate-300 mb-1.5 uppercase">Ángulo B2B:</label>
+            <select id="ai-angle-select-n" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer">
+              <option value="record">⚡ Dolor Operativo (WhatsApp Personal vs CRM)</option>
+              <option value="piso_cero">📄 Cementerio de Cotizaciones en PDF</option>
+              <option value="compromiso">🤖 IA Calificadora vs Respuestas Manuales</option>
+              <option value="mixer">📊 Cuellos de Botella y Fuga de Leads</option>
+              <option value="custom">✍️ Ángulo / Dolor B2B Personalizado</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-semibold text-slate-300 mb-1.5 uppercase">Tono de Voz:</label>
+            <select id="ai-tone-select-n" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400 cursor-pointer">
+              <option value="educativo">Consultor Estratégico B2B (Directo, profesional)</option>
+              <option value="debate">Controversial / Romper Mitos de Ventas</option>
+              <option value="santiago">Caso Real / Implementación Práctica</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-semibold text-slate-300 mb-1.5 uppercase">Instrucción Extra (Opcional):</label>
+            <input id="ai-custom-prompt-n" type="text" placeholder="Ej: hablar de empresas con 5 asesores..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400">
+          </div>
+
+          <div class="flex items-end">
+            <button id="btn-generate-ai-n" onclick="generateAiReels('nodo')" class="w-full py-2 px-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 hover:opacity-90 text-white font-bold text-xs shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-95">
+              <i id="ai-gen-icon-n" class="fa-solid fa-wand-magic-sparkles"></i>
+              <span id="ai-gen-text-n">Generar Guiones B2B con Gemini</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -1559,6 +1680,72 @@
               2. En <b>App Details</b>, sube el logo cuadrado de Nodo y pon <code class="text-slate-200">https://www.conectanodo.com</code> como Privacy Policy y Terms.<br>
               3. En la descripción de uso pega: <i>"Plataforma interna de analítica y optimización de contenido en video para nuestra agencia Nodo Tech & Growth."</i><br>
               4. Haz clic en <b>Submit for Review</b>. TikTok aprueba la app en 48 a 72 horas para acceso universal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOOGLE AI STUDIO (GEMINI 3.8 FLASH) SETTINGS CARD -->
+      <div class="panel rounded-2xl p-6 bg-gradient-to-br from-indigo-950/40 via-slate-900/90 to-purple-950/40 border border-indigo-500/30 shadow-xl space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-400 via-indigo-500 to-purple-600 flex items-center justify-center text-white text-xl shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-lg font-bold text-white">Google AI Studio · Agente Gemini 3.8 Flash</h2>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold border border-cyan-500/30">
+                  gemini-3.8-flash
+                </span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">Motor de inteligencia artificial para redactar guiones virales a demanda y optimizar ganchos</p>
+            </div>
+          </div>
+          <div id="gemini-key-badge-container">
+            <span id="gemini-settings-status" class="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-2">
+              <i class="fa-solid fa-circle-question"></i> Verificando Key...
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-4">
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold mb-1.5">
+                API Key de Google AI Studio (Gemini):
+              </label>
+              <div class="flex gap-2">
+                <input id="gemini-api-key-input" type="password" placeholder="Pega aquí tu API Key (ej: AIzaSy...)" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-cyan-400 transition-all">
+                <button onclick="toggleKeyVisibility()" class="px-3 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded-xl text-xs transition-all cursor-pointer" title="Ver / Ocultar">
+                  <i id="key-vis-icon" class="fa-regular fa-eye"></i>
+                </button>
+                <button onclick="saveGeminiKeyAction()" class="px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-cyan-500 hover:opacity-90 text-white font-bold text-xs rounded-xl shadow-md flex items-center gap-2 transition-all cursor-pointer">
+                  <i class="fa-solid fa-floppy-disk"></i> Guardar
+                </button>
+              </div>
+              <p id="gemini-key-feedback" class="text-[11px] text-slate-400 mt-2 font-mono"></p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button onclick="testGeminiConnection()" class="px-4 py-2 bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/40 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer">
+                <i class="fa-solid fa-bolt"></i> Probar Conexión con Gemini 3.8 Flash
+              </button>
+              <a href="https://aistudio.google.com/app/apikey" target="_blank" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded-xl text-xs font-medium flex items-center gap-1.5 transition-all">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Obtener API Key en Google Studio
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-black/30 p-4 rounded-xl border border-white/10 space-y-2 text-xs text-slate-300">
+            <p class="font-bold text-white flex items-center gap-1.5 text-xs font-mono uppercase text-cyan-300">
+              <i class="fa-solid fa-shield-halved"></i> Seguridad y Persistencia
+            </p>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              La API key se almacena localmente en <code class="text-indigo-300 font-mono">data/config.json</code>. No se comparte externamente y solo se utiliza para llamar directamente al endpoint oficial de Google Gemini (<code class="text-slate-300 font-mono">generativelanguage.googleapis.com</code>).
+            </p>
+            <div class="pt-2 border-t border-white/10 text-[11px] text-slate-400">
+              <span class="text-slate-300 font-semibold">Modelo Seleccionado:</span> <span class="font-mono text-cyan-400 font-bold">gemini-3.8-flash</span>
             </div>
           </div>
         </div>
@@ -2679,7 +2866,11 @@
       });
     }
 
+    window.CURRENT_PERSONAL_PLAN = [];
+    window.CURRENT_NODO_PLAN = [];
+
     function renderPersonalPlan(plan, diagnostic) {
+      window.CURRENT_PERSONAL_PLAN = plan || [];
       if (diagnostic) {
         const setTxt = (id, txt) => {
           const el = document.getElementById(id);
@@ -2699,6 +2890,7 @@
       container.innerHTML = '';
       (plan || []).forEach(r => {
         const card = document.createElement('div');
+        card.id = `reel-card-personal-${r.id}`;
         card.className = 'p-6 sm:p-7 rounded-2xl bg-slate-900/90 border border-slate-700/60 flex flex-col justify-between space-y-5 shadow-lg hover:border-pink-500/40 transition-all';
         card.innerHTML = `
           <div>
@@ -2708,23 +2900,33 @@
             </div>
             <h3 class="text-lg font-extrabold text-white mt-3">${r.theme}</h3>
             <div class="mt-4 p-4 bg-slate-800/80 rounded-xl border border-slate-700/60 space-y-2">
-              <p class="text-xs font-mono uppercase text-pink-300 font-bold tracking-wider">Texto Pantalla (Gancho 8s):</p>
-              <p class="text-base text-slate-200 leading-snug font-medium">"${r.line1}"</p>
-              <p class="text-base text-white font-extrabold leading-snug">"${r.line2}"</p>
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-mono uppercase text-pink-300 font-bold tracking-wider">Texto Pantalla (Gancho 8s):</p>
+                <span class="text-[10px] font-mono text-slate-400">0 - 8 Segundos</span>
+              </div>
+              <p id="reel-line1-personal-${r.id}" class="text-base text-slate-200 leading-snug font-medium">"${r.line1}"</p>
+              <p id="reel-line2-personal-${r.id}" class="text-base text-white font-extrabold leading-snug">"${r.line2}"</p>
             </div>
             <div class="mt-3 p-4 bg-slate-800/80 rounded-xl border border-slate-700/60 space-y-1.5">
               <p class="text-xs font-mono uppercase text-slate-400 font-bold tracking-wider">Copy / Descripción con CTA:</p>
-              <p class="text-sm text-slate-200 leading-relaxed italic">"${r.copy}"</p>
+              <p id="reel-copy-personal-${r.id}" class="text-sm text-slate-200 leading-relaxed italic">"${r.copy}"</p>
             </div>
             <p class="text-xs text-slate-300 font-medium mt-3 flex items-center gap-2"><i class="fa-solid fa-video text-pink-400"></i> ${r.tip}</p>
           </div>
-          <div class="pt-4 border-t border-slate-800 flex items-center gap-2.5">
-            <button onclick="copyToClipboard('${r.line1} ${r.line2}', this)" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <i class="fa-regular fa-copy"></i> Texto Pantalla
-            </button>
-            <button onclick="copyToClipboard('${r.copy}', this)" class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer">
-              <i class="fa-regular fa-paste"></i> Copiar Copy
-            </button>
+
+          <div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-2">
+              <button onclick="copyToClipboard(document.getElementById('reel-line1-personal-${r.id}').innerText + ' ' + document.getElementById('reel-line2-personal-${r.id}').innerText, this)" class="flex-1 min-w-[110px] py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <i class="fa-regular fa-copy"></i> Pantalla
+              </button>
+              <button onclick="copyToClipboard(document.getElementById('reel-copy-personal-${r.id}').innerText, this)" class="flex-1 min-w-[110px] py-2 px-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md transition-all cursor-pointer">
+                <i class="fa-regular fa-paste"></i> Copy
+              </button>
+              <button onclick="mutateHookAction(${r.id}, 'personal', this)" class="py-2 px-3 rounded-xl bg-violet-600/20 hover:bg-violet-600/40 text-violet-300 border border-violet-500/40 text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer" title="Probar 3 ganchos alternativos A/B con Gemini 3.8 Flash">
+                <i class="fa-solid fa-code-compare"></i> 3 Ganchos A/B
+              </button>
+            </div>
+            <div id="hook-mutator-container-personal-${r.id}" class="hidden mt-3 p-3.5 bg-slate-950/90 rounded-xl border border-violet-500/30 space-y-2 text-xs"></div>
           </div>
         `;
         container.appendChild(card);
@@ -2732,6 +2934,7 @@
     }
 
     function renderNodoPlan(plan, diagnostic) {
+      window.CURRENT_NODO_PLAN = plan || [];
       if (diagnostic) {
         const setTxt = (id, txt) => {
           const el = document.getElementById(id);
@@ -2751,6 +2954,7 @@
       container.innerHTML = '';
       (plan || []).forEach(r => {
         const card = document.createElement('div');
+        card.id = `reel-card-nodo-${r.id}`;
         card.className = 'p-6 sm:p-7 rounded-2xl bg-slate-900/90 border border-slate-700/60 flex flex-col justify-between space-y-5 shadow-lg hover:border-emerald-500/40 transition-all';
         card.innerHTML = `
           <div>
@@ -2760,23 +2964,33 @@
             </div>
             <h3 class="text-lg font-extrabold text-white mt-3">${r.theme}</h3>
             <div class="mt-4 p-4 bg-slate-800/80 rounded-xl border border-slate-700/60 space-y-2">
-              <p class="text-xs font-mono uppercase text-emerald-300 font-bold tracking-wider">Frase Gancho (Loop 8s):</p>
-              <p class="text-base text-slate-200 leading-snug font-medium">"${r.line1}"</p>
-              <p class="text-base text-white font-extrabold leading-snug">"${r.line2}"</p>
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-mono uppercase text-emerald-300 font-bold tracking-wider">Frase Gancho (Loop 8s):</p>
+                <span class="text-[10px] font-mono text-slate-400">B2B Retention</span>
+              </div>
+              <p id="reel-line1-nodo-${r.id}" class="text-base text-slate-200 leading-snug font-medium">"${r.line1}"</p>
+              <p id="reel-line2-nodo-${r.id}" class="text-base text-white font-extrabold leading-snug">"${r.line2}"</p>
             </div>
             <div class="mt-3 p-4 bg-slate-800/80 rounded-xl border border-slate-700/60 space-y-1.5">
               <p class="text-xs font-mono uppercase text-slate-400 font-bold tracking-wider">Copy B2B de Conversión:</p>
-              <p class="text-sm text-slate-200 leading-relaxed italic">"${r.copy}"</p>
+              <p id="reel-copy-nodo-${r.id}" class="text-sm text-slate-200 leading-relaxed italic">"${r.copy}"</p>
             </div>
             <p class="text-xs text-slate-300 font-medium mt-3 flex items-center gap-2"><i class="fa-solid fa-video text-emerald-400"></i> ${r.tip}</p>
           </div>
-          <div class="pt-4 border-t border-slate-800 flex items-center gap-2.5">
-            <button onclick="copyToClipboard('${r.line1} ${r.line2}', this)" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <i class="fa-regular fa-copy"></i> Texto Pantalla
-            </button>
-            <button onclick="copyToClipboard('${r.copy}', this)" class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer">
-              <i class="fa-regular fa-paste"></i> Copiar Copy
-            </button>
+
+          <div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-2">
+              <button onclick="copyToClipboard(document.getElementById('reel-line1-nodo-${r.id}').innerText + ' ' + document.getElementById('reel-line2-nodo-${r.id}').innerText, this)" class="flex-1 min-w-[110px] py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <i class="fa-regular fa-copy"></i> Pantalla
+              </button>
+              <button onclick="copyToClipboard(document.getElementById('reel-copy-nodo-${r.id}').innerText, this)" class="flex-1 min-w-[110px] py-2 px-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md transition-all cursor-pointer">
+                <i class="fa-regular fa-paste"></i> Copy
+              </button>
+              <button onclick="mutateHookAction(${r.id}, 'nodo', this)" class="py-2 px-3 rounded-xl bg-teal-600/20 hover:bg-teal-600/40 text-teal-300 border border-teal-500/40 text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer" title="Probar 3 ganchos alternativos A/B con Gemini 3.8 Flash">
+                <i class="fa-solid fa-code-compare"></i> 3 Ganchos A/B
+              </button>
+            </div>
+            <div id="hook-mutator-container-nodo-${r.id}" class="hidden mt-3 p-3.5 bg-slate-950/90 rounded-xl border border-teal-500/30 space-y-2 text-xs"></div>
           </div>
         `;
         container.appendChild(card);
@@ -3371,13 +3585,302 @@
       renderTikTokNodoStorytelling(EMBEDDED_DATA.tiktok_nodo_storytelling);
       renderRotationLab(EMBEDDED_DATA.rotation_lab);
 
-      if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 400);
+    // ==========================================
+    // GEMINI 3.8 FLASH AI AGENT INTEGRATION
+    // ==========================================
+
+    async function loadGeminiConfig() {
+      try {
+        const res = await fetch(`${API_BASE}/api/config/gemini-key`);
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        const settingsStatus = document.getElementById('gemini-settings-status');
+        const badgeP = document.getElementById('gemini-status-badge-p');
+        const badgeN = document.getElementById('gemini-status-badge-n');
+        const inputKey = document.getElementById('gemini-api-key-input');
+        
+        if (data.has_key) {
+          if (settingsStatus) {
+            settingsStatus.className = 'px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-2';
+            settingsStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Activa: ${data.key_preview || 'Configurada'}`;
+          }
+          if (badgeP) {
+            badgeP.className = 'text-xs font-mono px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5';
+            badgeP.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Gemini 3.8 Flash Activo';
+          }
+          if (badgeN) {
+            badgeN.className = 'text-xs font-mono px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5';
+            badgeN.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Gemini 3.8 Flash Activo';
+          }
+          if (inputKey && !inputKey.value) {
+            inputKey.placeholder = `Key guardada (${data.key_preview || '••••••••'}). Ingresa una nueva para cambiarla.`;
+          }
+        } else {
+          if (settingsStatus) {
+            settingsStatus.className = 'px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-2';
+            settingsStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Sin API Key (Motor Algorítmico)';
+          }
+          if (badgeP) {
+            badgeP.className = 'text-xs font-mono px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1.5';
+            badgeP.innerHTML = '⚡ Motor Algorítmico (Opcional: Conecta Key)';
+          }
+          if (badgeN) {
+            badgeN.className = 'text-xs font-mono px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1.5';
+            badgeN.innerHTML = '⚡ Motor Algorítmico (Opcional: Conecta Key)';
+          }
+        }
+      } catch (e) {
+        console.warn('Error loading Gemini config:', e);
+      }
+    }
+
+    async function saveGeminiKeyAction() {
+      const input = document.getElementById('gemini-api-key-input');
+      const feedback = document.getElementById('gemini-key-feedback');
+      if (!input || !input.value.trim()) {
+        if (feedback) {
+          feedback.className = 'text-[11px] text-rose-400 mt-2 font-mono';
+          feedback.innerText = 'Por favor ingresa tu API Key de Google Studio.';
+        }
+        return;
+      }
+      
+      const key = input.value.trim();
+      try {
+        if (feedback) {
+          feedback.className = 'text-[11px] text-cyan-400 mt-2 font-mono';
+          feedback.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Guardando y verificando...';
+        }
+        
+        const res = await fetch(`${API_BASE}/api/config/gemini-key`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ api_key: key })
+        });
+        const data = await res.json();
+        
+        if (res.ok && data.success) {
+          if (feedback) {
+            feedback.className = 'text-[11px] text-emerald-400 mt-2 font-mono font-semibold';
+            feedback.innerText = '¡API Key guardada exitosamente! Modelo activado: gemini-3.8-flash';
+          }
+          input.value = '';
+          showToast('Google Studio Conectado', 'API Key de Gemini 3.8 Flash guardada y lista.', 'success');
+          loadGeminiConfig();
+        } else {
+          throw new Error(data.error || 'Error al guardar key');
+        }
+      } catch (err) {
+        if (feedback) {
+          feedback.className = 'text-[11px] text-rose-400 mt-2 font-mono';
+          feedback.innerText = `Error: ${err.message}`;
+        }
+      }
+    }
+
+    function toggleKeyVisibility() {
+      const input = document.getElementById('gemini-api-key-input');
+      const icon = document.getElementById('key-vis-icon');
+      if (!input) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) icon.className = 'fa-regular fa-eye-slash';
+      } else {
+        input.type = 'password';
+        if (icon) icon.className = 'fa-regular fa-eye';
+      }
+    }
+
+    async function testGeminiConnection() {
+      showToast('Probando Gemini 3.8 Flash', 'Enviando petición a Google AI Studio...', 'info');
+      try {
+        const res = await fetch(`${API_BASE}/api/ai/mutate-hook`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            hook: 'A los 20s no pierdes amigos por madurar...',
+            theme: 'Disciplina en los 20s',
+            tone: 'santiago',
+            model: 'gemini-3.8-flash'
+          })
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('Conexión Exitosa', `Gemini respondió correctamente con 3 variantes usando ${data.model}.`, 'success');
+        } else {
+          showToast('Aviso Gemini', data.error || 'Respuesta alternativa devuelta.', 'warning');
+        }
+      } catch (e) {
+        showToast('Error de Conexión', e.message, 'error');
+      }
+    }
+
+    async function generateAiReels(account) {
+      const isPersonal = account === 'personal';
+      const angleEl = document.getElementById(isPersonal ? 'ai-angle-select-p' : 'ai-angle-select-n');
+      const toneEl = document.getElementById(isPersonal ? 'ai-tone-select-p' : 'ai-tone-select-n');
+      const promptEl = document.getElementById(isPersonal ? 'ai-custom-prompt-p' : 'ai-custom-prompt-n');
+      const btn = document.getElementById(isPersonal ? 'btn-generate-ai-p' : 'btn-generate-ai-n');
+      const icon = document.getElementById(isPersonal ? 'ai-gen-icon-p' : 'ai-gen-icon-n');
+      const txt = document.getElementById(isPersonal ? 'ai-gen-text-p' : 'ai-gen-text-n');
+      
+      const angle = angleEl ? angleEl.value : 'record';
+      const tone = toneEl ? toneEl.value : 'santiago';
+      const custom_prompt = promptEl ? promptEl.value.trim() : '';
+
+      if (btn) btn.disabled = true;
+      if (icon) icon.className = 'fa-solid fa-spinner fa-spin';
+      if (txt) txt.innerText = 'Redactando con Gemini 3.8 Flash...';
+      
+      showToast('IA Generando Guiones', `Analizando métricas ganadoras y redactando 8 guiones de 8 segundos...`, 'info');
+
+      try {
+        const res = await fetch(`${API_BASE}/api/ai/generate-reels`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            account,
+            angle,
+            tone,
+            custom_prompt,
+            count: 8,
+            model: 'gemini-3.8-flash'
+          })
+        });
+        const data = await res.json();
+        
+        if (data.success && data.reels && data.reels.length > 0) {
+          if (isPersonal) {
+            renderPersonalPlan(data.reels);
+          } else {
+            renderNodoPlan(data.reels);
+          }
+          showToast(
+            '¡Guiones Generados!',
+            `8 guiones listos generados con ${data.engine || 'Gemini 3.8 Flash'}. Formato de 8s optimizado para retención.`,
+            'success'
+          );
+        } else {
+          showToast('Error al generar', data.error || 'No se pudieron generar los guiones.', 'error');
+        }
+      } catch (e) {
+        showToast('Error', e.message, 'error');
+      } finally {
+        if (btn) btn.disabled = false;
+        if (icon) icon.className = 'fa-solid fa-wand-magic-sparkles';
+        if (txt) txt.innerText = isPersonal ? 'Generar 8 Guiones con Gemini' : 'Generar Guiones B2B con Gemini';
+      }
+    }
+
+    async function mutateHookAction(reelId, account, btnEl) {
+      const containerId = `hook-mutator-container-${account}-${reelId}`;
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!container.classList.contains('hidden') && container.innerHTML.trim() !== '') {
+        container.classList.add('hidden');
+        return;
+      }
+
+      const plan = account === 'personal' ? window.CURRENT_PERSONAL_PLAN : window.CURRENT_NODO_PLAN;
+      const reel = (plan || []).find(r => r.id === reelId);
+      const currentHook = reel ? reel.line1 : '';
+      const currentTheme = reel ? reel.theme : '';
+
+      container.classList.remove('hidden');
+      container.innerHTML = `
+        <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+          <span class="font-bold text-white flex items-center gap-1.5 font-mono text-xs">
+            <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> Ganchos Alternativos (A/B) · Gemini 3.8 Flash
+          </span>
+          <button onclick="document.getElementById('${containerId}').classList.add('hidden')" class="text-slate-400 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="text-center py-3 text-violet-300 font-mono text-xs flex items-center justify-center gap-2">
+          <i class="fa-solid fa-spinner fa-spin text-cyan-400"></i> Generando 3 variantes de gancho con Gemini 3.8 Flash...
+        </div>
+      `;
+
+      try {
+        const res = await fetch(`${API_BASE}/api/ai/mutate-hook`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            hook: currentHook,
+            theme: currentTheme,
+            tone: account === 'personal' ? 'santiago' : 'educativo',
+            model: 'gemini-3.8-flash'
+          })
+        });
+        const data = await res.json();
+        const variations = data.variations || [];
+        
+        if (variations.length === 0) {
+          container.innerHTML = `<p class="text-rose-400 text-xs">No se pudieron generar variantes.</p>`;
+          return;
+        }
+
+        let html = `
+          <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+            <span class="font-bold text-white flex items-center gap-1.5 font-mono text-xs">
+              <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> Ganchos Alternativos (A/B) · ${data.model || 'Gemini 3.8 Flash'}
+            </span>
+            <button onclick="document.getElementById('${containerId}').classList.add('hidden')" class="text-slate-400 hover:text-white cursor-pointer">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="space-y-2">
+        `;
+
+        variations.forEach((v, idx) => {
+          const cleanHook = (v.hook || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+          html += `
+            <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-700/80 flex items-start justify-between gap-3 hover:border-cyan-500/40 transition-all">
+              <div class="space-y-1">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold uppercase">
+                  Opción ${idx + 1}: ${v.type}
+                </span>
+                <p class="text-slate-100 font-medium text-xs leading-snug">"${v.hook}"</p>
+              </div>
+              <button onclick="applyAlternativeHook(${reelId}, '${cleanHook}', '${account}')" class="shrink-0 py-1.5 px-3 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] font-bold cursor-pointer transition-all flex items-center gap-1">
+                <i class="fa-solid fa-check"></i> Aplicar
+              </button>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        container.innerHTML = html;
+      } catch (err) {
+        container.innerHTML = `<p class="text-rose-400 text-xs">Error al conectar con la IA: ${err.message}</p>`;
+      }
+    }
+
+    function applyAlternativeHook(reelId, hookText, account) {
+      const line1El = document.getElementById(`reel-line1-${account}-${reelId}`);
+      if (line1El) {
+        const temp = document.createElement('textarea');
+        temp.innerHTML = hookText;
+        const decoded = temp.value;
+        
+        line1El.innerText = `"${decoded}"`;
+        line1El.classList.add('text-cyan-300', 'transition-all');
+        setTimeout(() => line1El.classList.remove('text-cyan-300'), 2000);
+      }
+      
+      const container = document.getElementById(`hook-mutator-container-${account}-${reelId}`);
+      if (container) container.classList.add('hidden');
+
+      showToast('Gancho Actualizado', `Se aplicó la nueva variante al Reel #${reelId}.`, 'success');
     }
 
     // Initial load
     document.addEventListener('DOMContentLoaded', () => {
       loadOverview();
       renderAll();
+      loadGeminiConfig();
     });
   </script>
 

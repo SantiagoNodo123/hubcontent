@@ -35,6 +35,12 @@ from services.token_manager import (
     exchange_tiktok_code,
     refresh_tiktok_token
 )
+from services.ai_agent import (
+    generate_reels_with_ai,
+    generate_hook_variations,
+    save_gemini_api_key,
+    get_gemini_api_key
+)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "data", "config.json")
@@ -479,6 +485,76 @@ async def api_analytics_history(request):
     except Exception as e:
         return JSONResponse({"success": False, "error": str(e)}, status_code=500)
 
+async def api_ai_generate_reels(request):
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+        
+    account = body.get("account", "personal")
+    angle = body.get("angle", "record")
+    tone = body.get("tone", "santiago")
+    custom_prompt = body.get("custom_prompt", "")
+    count = int(body.get("count", 8))
+    model = body.get("model", "gemini-3.8-flash")
+    api_key = body.get("api_key")
+    
+    result = generate_reels_with_ai(
+        account=account,
+        angle=angle,
+        tone=tone,
+        custom_prompt=custom_prompt,
+        count=count,
+        model=model,
+        api_key=api_key
+    )
+    return JSONResponse(result)
+
+async def api_ai_mutate_hook(request):
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+        
+    hook = body.get("hook", "")
+    theme = body.get("theme", "")
+    tone = body.get("tone", "santiago")
+    model = body.get("model", "gemini-3.8-flash")
+    api_key = body.get("api_key")
+    
+    result = generate_hook_variations(
+        hook=hook,
+        theme=theme,
+        tone=tone,
+        model=model,
+        api_key=api_key
+    )
+    return JSONResponse(result)
+
+async def api_config_gemini_key_get(request):
+    key = get_gemini_api_key()
+    return JSONResponse({
+        "success": True,
+        "has_key": bool(key),
+        "model": "gemini-3.8-flash",
+        "key_preview": f"{key[:4]}...{key[-4:]}" if key and len(key) > 8 else None
+    })
+
+async def api_config_gemini_key_post(request):
+    try:
+        body = await request.json()
+        api_key = body.get("api_key", "").strip()
+        if not api_key:
+            return JSONResponse({"success": False, "error": "API Key vacía"}, status_code=400)
+            
+        save_gemini_api_key(api_key)
+        return JSONResponse({
+            "success": True, 
+            "message": "API Key de Google AI Studio guardada correctamente. Modelo activado: gemini-3.8-flash"
+        })
+    except Exception as e:
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
 routes = [
     Route("/", homepage),
     Route("/api/overview", api_overview),
@@ -497,6 +573,10 @@ routes = [
     Route("/api/analytics/demographics", api_analytics_demographics),
     Route("/api/analytics/insights", api_analytics_insights),
     Route("/api/analytics/history", api_analytics_history),
+    Route("/api/ai/generate-reels", api_ai_generate_reels, methods=["POST"]),
+    Route("/api/ai/mutate-hook", api_ai_mutate_hook, methods=["POST"]),
+    Route("/api/config/gemini-key", api_config_gemini_key_get, methods=["GET"]),
+    Route("/api/config/gemini-key", api_config_gemini_key_post, methods=["POST"]),
 ]
 
 
