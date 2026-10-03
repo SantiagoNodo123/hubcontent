@@ -1514,7 +1514,7 @@
                 <span class="font-bold text-sm text-white flex items-center gap-2">
                   <i class="fa-brands fa-instagram text-slate-400"></i> IG Personal
                 </span>
-                <span id="badge-meta-personal" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">VERIFICANDO...</span>
+                <span id="badge-meta-personal" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">VERIFICANDO...</span>
               </div>
               <p class="text-xs text-slate-300 mt-3 font-medium">@s_thiago7</p>
               <p class="text-[11px] text-slate-400 mt-1">PÃ¡gina: Lab marketing (942687925585308)</p>
@@ -1535,7 +1535,7 @@
                 <span class="font-bold text-sm text-white flex items-center gap-2">
                   <i class="fa-solid fa-building text-slate-400"></i> IG Nodo B2B
                 </span>
-                <span id="badge-meta-nodo" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">VERIFICANDO...</span>
+                <span id="badge-meta-nodo" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">VERIFICANDO...</span>
               </div>
               <p class="text-xs text-slate-300 mt-3 font-medium">@nodo_tg</p>
               <p class="text-[11px] text-slate-400 mt-1">PÃ¡gina: Nodo.IA (823105594229157)</p>
@@ -3669,6 +3669,7 @@
           input.value = '';
           showToast('Google Studio Conectado', 'API Key de Gemini 3.8 Flash guardada y lista.', 'success');
           loadGeminiConfig();
+      checkApiStatus();
         } else {
           throw new Error(data.error || 'Error al guardar key');
         }
@@ -3882,6 +3883,7 @@
       loadOverview();
       renderAll();
       loadGeminiConfig();
+      checkApiStatus();
     });
   </script>
 

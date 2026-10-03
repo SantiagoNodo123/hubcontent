@@ -1,4 +1,4 @@
-import os
+﻿import os
 import sys
 import json
 import requests
@@ -65,7 +65,7 @@ async def api_status(request):
     personal_valid = False
     personal_error = None
     try:
-        r = requests.get(f"https://graph.facebook.com/v21.0/{config['personal']['instagram_account_id']}?fields=username&access_token={config['personal']['access_token']}", timeout=3).json()
+        r = requests.get(f"https://graph.facebook.com/v21.0/{config['personal']['instagram_account_id']}?fields=username&access_token={config['personal']['access_token']}", timeout=10).json()
         if "error" not in r:
             personal_valid = True
         else:
@@ -76,7 +76,7 @@ async def api_status(request):
     nodo_valid = False
     nodo_error = None
     try:
-        r = requests.get(f"https://graph.facebook.com/v21.0/{config['nodo']['instagram_account_id']}?fields=username&access_token={config['nodo']['access_token']}", timeout=3).json()
+        r = requests.get(f"https://graph.facebook.com/v21.0/{config['nodo']['instagram_account_id']}?fields=username&access_token={config['nodo']['access_token']}", timeout=10).json()
         if "error" not in r:
             nodo_valid = True
         else:
@@ -165,9 +165,9 @@ async def api_tiktok_data(request):
         else:
             # Fallback stats
             if acc == "santiagoquevedo71":
-                profiles.append({"username": acc, "nickname": "Santiago", "bio": "La vida desde mi perspectiva. Quizá algo de ella también sea tuyo.", "followers": 1211, "likes": 5603, "videos": 234})
+                profiles.append({"username": acc, "nickname": "Santiago", "bio": "La vida desde mi perspectiva. QuizÃ¡ algo de ella tambiÃ©n sea tuyo.", "followers": 1211, "likes": 5603, "videos": 234})
             else:
-                profiles.append({"username": acc, "nickname": "nodotechgrowth", "bio": "NODO. Automatización comercial B2B + IA.", "followers": 71, "likes": 875, "videos": 169})
+                profiles.append({"username": acc, "nickname": "nodotechgrowth", "bio": "NODO. AutomatizaciÃ³n comercial B2B + IA.", "followers": 71, "likes": 875, "videos": 169})
                 
     return JSONResponse({
         "success": True,
@@ -217,7 +217,7 @@ async def api_extend_meta(request):
         return JSONResponse({
             "success": True, 
             "is_permanent": is_permanent,
-            "token_type": "Page Access Token (Permanente)" if is_permanent else "User Token (60 Días)",
+            "token_type": "Page Access Token (Permanente)" if is_permanent else "User Token (60 DÃ­as)",
             "account": account
         })
     except Exception as e:
@@ -226,7 +226,7 @@ async def api_extend_meta(request):
 async def api_tiktok_callback(request):
     code = request.query_params.get("code")
     if not code:
-        return HTMLResponse("<h3>Error: No se recibió el código de autorización de TikTok.</h3>", status_code=400)
+        return HTMLResponse("<h3>Error: No se recibiÃ³ el cÃ³digo de autorizaciÃ³n de TikTok.</h3>", status_code=400)
     
     cfg = load_config()
     try:
@@ -242,13 +242,13 @@ async def api_tiktok_callback(request):
             
         return HTMLResponse("""
             <div style="font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 30px; background: #0c0e12; color: white; border-radius: 16px; border: 1px solid #1e222b; text-align: center;">
-                <h2 style="color: #10b981;">✅ ¡Autorización de TikTok Exitosa!</h2>
-                <p style="color: #94a3b8;">Los tokens de acceso (24h) y de refresco (365 días) han sido guardados correctamente en Nodo Content Hub.</p>
+                <h2 style="color: #10b981;">âœ… Â¡AutorizaciÃ³n de TikTok Exitosa!</h2>
+                <p style="color: #94a3b8;">Los tokens de acceso (24h) y de refresco (365 dÃ­as) han sido guardados correctamente en Nodo Content Hub.</p>
                 <a href="/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: white; color: black; font-weight: bold; border-radius: 8px; text-decoration: none;">Volver al Dashboard</a>
             </div>
         """)
     except Exception as e:
-        return HTMLResponse(f"<h3>Error al intercambiar código de TikTok: {e}</h3>", status_code=500)
+        return HTMLResponse(f"<h3>Error al intercambiar cÃ³digo de TikTok: {e}</h3>", status_code=500)
 
 async def api_tiktok_live(request):
     account = request.query_params.get("account")
@@ -429,19 +429,19 @@ async def api_overview(request):
             "diagnostics": {
                 "personal": {
                     "winner_title": p_strat.get("winner_title", "Y uno siempre resulta ser el malo"),
-                    "winner_stats": p_strat.get("winner_stats", "4,347 vistas · 19 guardados · 29.7% skip"),
+                    "winner_stats": p_strat.get("winner_stats", "4,347 vistas Â· 19 guardados Â· 29.7% skip"),
                     "why_winner": p_strat.get("why_winner", "Gancho de conflicto directo en el segundo 1."),
-                    "loser_title": p_strat.get("loser_title", "Empiezo yo 👇"),
-                    "loser_stats": p_strat.get("loser_stats", "183 alcance · 77.7% skip"),
+                    "loser_title": p_strat.get("loser_title", "Empiezo yo ðŸ‘‡"),
+                    "loser_stats": p_strat.get("loser_stats", "183 alcance Â· 77.7% skip"),
                     "why_loser": p_strat.get("why_loser", "Pregunta pasiva sin gancho genera abandono masivo."),
-                    "renewed_focus": p_strat.get("renewed_focus", "Estándares innegociables en los 20s, loops visuales de 8 segundos.")
+                    "renewed_focus": p_strat.get("renewed_focus", "EstÃ¡ndares innegociables en los 20s, loops visuales de 8 segundos.")
                 },
                 "nodo": {
                     "winner_title": n_strat.get("winner_title", "No se descarga en la App Store"),
-                    "winner_stats": n_strat.get("winner_stats", "621 views · 38.8% skip"),
+                    "winner_stats": n_strat.get("winner_stats", "621 views Â· 38.8% skip"),
                     "why_winner": n_strat.get("why_winner", "Ataca el dolor de procesos manuales en empresas."),
                     "loser_title": n_strat.get("loser_title", "El link en el primer comentario"),
-                    "loser_stats": n_strat.get("loser_stats", "80 views · 87.5% skip"),
+                    "loser_stats": n_strat.get("loser_stats", "80 views Â· 87.5% skip"),
                     "why_loser": n_strat.get("why_loser", "Pedir clics directos al segundo 1 provoca skip masivo."),
                     "renewed_focus": n_strat.get("renewed_focus", "Storytelling B2B de casos reales con Kommo CRM + IA.")
                 }
@@ -545,7 +545,7 @@ async def api_config_gemini_key_post(request):
         body = await request.json()
         api_key = body.get("api_key", "").strip()
         if not api_key:
-            return JSONResponse({"success": False, "error": "API Key vacía"}, status_code=400)
+            return JSONResponse({"success": False, "error": "API Key vacÃ­a"}, status_code=400)
             
         save_gemini_api_key(api_key)
         return JSONResponse({
