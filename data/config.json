@@ -28,5 +28,9 @@
       "santiagoquevedo71",
       "nodotechgrowth"
     ]
+  },
+  "gemini": {
+    "api_key": "",
+    "model": "gemini-3.8-flash"
   }
 }

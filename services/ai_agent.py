@@ -8,11 +8,24 @@ CONFIG_PATH = os.path.join(BASE_DIR, "data", "config.json")
 STRATEGY_PATH = os.path.join(BASE_DIR, "data", "analytics", "strategies", "latest_strategy.json")
 SCORES_PATH = os.path.join(BASE_DIR, "data", "analytics", "scores", "latest_scores.json")
 
+ENV_PATH = os.path.join(BASE_DIR, ".env")
+
 def get_gemini_api_key():
-    """Retrieve Gemini API Key from environment or data/config.json."""
+    """Retrieve Gemini API Key from environment, .env file, or data/config.json."""
     env_key = os.environ.get("GEMINI_API_KEY")
     if env_key and env_key.strip():
         return env_key.strip()
+        
+    if os.path.exists(ENV_PATH):
+        try:
+            with open(ENV_PATH, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.startswith("GEMINI_API_KEY="):
+                        val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                        if val:
+                            return val
+        except Exception as e:
+            print(f"[AI Agent] Error reading .env: {e}")
     
     if os.path.exists(CONFIG_PATH):
         try:
@@ -28,21 +41,31 @@ def get_gemini_api_key():
     return None
 
 def save_gemini_api_key(api_key: str):
-    """Save Gemini API Key to data/config.json."""
-    if not os.path.exists(CONFIG_PATH):
-        cfg = {}
-    else:
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            cfg = json.load(f)
-            
-    if "gemini" not in cfg:
-        cfg["gemini"] = {}
-        
-    cfg["gemini"]["api_key"] = api_key.strip()
-    cfg["gemini"]["model"] = "gemini-3.8-flash"
+    """Save Gemini API Key to gitignored .env file and data/config.json."""
+    clean_key = api_key.strip()
     
-    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
-        json.dump(cfg, f, indent=2)
+    # Save to .env (secure, not pushed to git)
+    try:
+        with open(ENV_PATH, "w", encoding="utf-8") as f:
+            f.write(f"GEMINI_API_KEY={clean_key}\n")
+    except Exception as e:
+        print(f"[AI Agent] Error writing .env: {e}")
+
+    # Update config.json metadata without exposing secret
+    if os.path.exists(CONFIG_PATH):
+        try:
+            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+            if "gemini" not in cfg:
+                cfg["gemini"] = {}
+            cfg["gemini"]["api_key"] = ""
+            cfg["gemini"]["model"] = "gemini-3.8-flash"
+            with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+                json.dump(cfg, f, indent=2)
+        except Exception:
+            pass
+        
+    return True
         
     return True
 
@@ -56,7 +79,7 @@ def _call_gemini_api(prompt: str, system_instruction: str = "", model: str = "ge
         raise ValueError("No se ha configurado ninguna API Key de Google Studio (Gemini).")
 
     candidate_models = [model]
-    for fallback in ["gemini-3.8-flash", "gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]:
+    for fallback in ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.7-flash", "gemini-flash-latest"]:
         if fallback not in candidate_models:
             candidate_models.append(fallback)
 
@@ -88,12 +111,9 @@ def _call_gemini_api(prompt: str, system_instruction: str = "", model: str = "ge
                 data = resp.json()
                 text_content = data["candidates"][0]["content"]["parts"][0]["text"]
                 return json.loads(text_content), current_model
-            elif resp.status_code in [400, 404]:
-                # Model name not supported or not available, try next fallback
-                last_error = f"Model {current_model} returned {resp.status_code}: {resp.text}"
-                continue
             else:
-                last_error = f"Gemini API error ({resp.status_code}): {resp.text}"
+                # If error (400, 404, 429, 503 etc.), record and try next candidate model
+                last_error = f"Model {current_model} returned {resp.status_code}: {resp.text[:200]}"
                 continue
         except requests.exceptions.Timeout:
             last_error = "Timeout al conectar con la API de Gemini (30s)."
