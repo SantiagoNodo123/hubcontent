@@ -1,0 +1,18 @@
+{
+  "gender": {
+    "labels": [],
+    "values": []
+  },
+  "age": {
+    "labels": [],
+    "values": []
+  },
+  "country": {
+    "labels": [],
+    "values": []
+  },
+  "city": {
+    "labels": [],
+    "values": []
+  }
+}

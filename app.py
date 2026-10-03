@@ -11,6 +11,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 from starlette.applications import Starlette
 from starlette.responses import JSONResponse, HTMLResponse
 from starlette.routing import Route
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 from services.meta_service import (
     get_channel_profile,
     get_channel_posts,
@@ -295,52 +297,52 @@ async def api_overview(request):
         config = load_config()
 
         # 1. Instagram Personal (@s_thiago7)
-        ig_p_fol = 1918
+        ig_p_fol = 1951
         ig_p_media = 280
         ig_p_prof = {}
         try:
             ig_p_prof = get_channel_profile(config["personal"]["access_token"], config["personal"]["instagram_account_id"])
-            ig_p_fol = ig_p_prof.get("followers_count", 1918)
+            ig_p_fol = ig_p_prof.get("followers_count", 1951)
             ig_p_media = ig_p_prof.get("media_count", 280)
         except Exception as e:
             print("Overview IG Personal fetch notice:", e)
 
         # 2. Instagram Nodo B2B (@nodo_tg)
         ig_n_fol = 38
-        ig_n_media = 149
+        ig_n_media = 151
         ig_n_prof = {}
         try:
             ig_n_prof = get_channel_profile(config["nodo"]["access_token"], config["nodo"]["instagram_account_id"])
             ig_n_fol = ig_n_prof.get("followers_count", 38)
-            ig_n_media = ig_n_prof.get("media_count", 149)
+            ig_n_media = ig_n_prof.get("media_count", 151)
         except Exception as e:
             print("Overview IG Nodo fetch notice:", e)
 
         # 3. TikTok Personal (@santiagoquevedo71)
-        tt_p_fol = 1212
-        tt_p_videos = 246
-        tt_p_likes = 5899
+        tt_p_fol = 1211
+        tt_p_videos = 253
+        tt_p_likes = 6037
         try:
             tok = get_valid_tiktok_token("santiagoquevedo71")
             if tok:
-                u = get_tiktok_api_user(tok)
-                tt_p_fol = u.get("follower_count", 1212)
-                tt_p_videos = u.get("video_count", 246)
-                tt_p_likes = u.get("likes_count", 5899)
+                u = get_tiktok_api_user(tok) or {}
+                tt_p_fol = u.get("follower_count", 1211)
+                tt_p_videos = u.get("video_count", 253)
+                tt_p_likes = u.get("likes_count", 6037)
         except Exception as e:
             print("Overview TT Personal fetch notice:", e)
 
         # 4. TikTok Nodo B2B (@nodotechgrowth)
-        tt_n_fol = 73
-        tt_n_videos = 174
-        tt_n_likes = 931
+        tt_n_fol = 74
+        tt_n_videos = 175
+        tt_n_likes = 934
         try:
             tok = get_valid_tiktok_token("nodotechgrowth")
             if tok:
-                u = get_tiktok_api_user(tok)
-                tt_n_fol = u.get("follower_count", 73)
-                tt_n_videos = u.get("video_count", 174)
-                tt_n_likes = u.get("likes_count", 931)
+                u = get_tiktok_api_user(tok) or {}
+                tt_n_fol = u.get("follower_count", 74)
+                tt_n_videos = u.get("video_count", 175)
+                tt_n_likes = u.get("likes_count", 934)
         except Exception as e:
             print("Overview TT Nodo fetch notice:", e)
 
@@ -498,7 +500,17 @@ routes = [
 ]
 
 
-app = Starlette(debug=True, routes=routes)
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_methods=["*"],
+        allow_headers=["*"],
+        allow_credentials=True
+    )
+]
+
+app = Starlette(debug=True, routes=routes, middleware=middleware)
 
 if __name__ == "__main__":
     print("Content Hub running on http://localhost:8000")

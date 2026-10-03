@@ -2,23 +2,23 @@
   "patterns": [
     {
       "icon": "fa-clock",
-      "text": "Formato ganador: 30-60s lidera con mayor score de retenci\u00f3n (11.1 pts).",
-      "number": "11.1 pts"
+      "text": "Formato ganador: 8s (R\u00e1pido) lidera con mayor score de retenci\u00f3n (10.0 pts).",
+      "number": "10.0 pts"
     },
     {
       "icon": "fa-bookmark",
       "text": "Los posts con alto ratio de guardados superan el promedio global de distribuci\u00f3n.",
-      "number": "36.4 pts"
+      "number": "36.6 pts"
     },
     {
       "icon": "fa-eye",
-      "text": "Skip rate medio: 57.4%. Los hooks en los primeros 2s reducen el salto a la mitad.",
+      "text": "Skip rate medio: 57.2%. Los hooks en los primeros 2s reducen el salto a la mitad.",
       "number": "-43.0%"
     },
     {
       "icon": "fa-chart-simple",
       "text": "TikTok convierte mejor en alcance exploratorio mediante storytelling sin guion estricto.",
-      "number": "11.5 pts"
+      "number": "9.4 pts"
     }
   ],
   "seo_descriptions": [
