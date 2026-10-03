@@ -2,13 +2,13 @@
   "patterns": [
     {
       "icon": "fa-clock",
-      "text": "Formato ganador: 8s (R\u00e1pido) lidera con mayor score de retenci\u00f3n (10.0 pts).",
-      "number": "10.0 pts"
+      "text": "Formato ganador: 8s (R\u00e1pido) lidera con mayor score de retenci\u00f3n (9.9 pts).",
+      "number": "9.9 pts"
     },
     {
       "icon": "fa-bookmark",
       "text": "Los posts con alto ratio de guardados superan el promedio global de distribuci\u00f3n.",
-      "number": "36.6 pts"
+      "number": "35.8 pts"
     },
     {
       "icon": "fa-eye",
@@ -18,7 +18,7 @@
     {
       "icon": "fa-chart-simple",
       "text": "TikTok convierte mejor en alcance exploratorio mediante storytelling sin guion estricto.",
-      "number": "9.4 pts"
+      "number": "9.3 pts"
     }
   ],
   "seo_descriptions": [
