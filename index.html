@@ -3585,6 +3585,9 @@
       renderTikTokNodoStorytelling(EMBEDDED_DATA.tiktok_nodo_storytelling);
       renderRotationLab(EMBEDDED_DATA.rotation_lab);
 
+      if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 400);
+    }
+
     // ==========================================
     // GEMINI 3.8 FLASH AI AGENT INTEGRATION
     // ==========================================
