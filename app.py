@@ -11,7 +11,7 @@ async def api_generate_custom_reels(request):
     except Exception as e:
         return JSONResponse({'success': False, 'error': str(e)}, status_code=500)
 
-﻿import os
+import os
 import sys
 import json
 import requests
