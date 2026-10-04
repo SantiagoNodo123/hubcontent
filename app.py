@@ -1,3 +1,16 @@
+
+async def api_generate_custom_reels(request):
+    try:
+        from services.ai_agent import generate_b2b_custom_reels
+        body = await request.json()
+        angulo = body.get('angulo', 'Dolor Operativo')
+        tono = body.get('tono', 'Controversial')
+        instruccion = body.get('instruccion', '')
+        reels = generate_b2b_custom_reels(angulo, tono, instruccion)
+        return JSONResponse({'success': True, 'scripts': reels})
+    except Exception as e:
+        return JSONResponse({'success': False, 'error': str(e)}, status_code=500)
+
 ﻿import os
 import sys
 import json
@@ -556,6 +569,7 @@ async def api_config_gemini_key_post(request):
         return JSONResponse({"success": False, "error": str(e)}, status_code=500)
 
 routes = [
+    Route('/api/ai/generate-scripts', api_generate_custom_reels, methods=['POST']),
     Route("/", homepage),
     Route("/api/overview", api_overview),
     Route("/api/status", api_status),

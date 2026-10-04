@@ -3889,5 +3889,81 @@
 
   <!-- Floating Sync Toast Notification -->
   <div id="sync-toast" class="fixed bottom-6 right-6 z-50 max-w-md p-4 rounded-2xl shadow-2xl backdrop-blur-xl bg-slate-900/95 border border-indigo-500/40 transition-all duration-300 transform translate-y-10 opacity-0 pointer-events-none flex items-start gap-3.5"></div>
+
+<script>
+async function ejecutarRedaccionB2B() {
+    const btn = document.querySelector('button[onclick*="generate"], .btn-redactar-b2b') || event?.target;
+    const anguloSelect = document.querySelector('select[name="angulo"], select:first-of-type');
+    const tonoSelect = document.querySelectorAll('select')[1];
+    const inputExtra = document.querySelector('input[placeholder*="opcional"], input[type="text"]');
+    const cardsContainer = document.querySelector('.grid-cols-3, [class*="grid"]');
+
+    const angulo = anguloSelect ? anguloSelect.value : 'Dolor Operativo';
+    const tono = tonoSelect ? tonoSelect.value : 'Controversial';
+    const instruccion = inputExtra ? inputExtra.value : '';
+
+    let prevText = btn ? btn.innerHTML : '';
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '⚡ Redactando con Gemini...';
+    }
+
+    try {
+        const res = await fetch('/api/ai/generate-scripts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ angulo, tono, instruccion })
+        });
+        const data = await res.json();
+        if (data.success && data.scripts && data.scripts.length > 0) {
+            actualizarTarjetasReels(data.scripts);
+        } else {
+            alert('Aviso: ' + (data.error || 'No se pudieron regenerar los guiones'));
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Error al conectar con Gemini');
+    } finally {
+        if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = prevText || '✨ Redactar con Gemini';
+        }
+    }
+}
+
+function actualizarTarjetasReels(scripts) {
+    const container = document.getElementById('b2b-reels-container') || document.querySelector('.guiones-container');
+    if (!container) return;
+    
+    container.innerHTML = scripts.map((s, idx) => `
+        <div class="card p-6" style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">${s.slot || 'Reel B2B #' + (idx+1)}</span>
+                <span style="color: #94a3b8; font-size: 11px;">⏰ ${s.time || '12:30 PM'}</span>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 14px;">${s.title}</h3>
+            
+            <div style="background: rgba(30, 41, 59, 0.6); padding: 14px; border-radius: 12px; margin-bottom: 14px; border-left: 3px solid #10b981;">
+                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; color: #10b981; margin-bottom: 6px;">
+                    <span>FRASE GANCHO (LOOP 8S):</span>
+                    <span>B2B Retention</span>
+                </div>
+                <p style="font-size: 13px; font-weight: 700; color: #f8fafc; line-height: 1.4; margin: 0;">${s.hook}</p>
+            </div>
+            
+            <div style="margin-bottom: 14px;">
+                <div style="font-size: 10px; font-weight: 700; color: #94a3b8; margin-bottom: 4px;">COPY B2B DE CONVERSIÓN:</div>
+                <p style="font-size: 12px; color: #cbd5e1; line-height: 1.4; margin: 0; font-style: italic;">${s.copy}</p>
+            </div>
+            
+            <div style="font-size: 11px; color: #64748b; display: flex; align-items: flex-start; gap: 6px;">
+                <span>📹</span>
+                <span>${s.visual}</span>
+            </div>
+        </div>
+    `).join('');
+}
+</script>
+
 </body>
 </html>

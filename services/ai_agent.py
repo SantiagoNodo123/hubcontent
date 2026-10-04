@@ -415,3 +415,78 @@ def _generate_algorithmic_reels(angle: str, tone: str, custom_prompt: str = "", 
         item["time"] = times[idx]
         
     return templates[:count]
+
+
+def generate_b2b_custom_reels(angulo="Dolor Operativo", tono="Controversial", instruccion=""):
+    """Genera exactamente los 3 Reels B2B del dia en formato JSON ultrarrapido (2-3 segundos)"""
+    prompt = f"""Eres el director de contenido de NODO (conectanodo.com), especialistas en automatizacion comercial con WhatsApp API, agentes de IA y Kommo CRM.
+Tu tarea es redactar exactamente los 3 guiones de Reels B2B de hoy (formato 8s ganador de alta retencion para compartir).
+
+PARAMETROS DEL CLIENTE:
+- Angulo B2B: {angulo}
+- Tono de voz: {tono}
+- Enfoque o instruccion extra: {instruccion if instruccion else 'Friccion en ventas y WhatsApp'}
+
+Responde UNICAMENTE con un arreglo JSON valido con esta estructura exacta (sin texto previo ni explicaciones):
+[
+  {{
+    "slot": "Reel B2B #1",
+    "time": "12:30 PM",
+    "title": "Titulo contundente del Reel 1",
+    "hook": "Frase gancho para loop de 8 segundos entre comillas",
+    "copy": "Copy B2B persuasivo con llamado a la accion a conectanodo.com",
+    "visual": "Tomas en loop de WhatsApp y pipeline de ventas (8 segundos)"
+  }},
+  {{
+    "slot": "Reel B2B #2",
+    "time": "04:30 PM",
+    "title": "Titulo contundente del Reel 2",
+    "hook": "Frase gancho para loop de 8 segundos entre comillas",
+    "copy": "Copy B2B persuasivo con llamado a la accion a conectanodo.com",
+    "visual": "Tomas de flujo automatizado respondiendo en tiempo real"
+  }},
+  {{
+    "slot": "Reel B2B #3",
+    "time": "07:30 PM",
+    "title": "Titulo contundente del Reel 3",
+    "hook": "Frase gancho para loop de 8 segundos entre comillas",
+    "copy": "Copy B2B persuasivo con llamado a la accion a conectanodo.com",
+    "visual": "Tomas de notificaciones de cierres de venta en CRM"
+  }}
+]
+"""
+    try:
+        model = genai.GenerativeModel('gemini-2.5-flash')
+        response = model.generate_content(prompt)
+        text = response.text.strip()
+        if "```json" in text:
+            text = text.split("```json")[1].split("```")[0].strip()
+        elif "```" in text:
+            text = text.split("```")[1].split("```")[0].strip()
+        return json.loads(text)
+    except Exception as e:
+        print(f"Error generando reels B2B: {e}")
+        # Fallback de seguridad
+        return [
+            {
+                "slot": "Reel B2B #1", "time": "12:30 PM",
+                "title": f"El Error en {angulo}",
+                "hook": f"\"El 80% de las empresas fallan en {instruccion if instruccion else 'su proceso comercial'}: responden tarde y pierden el cliente en 5 minutos.\"",
+                "copy": "Automatiza la captacion y califica prospectos con WhatsApp API y Kommo CRM. Diagnostico en conectanodo.com",
+                "visual": "Loop de pantalla con chats desatendidos vs calificados por IA."
+            },
+            {
+                "slot": "Reel B2B #2", "time": "04:30 PM",
+                "title": f"Rompiendo el Mito: {tono}",
+                "hook": "\"Tu problema no es de trafico, es que no tienes un pipeline que convierta leads en citas de venta en menos de 60 segundos.\"",
+                "copy": "No dejes que tus ventas dependan de respuestas manuales. Visita conectanodo.com",
+                "visual": "Transicion rapida de leads entrando a reuniones agendadas."
+            },
+            {
+                "slot": "Reel B2B #3", "time": "07:30 PM",
+                "title": "IA vs Procesos Manuales",
+                "hook": "\"Mientras tu equipo sigue pegado al celular respondiendo a las 10 PM, tu competencia cierra negocios con agentes de IA.\"",
+                "copy": "Integra agentes de IA conectados a tu CRM en conectanodo.com",
+                "visual": "Panel de Kommo CRM actualizandose solo."
+            }
+        ]
